@@ -14,16 +14,27 @@ nav li{
 	float: left;
 	width: 25%;
 	border: 2px solid red;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 section{
+	overflow: auto;
 	border: solid green;
+}
+
+#Projects img{
+	float: left;
+	width: 50%;
+	border: 5px solid blue;
 }
 
 #Contact img{
 	float: left;
 	width: 25%;
+	border: 1px solid blue;
+}
+
+.box {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
