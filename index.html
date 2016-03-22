@@ -20,68 +20,133 @@
             <![endif]-->
 
             <!-- Add your site or application content here -->
-            <header>
-                <nav role='navigation'>
-                <ul class="container">
-                        <li class="box"><a href="#home">Home</a></li>
-                        <li class="box"><a href="#projects">Projects</a></li>
-                        <li class="box"><a href="#resume">Resume</a></li>
-                        <li class="box"><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </header>
+            <div class="wrapper">
+                <header>
+                    <nav role='navigation'>
+                        <ul class="container">
+                            <li class="box float"><a href="#home">Home</a></li>
+                            <li class="box float"><a href="#projects">Projects</a></li>
+                            <li class="box float"><a href="#resume">Resume</a></li>
+                            <li class="box float"><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
 
-            <section id="Home" class="container">
-                <div class="illustration"></div>
-                <p>I graduated from SUNY at Buffalo with degree in chemical engineering and math minor along with premed track. I have very strong interest in stem cell research, so in my sophomore year... <br/><br/>
+                <section id="Home" class="container">
+                    <div class="box">
+                        <img src="images/profile/bike.jpg">
+                    </div>
+                    <div class="box">
+                        <p>I graduated from SUNY at Buffalo with degree in chemical engineering and math minor along with premed track. I have very strong interest in stem cell research, so in my sophomore year... <br/><br/>
 
-                    Yali yali yada...<br/><br/>
+                            Yali yali yada...<br/><br/>
 
-                    I ended up choosing programing as my career. I love being challenged. I love learning new technologies. The feeling of being intellectually challenged and sense of achievement is indescribable.
-                </p>
-            </section>
-            <section id="Resume" class="container" style="display:none;">
-                <a href="resources/Zeng,Keith-Resume.docx">Resume</a>
-            </section>
-            <section id="Projects" class="container" style="display:none;">
-                <div class="box">
-                    <a href="http://keithzeng.github.io/fitness/">
-                        <img src="images/projects/fitness.jpg">
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="http://keithzeng.github.io/fitness/">
-                        <img src="images/projects/fitness.jpg">
-                    </a>
-                </div>
-            </section>
-            <section id="Contact" class="container" style="display:none;">
-                <div class="box">
-                    <a href="https://www.linkedin.com/in/keithzeng">
-                        <img src="images/social_media/border/linkedin.png">
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="https://github.com/keithzeng/">
-                        <img src="images/social_media/border/github.png">
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="https://www.facebook.com/shihezen">
-                        <img src="images/social_media/border/facebook.png">
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="https://twitter.com/keithszeng">
-                        <img src="images/social_media/border/twitter.png">
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="https://plus.google.com/116591192020446298342">
-                        <img src="images/social_media/border/googleplus.png">
-                    </a>
-                </div>
-            </section>
+                            I ended up choosing programing as my career. I love being challenged. I love learning new technologies. The feeling of being intellectually challenged and sense of achievement is indescribable.
+                        </p>
+                    </div>
+                </section>
+                <section id="Resume" class="container" style="display:none;">
+                    <div class="resume_wrapper">
+                        <div class="resume_section">
+                            <div>my picture</div>
+                            <div>Name and Title</div>
+                            <div>
+                                <ul>
+                                    <li>info</li>
+                                    <li><a href="resources/Zeng,Keith-Resume.docx">Resume</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resume_section">
+                            <div class="resume_section_title">my work experience</div>
+                            <div class="resume_section_detail">detail</div>
+                        </div>
+                        <div class="resume_section">
+                            <div class="resume_section_title">Skills</div>
+                            <div class="resume_section_detail">detail</div>
+                        </div>
+                        <div class="resume_section">
+                            <div class="resume_section_title">Education</div>
+                            <div class="resume_section_detail">detail</div>
+                        </div>
+                        <div class="resume_section">
+                            <div class="resume_section_title">Additional</div>
+                            <div class="resume_section_detail">detail</div>
+                        </div>
+                    </div>
+                </section>
+                <section id="Projects" class="container" style="display:none;">
+                    <div class="box float">
+                        <a href="http://keithzeng.github.io/fitness/">
+                            <img src="images/projects/fitness.jpg">
+                        </a>
+                    </div>
+                    <div class="box float">
+                        <a href="http://keithzeng.github.io/fitness/">
+                            <img src="images/projects/fitness.jpg">
+                        </a>
+                    </div>
+                    <div class="box float">
+                        <a href="http://keithzeng.github.io/fitness/">
+                            <img src="images/projects/fitness.jpg">
+                        </a>
+                    </div>
+                    <div class="box float">
+                        <a href="http://keithzeng.github.io/fitness/">
+                            <img src="images/projects/fitness.jpg">
+                        </a>
+                    </div>
+                    <div class="box float">
+                        <a href="http://keithzeng.github.io/fitness/">
+                            <img src="images/projects/fitness.jpg">
+                        </a>
+                    </div>
+                    <div class="box float">
+                        <a href="http://keithzeng.github.io/fitness/">
+                            <img src="images/projects/fitness.jpg">
+                        </a>
+                    </div>
+                </section>
+                <section id="Contact" class="container" style="display:none;">
+                    <div class="email">
+                        <form action="mailto:you@yourwebsite.com">
+                            <label>Your name</label><br>
+                            <input type="text" name="full_name"><br>
+                            <label>Your e-mail</label><br>
+                            <input type="text" name="email"><br>
+                            <label>Message</label><br>
+                            <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea><br>
+                            <input type="submit" value="Send">
+                            <input type="reset" value="Clear">
+                        </form>
+                    </div>
+                    <div class="box float">
+                        <a href="https://www.linkedin.com/in/keithzeng">
+                            <img src="images/social_media/border/linkedin.png">
+                        </a>
+                    </div>
+                    <div class="box float">
+                        <a href="https://github.com/keithzeng/">
+                            <img src="images/social_media/border/github.png">
+                        </a>
+                    </div>
+                    <div class="box float">
+                        <a href="https://www.facebook.com/shihezen">
+                            <img src="images/social_media/border/facebook.png">
+                        </a>
+                    </div>
+                    <div class="box float">
+                        <a href="https://twitter.com/keithszeng">
+                            <img src="images/social_media/border/twitter.png">
+                        </a>
+                    </div>
+                    <div class="box float">
+                        <a href="https://plus.google.com/116591192020446298342">
+                            <img src="images/social_media/border/googleplus.png">
+                        </a>
+                    </div>
+                </section>
+            </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
             <script src="js/plugins.js"></script>
