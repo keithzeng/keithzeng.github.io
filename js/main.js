@@ -1,6 +1,4 @@
 $(function(){
-	$('img').addClass('box');
-
 	$('nav ul a').click(function(e){
 		var box=$(this).text();
 		$('#'+box).show();

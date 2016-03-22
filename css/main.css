@@ -2,39 +2,44 @@ body{
 	height: 100%;
 }
 
-nav ul{
+.container{
 	overflow: auto;
 	list-style-type: none;
 	margin: 0;
-	padding: 0; 
-}
-
-nav li{
-	padding: 10px;
-	float: left;
-	width: 25%;
-	border: 2px solid red;
-}
-
-section{
-	overflow: auto;
+	padding: 0;
 	border: solid green;
 }
 
-#Projects img{
-	float: left;
-	width: 50%;
-	border: 5px solid blue;
-}
-
-#Contact img{
-	float: left;
-	width: 25%;
-	border: 1px solid blue;
-}
-
 .box {
+	float: left;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	border: solid red;
 }
+
+nav .box{
+	padding: 10px;
+	width: 25%;
+	text-align: center;
+}
+
+#Projects .box{
+	width: 50%;
+	border: solid red;
+}
+
+#Projects img{
+	width: 100%;
+}
+
+#Contact .box{
+	width: 100%;
+}
+
+#Contact img{
+	width: 20%;
+	display: block;
+	margin: auto;
+}
+
