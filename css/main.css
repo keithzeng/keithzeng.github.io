@@ -1,7 +1,22 @@
 body{
 	height: 100%;
 	font-size: 14px;
+	color: black;
 	background-color: white;
+}
+
+*{
+	width: 100%;
+	margin:0;
+	padding:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/*border: solid black;*/
+}
+
+.container{
+	overflow: auto;
 }
 
 p{
@@ -13,72 +28,98 @@ p{
 	margin: auto;
 }
 
-.container{
-	overflow: auto;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	border: solid green;
+.box{
+	padding: 2%;
+	border: solid black;
+	/*align-items: stretch;*/
 }
 
 .float{
 	float:left;
 }
 
-.box {
-	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	border: solid red;
-}
+ul{
+	list-style: none;
 
-.box img{
-	width: 100%;
-	display: block;
-	margin: auto;
 }
 
 nav .box{
-	padding: 10px;
 	width: 25%;
 	text-align: center;
-}
-
-#Home .box{
-	padding: 10px;
-}
-
-#Home .box img{
-	width: 50%;
-	min-width: 100px;
-	max-width: 200px;
 }
 
 #Projects .box{
 	width: 50%;
 }
 
-#Resume{
-	
+#Projects .box:nth-child(odd){
+	padding:2% 1% 1% 2%;
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
 }
 
-#Contact .email{
-	height: 300px;
+#Projects .box:nth-child(even){
+	padding:2% 2% 1% 1%;
+	border-top: none;
+	border-left: none;
+	border-bottom: none;
 }
 
-#Contact .box{
-	padding: 10px;
-	width: 16.6666666666%;
+#Resume .box:nth-of-type(1){
+	padding: 2%;
+	width: 30%;
 }
 
-#Contact img{
-	width: 80%;
+#Resume .box:nth-of-type(2){
+	width: 70%;
 }
 
-#Contact .box:nth-of-type(1)
-{
-	width: 100%;
-    border:5px solid yellow;
+#Resume .resume_head .box:nth-of-type(1){
+	width: 20%;
+}
+
+#Resume .resume_head .box:nth-of-type(2){
+	width: 50%;
+}
+
+#Resume .resume_head .box:nth-of-type(3){
+	padding: 2%;
+	width: 30%;
+}
+
+#Resume .skills .box .box{
+	padding: 0;
+	width: 33.3333333%;
+}
+
+#Resume img{
+	max-width: 150px;
+	margin: auto;
+}
+
+#Contact ul .box{
+	width: 16.666666%;
+}
+
+.box .box{
+	padding: 2%;
+	border: 0px;
+}
+
+@media (max-width: 600px) {
+	.box:not(li){
+		width: 100% !important;
+	}
+}
+
+@media (min-width: 601px) {
+	#Resume .container{
+		display: flex;
+	}
+
+	.box{
+		align-items: stretch;
+	}
 }
 
