@@ -1,5 +1,11 @@
-body{
+html {
+	width: 100%;
 	height: 100%;
+}
+
+body{
+	width: 100%;
+	min-height: 100%;
 	font-size: 14px;
 	color: black;
 	background-color: white;
@@ -12,7 +18,6 @@ body{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	/*border: solid black;*/
 }
 
 .container{
@@ -25,13 +30,13 @@ p{
 
 .wrapper{
 	width: 100%;
-	margin: auto;
+	height: 100%;
+	min-height: 100%;
 }
 
 .box{
 	padding: 2%;
 	border: solid black;
-	/*align-items: stretch;*/
 }
 
 .float{
@@ -50,24 +55,20 @@ nav .box{
 
 #Projects .box{
 	width: 50%;
+	/*border: none;*/
 }
 
 #Projects .box:nth-child(odd){
 	padding:2% 1% 1% 2%;
-	border-top: none;
-	border-right: none;
-	border-bottom: none;
+	border: none;
 }
 
 #Projects .box:nth-child(even){
 	padding:2% 2% 1% 1%;
-	border-top: none;
-	border-left: none;
-	border-bottom: none;
+	border: none;
 }
 
 #Resume .box:nth-of-type(1){
-	padding: 2%;
 	width: 30%;
 }
 
@@ -84,7 +85,6 @@ nav .box{
 }
 
 #Resume .resume_head .box:nth-of-type(3){
-	padding: 2%;
 	width: 30%;
 }
 
@@ -96,6 +96,7 @@ nav .box{
 #Resume img{
 	max-width: 150px;
 	margin: auto;
+	display: block;
 }
 
 #Contact ul .box{
@@ -104,7 +105,7 @@ nav .box{
 
 .box .box{
 	padding: 2%;
-	border: 0px;
+	border: none;
 }
 
 @media (max-width: 600px) {
@@ -116,10 +117,6 @@ nav .box{
 @media (min-width: 601px) {
 	#Resume .container{
 		display: flex;
-	}
-
-	.box{
-		align-items: stretch;
 	}
 }
 
