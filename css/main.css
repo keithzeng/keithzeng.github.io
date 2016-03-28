@@ -15,7 +15,7 @@ body{
 	width: 100%;
 	margin:0;
 	padding:0;
-	-webkit-box-sizing: border-box;
+	-webkit-box-sizing: padding-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
@@ -118,6 +118,14 @@ nav .box:last-child{
 	position: relative;
 }
 
+#Projects .box:nth-child(odd){
+	padding: 2% 1% 0% 2%;
+}
+
+#Projects .box:nth-child(even){
+	padding: 2% 2% 0% 1%;
+}
+
 #Projects a{
 	text-decoration: none;
 	color: white;
@@ -134,12 +142,12 @@ nav .box:last-child{
 
 #Projects .box a{
 	opacity: 0;
-	height: 84%;
-	width: 92%;
+	height: 91%;
+	width: 94%;
 	position: absolute;
 	margin-top: 0;
 	margin-left: 0;
-	background: black;
+	background: #daad86;
 	text-align: center;
 	-webkit-transition: opacity 1s ease-in-out;
 	-moz-transition: opacity 1s ease-in-out;
@@ -154,6 +162,7 @@ nav .box:last-child{
 
 #Resume .box{
 	border: 2px solid #312c32;
+	border-top: 0;
 }
 
 #Resume .box:nth-of-type(1){
@@ -216,8 +225,19 @@ footer{
 		padding: 15%;
 	}
 
+	#Projects{
+		margin-top: 2%;
+	}
+
 	#Projects .box{
+		padding: 2% 4% !important;
 		width: 100%;
+	}
+
+	#Projects .box a{
+		opacity: 0;
+		height: 91%;
+		width: 92%;
 	}
 
 }
