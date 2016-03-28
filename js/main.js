@@ -14,6 +14,8 @@ $(function(){
 	});
 
 	$('nav ul a').click(function(e){
+		$(this).addClass('active_link');
+		$(this).parent().siblings().find('.active_link').removeClass('active_link');
 		var box=$(this).text();
 		$('#'+box).show();
 		$('#'+box).siblings().hide();
