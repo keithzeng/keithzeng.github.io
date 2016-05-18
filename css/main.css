@@ -31,10 +31,6 @@ h1{
 	margin: 0;
 }
 
-h4{
-	margin-top: 2%;
-}
-
 ul:first-child h4{
 	margin-top: 0;
 }
@@ -199,6 +195,24 @@ nav .box:last-child{
 #Resume .box .box{
 	padding: 2%;
 	border: none;
+}
+
+#Resume ol li{
+	font-weight: bold;
+	margin-left: 1.4em;
+}
+
+#Resume ul li{
+	font-weight: normal;
+	list-style: disc;
+}
+
+#Resume .skills ul li{
+	list-style: none;
+}
+
+#Resume .education li, #Resume .interests li, #Resume .additional li{
+	margin-left: 2.8em;
 }
 
 #Contact ul .box{
