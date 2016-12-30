@@ -204,6 +204,7 @@ nav .box:last-child{
 #Resume ol li{
 	font-weight: bold;
 	margin-left: 1.4em;
+	padding-right: 1.4em;
 }
 
 #Resume ul li{
