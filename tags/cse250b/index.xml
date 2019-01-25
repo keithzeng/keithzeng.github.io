@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on k317h</title>
-    <link>https://keithzeng.github.io/posts/</link>
-    <description>Recent content in Posts on k317h</description>
+    <title>Cse250b on k317h</title>
+    <link>https://keithzeng.github.io/tags/cse250b/</link>
+    <description>Recent content in Cse250b on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Jan 2019 22:27:30 -0800</lastBuildDate>
     
-	<atom:link href="https://keithzeng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://keithzeng.github.io/tags/cse250b/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,15 +21,6 @@
 A discrete random variable X has finitely countable values $x_i = 1, 2&amp;hellip;$ and $p(x_i) = P(X = x_i)$ is called probability mass function.
 Probability mass functions has following properties:
  For all i, $p(x_i) &amp;gt; 0$ For any interval $P(X \in B) = \sum_{x_i \in B}p(x_i)$ $\sum_{i}p(x_i) = 1$  There are many types of discrete random variable</description>
-    </item>
-    
-    <item>
-      <title>My First Post</title>
-      <link>https://keithzeng.github.io/posts/my-first-post/</link>
-      <pubDate>Thu, 24 Jan 2019 16:32:01 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/posts/my-first-post/</guid>
-      <description>Hello, this is the first post</description>
     </item>
     
   </channel>

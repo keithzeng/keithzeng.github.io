@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Main</title>
+    <title>Tags on k317h</title>
     <link>https://keithzeng.github.io/tags/</link>
-    <description>Recent content in Tags on Main</description>
+    <description>Recent content in Tags on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 16:32:01 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jan 2019 22:27:30 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cse250b</title>
+      <link>https://keithzeng.github.io/tags/cse250b/</link>
+      <pubDate>Thu, 24 Jan 2019 22:27:30 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/cse250b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Notes</title>
+      <link>https://keithzeng.github.io/tags/notes/</link>
+      <pubDate>Thu, 24 Jan 2019 22:27:30 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/notes/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Other</title>
@@ -17,6 +35,15 @@
       <pubDate>Thu, 24 Jan 2019 16:32:01 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/tags/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Probability</title>
+      <link>https://keithzeng.github.io/tags/probability/</link>
+      <pubDate>Thu, 24 Jan 2019 22:27:30 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/probability/</guid>
       <description></description>
     </item>
     

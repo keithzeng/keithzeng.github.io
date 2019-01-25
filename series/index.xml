@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Series on Main</title>
+    <title>Series on k317h</title>
     <link>https://keithzeng.github.io/series/</link>
-    <description>Recent content in Series on Main</description>
+    <description>Recent content in Series on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Jan 2019 16:32:01 -0800</lastBuildDate>
@@ -17,6 +17,15 @@
       <pubDate>Thu, 24 Jan 2019 16:32:01 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/series/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistical Learning</title>
+      <link>https://keithzeng.github.io/series/statistical-learning/</link>
+      <pubDate>Thu, 24 Jan 2019 22:27:30 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/series/statistical-learning/</guid>
       <description></description>
     </item>
     
