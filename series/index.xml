@@ -6,9 +6,19 @@
     <description>Recent content in Series on Main</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 24 Jan 2019 16:32:01 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Other</title>
+      <link>https://keithzeng.github.io/series/other/</link>
+      <pubDate>Thu, 24 Jan 2019 16:32:01 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/series/other/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
