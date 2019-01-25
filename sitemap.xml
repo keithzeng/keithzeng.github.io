@@ -19,13 +19,31 @@
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/categories/other/</loc>
+    <lastmod>2019-01-24T16:32:01-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/tags/other/</loc>
+    <lastmod>2019-01-24T16:32:01-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/posts/</loc>
     <lastmod>2019-01-24T16:32:01-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/tags/</loc>
+    <lastmod>2019-01-24T16:32:01-08:00</lastmod>
     <priority>0</priority>
   </url>
   
