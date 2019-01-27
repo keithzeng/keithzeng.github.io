@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>k317h  | K Clustering</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.53" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="K Clustering" />
+<meta property="og:description" content="Problem We have set of objects $U = \{o_1, o_2, &hellip;\}$, and we want to split them into k clusters.
+We also have following definition for distance function.
+ $\forall_{i,j} dist(p_i, p_j) = dist(p_j, p_j)$ $\forall_{i,j} dist(p_i, p_i) = 0$ $\forall_{i,j} dist(p_i, p_j) &gt; 0$.  At the end, we should have $C = \{C_1, C_2, &hellip; C_K\}$.
+Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is to find the k-clustering with maximum spacing." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://keithzeng.github.io/posts/k-clustering/" /><meta property="article:published_time" content="2019-01-25T21:51:25-08:00"/>
+<meta property="article:modified_time" content="2019-01-25T21:51:25-08:00"/>
+
+
+<meta itemprop="name" content="K Clustering">
+<meta itemprop="description" content="Problem We have set of objects $U = \{o_1, o_2, &hellip;\}$, and we want to split them into k clusters.
+We also have following definition for distance function.
+ $\forall_{i,j} dist(p_i, p_j) = dist(p_j, p_j)$ $\forall_{i,j} dist(p_i, p_i) = 0$ $\forall_{i,j} dist(p_i, p_j) &gt; 0$.  At the end, we should have $C = \{C_1, C_2, &hellip; C_K\}$.
+Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is to find the k-clustering with maximum spacing.">
+
+
+<meta itemprop="datePublished" content="2019-01-25T21:51:25-08:00" />
+<meta itemprop="dateModified" content="2019-01-25T21:51:25-08:00" />
+<meta itemprop="wordCount" content="277">
+
+
+
+<meta itemprop="keywords" content="CSE202,notes," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="K Clustering"/>
+<meta name="twitter:description" content="Problem We have set of objects $U = \{o_1, o_2, &hellip;\}$, and we want to split them into k clusters.
+We also have following definition for distance function.
+ $\forall_{i,j} dist(p_i, p_j) = dist(p_j, p_j)$ $\forall_{i,j} dist(p_i, p_i) = 0$ $\forall_{i,j} dist(p_i, p_j) &gt; 0$.  At the end, we should have $C = \{C_1, C_2, &hellip; C_K\}$.
+Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is to find the k-clustering with maximum spacing."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://keithzeng.github.io" class="f3 fw2 hover-white no-underline white-90 dib">
+      k317h
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">K Clustering</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-01-25T21:51:25-08:00">January 25, 2019</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="problem">Problem</h2>
+
+<p>We have set of objects $U = \{o_1, o_2, &hellip;\}$, and we want to split them into k clusters.</p>
+
+<p>We also have following definition for distance function.</p>
+
+<ul>
+<li>$\forall_{i,j} dist(p_i, p_j) = dist(p_j, p_j)$</li>
+<li>$\forall_{i,j} dist(p_i, p_i) = 0$</li>
+<li>$\forall_{i,j} dist(p_i, p_j) &gt; 0$.</li>
+</ul>
+
+<p>At the end, we should have $C = \{C_1, C_2, &hellip; C_K\}$.</p>
+
+<p>Let&rsquo;s define <em>spacing</em> to be the minimum dist between clusters.
+Our goal is to find the k-clustering with maximum spacing.</p>
+
+<h2 id="algorithm">Algorithm</h2>
+
+<p>Kruskal&rsquo;s Algorithm</p>
+
+<ul>
+<li>Sort the edges using dist as edge weight</li>
+<li>In each iteration, pick the min edge that doesn&rsquo;t form cycle
+
+<ul>
+<li>The connected component = cluster</li>
+<li>Connecting (merge) two clusters with new edge = <em>single-link clustering</em></li>
+</ul></li>
+<li>Stops when we have k components
+
+<ul>
+<li>equivalent of stop before adding last k - 1 edges for Kruskal&rsquo;s Algorithm</li>
+</ul></li>
+</ul>
+
+<p>Below is picture of single-linked clusters with k = 3.
+<img src="/img/cse202/k-clustering-1.png" alt="k = 3" /></p>
+
+<h2 id="analyzing-algorithm">Analyzing Algorithm</h2>
+
+<p>Claim:
+The components $C_1, C_2, &hellip;, C_k$ formed by deleting the k − 1 most expensive edges of the minimum spanning tree T constitute a k-clustering of maximum spacing.</p>
+
+<p>Proof:</p>
+
+<ul>
+<li>$\mathbb{C} = \{C_1, C_2, &hellip;, C_k\}$</li>
+<li>$d^{*} = (k - 1)$ most expensive edge (since algorithm stops here)</li>
+<li>Assume there is $\mathbb{C&rsquo;} = \{C&rsquo;_1, C&rsquo;_2, &hellip;, C&rsquo;_k\}$</li>
+<li>$\exists C_r$ that contains $p_i$ and $p_j$
+
+<ul>
+<li>S.T. $C_r \subsetneq C&rsquo;_s$ and $C_r\subsetneq C&rsquo;_t$</li>
+<li>$p_i \in C&rsquo;_s$, $p_j \in C&rsquo;_t$ and $s \neq t$</li>
+</ul></li>
+<li>Since $p_i$ and $p_j \in C_r$, there is path between them
+
+<ul>
+<li>On Kruskal&rsquo;s algorithm, all these edges in the path are at most d*</li>
+</ul></li>
+<li>Assume $p \in C&rsquo;s$ and $p&rsquo; \in C&rsquo;t$ that were connected before
+
+<ul>
+<li>p - p&rsquo; was one of the edges, $d(p, p&rsquo;) \leq d*$</li>
+</ul></li>
+<li>Spacing $\mathbb{C&rsquo;} \leq d*$
+<img src="/img/cse202/k-clustering-2.png" alt="Proof" /></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/cse202" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">CSE202</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/notes" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">notes</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/probability/">Probability</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://keithzeng.github.io" >
+    &copy; 2019 Keith Zeng
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+</div>
+  </div>
+<script type="text/javascript"
+        async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+</footer>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-133234541-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+        'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+
+</script>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

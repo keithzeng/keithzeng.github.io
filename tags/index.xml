@@ -6,10 +6,19 @@
     <description>Recent content in Tags on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 22:27:30 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jan 2019 21:51:25 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cse202</title>
+      <link>https://keithzeng.github.io/tags/cse202/</link>
+      <pubDate>Fri, 25 Jan 2019 21:51:25 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/cse202/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Cse250b</title>
@@ -23,7 +32,7 @@
     <item>
       <title>Notes</title>
       <link>https://keithzeng.github.io/tags/notes/</link>
-      <pubDate>Thu, 24 Jan 2019 22:27:30 -0800</pubDate>
+      <pubDate>Fri, 25 Jan 2019 21:51:25 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/tags/notes/</guid>
       <description></description>
