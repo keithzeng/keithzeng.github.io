@@ -81,7 +81,7 @@ img{
     width: auto;
     height: auto;
     max-width: 100%;
-    max-height: 100%;   
+    max-height: 100%;	
 }
 a, button.submit {
     color:#6E7173;
@@ -369,13 +369,9 @@ textarea {
 .page-content{
     padding-top: 40px;
 }
-.post-content h2{
+.post-content h3,.post-content h2{
     margin: 1.4em 0 1.1em;
     border-bottom: 1px solid #eee;
-    overflow: hidden;
-}
-.post-content h3, .post-content h4{
-    margin: 1.4em 0 0;
     overflow: hidden;
 }
 /* .post-content pre, .comment-content pre {
@@ -391,10 +387,7 @@ textarea {
     border: 1px solid #ddd;
 }
 .post-content p {
-    margin: 0;
-}
-.post-content * + p {
-    margin: 1.1em 0 0;
+    margin:0 0 1.1em;
 }
 .post-content img {
     padding:1em 0;
@@ -403,11 +396,8 @@ textarea {
 }
 .post-content ul {
     overflow: auto;
-    padding: 0 0 0 2.4em;
+    padding: .5em 2.4em;
     border-radius: 3px;
-    margin: 0;
-}
-.post-content ol {
     margin: 0;
 }
 .post-content ul li{
@@ -920,7 +910,7 @@ img.alignright {
     padding-bottom: .8em; 
 }
 .post-archive h2 {
-      margin: 0.5em 0, 0, 0;
+      margin: 0;
       font: bold 25px / 1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; 
 }
 .post-archive .date {
