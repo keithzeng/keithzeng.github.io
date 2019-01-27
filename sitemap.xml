@@ -70,6 +70,12 @@
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/tags/other/</loc>
+    <lastmod>2019-01-27T03:17:07-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/categories/other/</loc>
     <lastmod>2019-01-27T03:17:07-08:00</lastmod>
     <priority>0</priority>
@@ -77,12 +83,6 @@
   
   <url>
     <loc>https://keithzeng.github.io/series/other/</loc>
-    <lastmod>2019-01-27T03:17:07-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://keithzeng.github.io/tags/other/</loc>
     <lastmod>2019-01-27T03:17:07-08:00</lastmod>
     <priority>0</priority>
   </url>
