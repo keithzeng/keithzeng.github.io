@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on k317h</title>
+    <link>https://keithzeng.github.io/categories/machine-learning/</link>
+    <description>Recent content in Machine Learning on k317h</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jan 2019 20:25:22 -0800</lastBuildDate>
+    
+	<atom:link href="https://keithzeng.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prototype Selection</title>
+      <link>https://keithzeng.github.io/posts/prototype-selection/</link>
+      <pubDate>Sun, 27 Jan 2019 20:25:22 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/prototype-selection/</guid>
+      <description>kNN prototype selection
+There are couple drawbacks for KNN
+ high storage for data computation for decision boundary intolerance to noise  There are couple methods address above issue
+ better similarity metric better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time</description>
+    </item>
+    
+  </channel>
+</rss>

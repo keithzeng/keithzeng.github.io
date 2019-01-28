@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Notes | k317h</title>
-    <meta property="og:title" content="Notes - k317h">
+    <title>Knn | k317h</title>
+    <meta property="og:title" content="Knn - k317h">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Notes">
+    <meta name="description" content="Knn">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/tags/notes/">
+    <meta property="og:url" content="https://keithzeng.github.io/tags/knn/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/notes/index.xml" title="k317h" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/knn/index.xml" title="k317h" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -71,7 +71,7 @@
                     
                     <h3 class="archive-title">
                         Tagged
-                        <span class="keyword">notes</span>
+                        <span class="keyword">knn</span>
                         Articles
                     </h3>
                     
@@ -80,52 +80,26 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/k-clustering/">K Clustering</a>
+                                    <a href="https://keithzeng.github.io/posts/prototype-selection/">Prototype Selection</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2019/1/25
+                                2019/1/27
                             </date>
                             
                             <div class="post-meta meta-category">
                                 |
                                 
-                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
                                 
                             </div>
                             
                             <div class="post-content">
-                                Problem We have set of objects $U = \{o_1, o_2, &hellip;\}$, and we want to split them into k clusters.
-We also have following definition for distance function.
- $\forall_{i,j} dist(p_i, p_j) = dist(p_j, p_j)$ $\forall_{i,j} dist(p_i, p_i) = 0$ $\forall_{i,j} dist(p_i, p_j) &gt; 0$.  At the end, we should have $C = \{C_1, C_2, &hellip; C_K\}$.
-Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is to find the k-clustering with maximum spacing.……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/k-clustering/">Read More</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/probability/">Probability</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/24
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://keithzeng.github.io/categories/mathematic">mathematic</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Discrete Random Variables A random variable is a number whose value depends upon the outcome of a random experiement. Such as tossing a coin 10 times and let X be the number of Head.
-A discrete random variable X has finitely countable values $x_i = 1, 2&hellip;$ and $p(x_i) = P(X = x_i)$ is called probability mass function.
-Probability mass functions has following properties:
- For all i, $p(x_i) &gt; 0$ For any interval $P(X \in B) = \sum_{x_i \in B}p(x_i)$ $\sum_{i}p(x_i) = 1$  There are many types of discrete random variable……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/probability/">Read More</a></p>
+                                kNN prototype selection
+There are couple drawbacks for KNN
+ high storage for data computation for decision boundary intolerance to noise  There are couple methods address above issue
+ better similarity metric better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/prototype-selection/">Read More</a></p>
                             </div>
                         </article>
                     

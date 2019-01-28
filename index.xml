@@ -6,10 +6,35 @@
     <description>Recent content on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Jan 2019 03:17:07 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Jan 2019 22:33:16 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Margin of Error</title>
+      <link>https://keithzeng.github.io/posts/margin-error/</link>
+      <pubDate>Sun, 27 Jan 2019 22:33:16 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/margin-error/</guid>
+      <description>Z-Score vs T-Score Z-Score Link
+Z-Score&amp;rsquo;s formula $$z = \frac{X - \mu}{\sigma}$$ where X = sample mean, $\mu$ = population means, $\sigma$ = population standard deviation.
+Also, we use Z Score when sample size &amp;gt;= 30 or we know the population&amp;rsquo;s mean dna SD.
+Z Table
+T-Score T-Score T-Score&amp;rsquo;s formula $$T = \frac{X - \mu}{s/ \sqrt{n}}$$ where X = sample mean, $\mu$ = population mean, s = sample standard deviation, and n = sample size.</description>
+    </item>
+    
+    <item>
+      <title>Prototype Selection</title>
+      <link>https://keithzeng.github.io/posts/prototype-selection/</link>
+      <pubDate>Sun, 27 Jan 2019 20:25:22 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/prototype-selection/</guid>
+      <description>kNN prototype selection
+There are couple drawbacks for KNN
+ high storage for data computation for decision boundary intolerance to noise  There are couple methods address above issue
+ better similarity metric better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time</description>
+    </item>
     
     <item>
       <title>About</title>
