@@ -70,6 +70,34 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort" >Merge Sort</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/29
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Sort the elements
+Abstract the behavior:
+1. Divide the input into two pieces of equal size O(n) 1. solve the two subproblems on these pieces separately by recursion 1. combine the two results into an overall solution O(n)
+Recurrence Time Complexity:
+T(n) ≤ 2T(n/2) + cn
+To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  For more general case……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/merge-sort/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/margin-error/" title="Margin of Error" >Margin of Error</a>
                                 </h1>
                             </header>
@@ -112,10 +140,10 @@ T-Score T-Score T-Score&rsquo;s formula $$T = \frac{X - \mu}{s/ \sqrt{n}}$$ wher
                             </div>
                             
                             <div class="post-content">
-                                kNN prototype selection
+                                Backgrond kNN prototype selection Summary List
 There are couple drawbacks for KNN
  high storage for data computation for decision boundary intolerance to noise  There are couple methods address above issue
- better similarity metric better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time……
+ better similarity metric or better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time……
                             </div>
                             <p class="readmore"><a href="https://keithzeng.github.io/posts/prototype-selection/">Read More</a></p>
                         </article>
@@ -219,6 +247,10 @@ Probability mass functions has following properties:
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort">Merge Sort</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/margin-error/" title="Margin of Error">Margin of Error</a>
     </li>
     
@@ -248,7 +280,7 @@ Probability mass functions has following properties:
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(1)</a>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(2)</a>
     </li>
     
     <li>
@@ -269,6 +301,10 @@ Probability mass functions has following properties:
     <section class="widget">
         <h3 class="widget-title">Series</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/divide-and-conquer/">divide-and-conquer(1)</a>
+    </li>
     
     <li>
         <a href="https://keithzeng.github.io/categories/greedy/">greedy(1)</a>

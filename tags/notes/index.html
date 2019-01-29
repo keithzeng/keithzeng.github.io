@@ -80,6 +80,34 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/merge-sort/">Merge Sort</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/29
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Sort the elements
+Abstract the behavior:
+1. Divide the input into two pieces of equal size O(n) 1. solve the two subproblems on these pieces separately by recursion 1. combine the two results into an overall solution O(n)
+Recurrence Time Complexity:
+T(n) ≤ 2T(n/2) + cn
+To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  For more general case……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/merge-sort/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/k-clustering/">K Clustering</a>
                                 </h1>
                             </header>
@@ -153,6 +181,10 @@ Probability mass functions has following properties:
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort">Merge Sort</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/margin-error/" title="Margin of Error">Margin of Error</a>
     </li>
     
@@ -182,7 +214,7 @@ Probability mass functions has following properties:
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(1)</a>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(2)</a>
     </li>
     
     <li>
@@ -203,6 +235,10 @@ Probability mass functions has following properties:
     <section class="widget">
         <h3 class="widget-title">Series</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/divide-and-conquer/">divide-and-conquer(1)</a>
+    </li>
     
     <li>
         <a href="https://keithzeng.github.io/categories/greedy/">greedy(1)</a>

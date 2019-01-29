@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithm on k317h</title>
-    <link>https://keithzeng.github.io/categories/algorithm/</link>
-    <description>Recent content in Algorithm on k317h</description>
+    <title>Divide and Conquer on k317h</title>
+    <link>https://keithzeng.github.io/series/divide-and-conquer/</link>
+    <description>Recent content in Divide and Conquer on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 29 Jan 2019 01:14:32 -0800</lastBuildDate>
     
-	<atom:link href="https://keithzeng.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://keithzeng.github.io/series/divide-and-conquer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -23,18 +23,6 @@ Abstract the behavior:
 Recurrence Time Complexity:
 T(n) ≤ 2T(n/2) + cn
 To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  For more general case</description>
-    </item>
-    
-    <item>
-      <title>K Clustering</title>
-      <link>https://keithzeng.github.io/posts/k-clustering/</link>
-      <pubDate>Fri, 25 Jan 2019 21:51:25 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/posts/k-clustering/</guid>
-      <description>Problem We have set of objects $U = \{o_1, o_2, &amp;hellip;\}$, and we want to split them into k clusters.
-We also have following definition for distance function.
- $\forall_{i,j} dist(p_i, p_j) = dist(p_j, p_j)$ $\forall_{i,j} dist(p_i, p_i) = 0$ $\forall_{i,j} dist(p_i, p_j) &amp;gt; 0$.  At the end, we should have $C = \{C_1, C_2, &amp;hellip; C_K\}$.
-Let&amp;rsquo;s define spacing to be the minimum dist between clusters. Our goal is to find the k-clustering with maximum spacing.</description>
     </item>
     
   </channel>

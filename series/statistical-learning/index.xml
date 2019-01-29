@@ -30,10 +30,10 @@ T-Score T-Score T-Score&amp;rsquo;s formula $$T = \frac{X - \mu}{s/ \sqrt{n}}$$ 
       <pubDate>Sun, 27 Jan 2019 20:25:22 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/posts/prototype-selection/</guid>
-      <description>kNN prototype selection
+      <description>Backgrond kNN prototype selection Summary List
 There are couple drawbacks for KNN
  high storage for data computation for decision boundary intolerance to noise  There are couple methods address above issue
- better similarity metric better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time</description>
+ better similarity metric or better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time</description>
     </item>
     
     <item>

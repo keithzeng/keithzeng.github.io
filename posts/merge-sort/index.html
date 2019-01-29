@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Prototype Selection | k317h</title>
-    <meta property="og:title" content="Prototype Selection - k317h">
+    <title>Merge Sort | k317h</title>
+    <meta property="og:title" content="Merge Sort - k317h">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-01-27T20:25:22&#43;08:00">
+    <meta property="article:published_time" content="2019-01-29T01:14:32&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-01-27T20:25:22&#43;08:00">
+    <meta property="article:modified_time" content="2019-01-29T01:14:32&#43;08:00">
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Prototype Selection">
+    <meta name="description" content="Merge Sort">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/posts/prototype-selection/">
+    <meta property="og:url" content="https://keithzeng.github.io/posts/merge-sort/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -74,16 +74,16 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">Prototype Selection</h1>
+                            <h1 class="post-title">Merge Sort</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019/1/27
+                            2019/1/29
                         </date>
                         
                         <div class="post-meta">
                             <span>|</span>
                             
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
                             
                         </div>
                         
@@ -95,61 +95,56 @@
                         <div class="post-content">
                             
 
-<h1 id="backgrond">Backgrond</h1>
+<h2 id="problem">Problem</h2>
 
-<p><a href="https://ieeexplore.ieee.org/document/6136515">kNN prototype selection</a>
-<a href="https://sci2s.ugr.es/pr">Summary</a>
-<a href="https://sci2s.ugr.es/pr/pstax/techReport">List</a></p>
+<p>Sort the elements</p>
 
-<p>There are couple drawbacks for KNN</p>
+<p>Abstract the behavior:<br />
+1. Divide the input into two pieces of equal size O(n)
+1. solve the two subproblems on these pieces separately by recursion
+1. combine the two results into an overall solution O(n)</p>
 
-<ol>
-<li>high storage for data</li>
-<li>computation for decision boundary</li>
-<li>intolerance to noise</li>
-</ol>
+<h2 id="recurrence">Recurrence</h2>
 
-<p>There are couple methods address above issue</p>
+<p>Time Complexity:</p>
 
-<ol>
-<li>better similarity metric or better distance function</li>
-<li>k-d trees or R-trees as storage</li>
-<li>reduction technique (prototype selection)</li>
-</ol>
+<p>T(n) ≤ 2T(n/2) + cn</p>
 
-<p>Prototype Selection
-1. edition method
-  - remove noise
-1. condensation method
-  - remove superfluous dataset
-1. hybrid method
-  - achive elimination of noise and superfluous at the same time</p>
-
-<h1 id="methods">Methods</h1>
-
-<h2 id="edition-method">Edition Method</h2>
-
-<h2 id="condensation-method">Condensation Method</h2>
-
-<ol>
-<li><p>CNN</p>
+<p>To analyze the above recurrence relation, check below image.
+<img src="/img/cse202/recurrence-tree.png" alt="Recurrence" /></p>
 
 <ul>
-<li>$S = {t_1, t2, &hellip;, t_c}$</li>
-<li>$T = Training Set \setminus S$</li>
-<li>while there is misclassified point in T by training on S
+<li>At level j, we have $2^j$ nodes with size $n/2^j$</li>
+<li>Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$</li>
+<li>There are logn levels, so T(n) = O(nlogn)</li>
+</ul>
+
+<p>For more general case</p>
+
+<p>T(n) ≤ qT(n/2) + cn</p>
+
+<p>Check below:
+<img src="/img/cse202/recurrence-tree-q.png" alt="Recurrence" /></p>
 
 <ul>
-<li>for t in $T \setminus S$
+<li>At level j, we have $q^j$ nodes with size $n/2^j$</li>
+<li>Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $q^j = (q/2)^jcn$</li>
+<li>So
+$$T(n) \leq cn\sum_{j=0}^{\log_2 {n-1}}(\frac{q}{2})^j$$</li>
+</ul>
 
-<ul>
-<li>if t is misclassified, S = S + {t}, T = T $\setminus$ {t}</li>
-</ul></li>
-</ul></li>
-</ul></li>
+<p>Since this is a geometric series with r = q/2
+$$T(n) \leq cn\frac{r^{\log_2 n} - 1}{r - 1} \leq cn\frac{r^{\log_2 n}}{r - 1}$$</p>
 
-<li><p><a href="https://ieeexplore.ieee.org/document/6377386">Protoype Selection by Clustering</a></p></li>
-</ol>
+<p>We then move the r - 1 out to form the constant
+$$T(n) \leq \frac{c}{r - 1}nr^{\log_2 n}$$</p>
+
+<p>To figure out what is $r^{\log_2 n}$, we use $a^{\log b} = b^{\log a}$ when a &gt; 1 and b &gt; 1.</p>
+
+<p>So, $r^{log_2 n} = n^{\log_2 r} = n^{\log_2 \frac{q}{2}} = n^{{\log_2 q} - 1}$</p>
+
+<p>Thus, we have
+$$T(n) \leq \frac{c}{r - 1}nn^{\log_2 q - 1} \leq \frac{c}{r - 1}n^{\log_2 q} = O(n^{\log_2 q})$$</p>
 
                         </div>
 
@@ -159,15 +154,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="/about/">About</a></li>
-        
-        <li><a href="/archives/">Archives</a></li>
-        
         <li><a href="/posts/k-clustering/">K Clustering</a></li>
         
         <li><a href="/posts/probability/">Probability</a></li>
         
-        <li><a href="/posts/my-first-post/">My First Post</a></li>
+        <li><a href="/posts/margin-error/">Margin of Error</a></li>
+        
+        <li><a href="/posts/prototype-selection/">Prototype Selection</a></li>
+        
+        <li><a href="/about/">About</a></li>
         
     </ul>
 </div>
@@ -177,7 +172,9 @@
                             
                             <ul class="clearfix">
                                 
-                                <li><a href="https://keithzeng.github.io/tags/knn">knn</a></li>
+                                <li><a href="https://keithzeng.github.io/tags/cse202">CSE202</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/notes">notes</a></li>
                                 
                             </ul>
                             

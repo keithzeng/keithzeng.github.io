@@ -6,10 +6,24 @@
     <description>Recent content on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Jan 2019 22:33:16 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 01:14:32 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Merge Sort</title>
+      <link>https://keithzeng.github.io/posts/merge-sort/</link>
+      <pubDate>Tue, 29 Jan 2019 01:14:32 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/merge-sort/</guid>
+      <description>Problem Sort the elements
+Abstract the behavior:
+1. Divide the input into two pieces of equal size O(n) 1. solve the two subproblems on these pieces separately by recursion 1. combine the two results into an overall solution O(n)
+Recurrence Time Complexity:
+T(n) ≤ 2T(n/2) + cn
+To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  For more general case</description>
+    </item>
     
     <item>
       <title>Margin of Error</title>
@@ -30,10 +44,10 @@ T-Score T-Score T-Score&amp;rsquo;s formula $$T = \frac{X - \mu}{s/ \sqrt{n}}$$ 
       <pubDate>Sun, 27 Jan 2019 20:25:22 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/posts/prototype-selection/</guid>
-      <description>kNN prototype selection
+      <description>Backgrond kNN prototype selection Summary List
 There are couple drawbacks for KNN
  high storage for data computation for decision boundary intolerance to noise  There are couple methods address above issue
- better similarity metric better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time</description>
+ better similarity metric or better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time</description>
     </item>
     
     <item>
