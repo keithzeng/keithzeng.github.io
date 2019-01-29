@@ -926,7 +926,13 @@ img.alignright {
 .post-archive .date {
       padding-right: .7em; 
 }
+table {
+  border-collapse: collapse;
+}
 
+table, th, td {
+  border: 1px solid black;
+}
 /* for archive page ends*/
 
 /* back-to-top rocket*/
