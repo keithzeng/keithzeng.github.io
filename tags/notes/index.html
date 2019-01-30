@@ -80,6 +80,110 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/">Fast Fourtier Transform</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/30
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Given two vectors $a = (a_1, a_2, a_{n-1})$ and $b = (a_1, b_2, b_{n-1})$.
+The convolution of a * b is a vector with 2n - 1 coordinates, where coordinate k is $\sum_{(i,j):i+j=k|i,j &lt; n} a_ib_j$, which is can be written as
+$$a ∗ b = (a_0b_0, a_0b_1 + a_1b_0, a_0b_2 + a_1b_1 + a_2b_0, &hellip; , a_{n−2}b_{n−1} + a_{n−1}b_{n−2}, a_{n−1}b_{n−1})$$
+Or an n x n table, whose (i, j) entry is $a_ib_j$……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/fast-fourtier-transform/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/integer-multiplication/">Integer Multiplication</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/30
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Algorithm Let&rsquo;s say we define $x = x_1 2^{n/2} + x_0$, then xy become \begin{align} xy &amp;= (x_1 2^{n/2} + x_0)(y_1 2^{n/2} + y_0) \newline &amp;= x_1 y_1 2^n + (x_1 y_0 + x_0 y_1)2^{n/2} + x_0 y_0 \end{align}
+So we have $$T(n) \leq 4T(n/2) + cn$$ But this is essentially $$T(n) \leq O(n^{\log_2 q}) = O(n^2)$$
+However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y_1 + x_1y_0 + x_0y_1 + x_0y_0$.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/integer-multiplication/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/closest-point/">Closest Point</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/29
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Given n points in the plane, find the pair that is closest together.
+Brute force takes $O(n^2)$.
+Algorithm Let&rsquo;s $d(p_i, p_j)$ = Euclidean distance.
+In 1-d, we can simply sort points and compute the distance with the next point, we then have complexity of O(nlogn). In 2-d, we can&rsquo;t applied the same thing.
+We will use divide and conquer. We find the closest pair in the left and closest pair in the right, and hoping to get it in linear time.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/closest-point/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/counting-inversion/">Counting Inversion</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/29
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Application in ranking, also called corraborative filtering.
+Comparing two rankings and decide how similar they are, or how many pairs are out of order.
+To quantify this, we count the number of inversions. The inversion is defined as two indices i &lt; j that $a_i &gt; a_j$. Algorithm Brute-Force $T(n) = O(n^2)$
+Modified Merge-Sort By leverage the merge process form merger-sort, we can count the number of inversion. Basically, when the element from A is appended, there is not inversion.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/counting-inversion/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/merge-sort/">Merge Sort</a>
                                 </h1>
                             </header>
@@ -98,9 +202,8 @@
                                 Problem Sort the elements
 Abstract the behavior:
 1. Divide the input into two pieces of equal size O(n) 1. solve the two subproblems on these pieces separately by recursion 1. combine the two results into an overall solution O(n)
-Recurrence Time Complexity:
-T(n) ≤ 2T(n/2) + cn
-To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  For more general case……
+Recurrence Time Complexity q = 2 T(n) ≤ 2T(n/2) + cn
+To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  General Case For q &gt; 2 T(n) ≤ qT(n/2) + cn……
                                 <p class="readmore"><a href="https://keithzeng.github.io/posts/merge-sort/">Read More</a></p>
                             </div>
                         </article>
@@ -181,6 +284,22 @@ Probability mass functions has following properties:
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/" title="Fast Fourtier Transform">Fast Fourtier Transform</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/integer-multiplication/" title="Integer Multiplication">Integer Multiplication</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/closest-point/" title="Closest Point">Closest Point</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/counting-inversion/" title="Counting Inversion">Counting Inversion</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort">Merge Sort</a>
     </li>
     
@@ -214,7 +333,7 @@ Probability mass functions has following properties:
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(2)</a>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(6)</a>
     </li>
     
     <li>
@@ -237,7 +356,7 @@ Probability mass functions has following properties:
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/divide-and-conquer/">divide-and-conquer(1)</a>
+        <a href="https://keithzeng.github.io/categories/divide-and-conquer/">divide-and-conquer(5)</a>
     </li>
     
     <li>
@@ -292,10 +411,7 @@ Probability mass functions has following properties:
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2018 <a href="https://keithzeng.github.io">k317h By k317h</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
     </div>
 </footer>
 

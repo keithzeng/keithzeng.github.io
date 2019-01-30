@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>My First Post | k317h</title>
-    <meta property="og:title" content="My First Post - k317h">
+    <title>Fast Fourtier Transform | k317h</title>
+    <meta property="og:title" content="Fast Fourtier Transform - k317h">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-01-24T16:32:01&#43;08:00">
+    <meta property="article:published_time" content="2019-01-30T00:31:46&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-01-24T16:32:01&#43;08:00">
+    <meta property="article:modified_time" content="2019-01-30T00:31:46&#43;08:00">
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="My First Post">
+    <meta name="description" content="Fast Fourtier Transform">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/posts/my-first-post/">
+    <meta property="og:url" content="https://keithzeng.github.io/posts/fast-fourtier-transform/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -74,16 +74,16 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">My First Post</h1>
+                            <h1 class="post-title">Fast Fourtier Transform</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019/1/24
+                            2019/1/30
                         </date>
                         
                         <div class="post-meta">
                             <span>|</span>
                             
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/other">other</a></span>
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
                             
                         </div>
                         
@@ -93,18 +93,114 @@
                         </div>
                         
                         <div class="post-content">
-                            <p>Hello, this is the first post</p>
+                            
+
+<h2 id="problem">Problem</h2>
+
+<p>Given two vectors $a = (a_1, a_2, a_{n-1})$ and $b = (a_1, b_2, b_{n-1})$.</p>
+
+<p>The convolution of a * b is a vector with 2n - 1 coordinates, where coordinate k is $\sum_{(i,j):i+j=k|i,j &lt; n} a_ib_j$, which is can be written as</p>
+
+<p>$$a ∗ b = (a_0b_0, a_0b_1 + a_1b_0, a_0b_2 + a_1b_1 + a_2b_0, &hellip; ,
+a_{n−2}b_{n−1} + a_{n−1}b_{n−2}, a_{n−1}b_{n−1})$$</p>
+
+<p>Or an n x n table, whose (i, j) entry is $a_ib_j$</p>
+
+<p>\begin{bmatrix}
+a_0b_0 &amp; a_0b_1 &amp; &hellip; &amp; a_0b_{n-2} &amp; a_0b_{n-1}\newline
+a_1b_0 &amp; a_1b_1 &amp; &hellip; &amp; a_2b_{n-2} &amp; a_1b_{n-1}\newline
+a_2b_0 &amp; a_2b_1 &amp; &hellip; &amp; a_2b_{n-2} &amp; a_2b_{n-1}\newline
+&hellip; &amp; &hellip; &amp; &hellip; &amp; &hellip; &amp; &hellip; \newline
+a_{n-1}b_0 &amp; a_{n-1}b_1 &amp; &hellip; &amp; a_{n-1}b_{n-2} &amp; a_{n-1}b_{n-1}
+\end{bmatrix}</p>
+
+<p>Then the convolution is suming along the diagonols. The motivation for convultion lies on the polynomial applications, signaling.</p>
+
+<p><strong>Extra notes</strong></p>
+
+<p>For example, we have a vector representing the measurement. We would like to smooth out the noise for each measurement $a_i$ with weighted sum of its left neighbors and right neighbors within k steps.</p>
+
+<h2 id="algorithm">Algorithm</h2>
+
+<h3 id="preprocess">Preprocess:</h3>
+
+<ol>
+<li>Choose 2n values $x_1, x_2, &hellip;, x_{2n}$, evaluate $A(x_j)$ and $B(x_j)$ for j=1 &hellip; 2n</li>
+<li>$C(x_j) = A(x_j)B(x_j)$</li>
+<li>Reconstruct $C(x_j)$ from its values on $x_1, x_2, &hellip;, x_{2n}$</li>
+</ol>
+
+<h3 id="the-complex-roots-of-unity">The Complex Roots of Unity</h3>
+
+<p><a href="https://www.math.toronto.edu/mathnet/questionCorner/epii.html">Complex Number</a>
+<img src="/img/cse202/complex-number.png" alt="Complex Number" />
+A complex number can be represented in rectangular form as $z = x + iy$.<br />
+Or $z = r(cos\theta + isin\theta)$<br />
+Or in polar coordinate $z = re^{\theta i}$</p>
+
+<p>Combine these, we get $e^{i\theta} = cos\theta + sin\theta$
+Plug in $\theta = \pi$, we got $e^{i\pi} = -1$, which leads to the Euler&rsquo;s identity $e^{i\pi} + 1 = 0$.</p>
+
+<p>For each polynomial equation $x^k = 1$, the complex roots $\omega_{j,k} = e^{2\pi ji/k}$, since $(e^{2\pi ji/k})^k = e^{2\pi ji} = (e^{2\pi i})^j = 1 ^ j = 1$. We refer $\omega$ as the <em>kth root of unity</em>.</p>
+
+<p>For k = 8, we got following
+<img src="/img/cse202/8th-root-of-unity.png" alt="8th-root-of-unity" /></p>
+
+<p>Step 1.
+Going back to the evaluating A(x), let&rsquo;s split A(x) into
+$$A_{even}(x) = a_0 + a_2x + a_4x^2 + &hellip; + a_{n−2}x^{(n−2)/2}$$
+and
+$$A_{odd}(x) = a_1 + a_3x + a_5x^2 + &hellip; + a_{n−1}x^{(n−2)/2}$$<br />
+And $A(x) = A_{even}(x^2) + xA_{odd}(x^2)$</p>
+
+<p>Step 2.
+Now considering we got the 2nth root of unity, $\omega_{j,2n} = e^{2\pi ji/2n}$, we can simply obtain the nth root by squaring the 2nth root, $\omega_{j,k}^2 = e^{2\pi ji/n}$. This only takes constant operation, so we got
+$$A(\omega_{j, 2n}) = A_{even}(\omega_{j, 2n}^2) + \omega_{j, 2n}A_{odd}(\omega_{j, 2n}^2)$$</p>
+
+<p>Step 3.
+For $C(\omega_{j,n}) = A(\omega_{j,2n})B(\omega_{j,2n})$, it takes O(n) times. Reconstruction takes similar approach as before. Let&rsquo;s define C(x) $C(x) = \sum_{s=0}^{2n-1} c_sx^s$, which we want to reconstruct from its values $C(\omega_{s,2n})$ at 2nth root of unity. Let&rsquo;s define another $D(x) = \sum_{s=0}^{2n-1} d_sx^s$ where $d_s = C(\omega_{s,2n})$. Then,</p>
+
+<p>\begin{align}
+D(\omega_{j,2n}) &amp;= \sum_{s=0}^{2n - 1}C(\omega_{s,2n})\omega_{j,2n}^s \newline
+&amp;= \sum_{s=0}^{2n - 1} (\sum_{t=0}^{2n - 1} c_t\omega_{s,2n}^t)\omega_{j,2n}^s \newline
+&amp;= \sum_{t=0}^{2n - 1} c_t(\sum_{s=0}^{2n - 1} \omega_{s,2n}^t\omega_{j,2n}^s)
+\end{align}</p>
+
+<p>Using the fact that $\omega_{s,2n} = (e^{2pii/2n})^s$, the above expression
+\begin{align}
+D(\omega_{j,2n}) &amp;= \sum_{t=0}^{2n - 1} c_t(\sum_{s=0}^{2n - 1} e^{(2\pi i)(st+js)/2n}) \newline
+&amp;= \sum_{t=0}^{2n - 1} c_t(\sum_{s=0}^{2n - 1} \omega_{t+j,2n}^s)
+\end{align}</p>
 
                         </div>
 
                         
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/integer-multiplication/">Integer Multiplication</a></li>
+        
+        <li><a href="/posts/closest-point/">Closest Point</a></li>
+        
+        <li><a href="/posts/counting-inversion/">Counting Inversion</a></li>
+        
+        <li><a href="/posts/merge-sort/">Merge Sort</a></li>
+        
+        <li><a href="/posts/k-clustering/">K Clustering</a></li>
+        
+    </ul>
+</div>
 
 
                         <div class="post-meta meta-tags">
                             
                             <ul class="clearfix">
                                 
-                                <li><a href="https://keithzeng.github.io/tags/other">other</a></li>
+                                <li><a href="https://keithzeng.github.io/tags/cse202">cse202</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/notes">notes</a></li>
                                 
                             </ul>
                             

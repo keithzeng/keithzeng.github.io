@@ -106,7 +106,9 @@
 
 <h2 id="recurrence">Recurrence</h2>
 
-<p>Time Complexity:</p>
+<h3 id="time-complexity">Time Complexity</h3>
+
+<h4 id="q-2">q = 2</h4>
 
 <p>T(n) ≤ 2T(n/2) + cn</p>
 
@@ -119,12 +121,15 @@
 <li>There are logn levels, so T(n) = O(nlogn)</li>
 </ul>
 
-<p>For more general case</p>
+<h3 id="general-case">General Case</h3>
+
+<h4 id="for-q-2">For q &gt; 2</h4>
 
 <p>T(n) ≤ qT(n/2) + cn</p>
 
-<p>Check below:
-<img src="/img/cse202/recurrence-tree-q.png" alt="Recurrence" /></p>
+<h4 id="solving-directly">Solving directly</h4>
+
+<p><img src="/img/cse202/recurrence-tree-q.png" alt="Recurrence" /></p>
 
 <ul>
 <li>At level j, we have $q^j$ nodes with size $n/2^j$</li>
@@ -145,6 +150,56 @@ $$T(n) \leq \frac{c}{r - 1}nr^{\log_2 n}$$</p>
 
 <p>Thus, we have
 $$T(n) \leq \frac{c}{r - 1}nn^{\log_2 q - 1} \leq \frac{c}{r - 1}n^{\log_2 q} = O(n^{\log_2 q})$$</p>
+
+<h4 id="alternative">Alternative</h4>
+
+<p>We guess
+$$T(n) \leq kn^d$$
+which leads to
+\begin{align}
+T(n) &amp;\leq qT(n/2) + cn \newline
+     &amp; = qk(n/2)^d +cn \newline
+     &amp; = \frac{q}{2^d}kn^d + cn
+\end{align}
+Choosing $2^d = q$ -&gt; $d = \log_2 q$
+$$T(n) \leq kn^{\log_2 q} + cn$$
+However, there is cn left. We guess another solution.
+$$T(n) \leq kn^d - ln$$
+which leads to
+\begin{align}
+T(n) &amp;\leq qk(n/2)^d - ql(n/2)+cn \newline
+     &amp; = \frac{q}{2^d}kn^d - \frac{ql}{2}n+cn \newline
+     &amp; = kn^d - \frac{ql}{2}n+cn \newline
+     &amp; = kn^d - (\frac{ql}{2} - c)n
+\end{align}</p>
+
+<h4 id="for-q-1">For q = 1</h4>
+
+<p><img src="/img/cse202/recurrence-tree-q1.png" alt="Recurrence" /></p>
+
+<ul>
+<li>At first level we have $O(cn)$, next level we have $O(cn/2)$</li>
+<li>At level j, we have work of $O(cn/2^j)$</li>
+<li>So total amount of work
+\begin{align}
+T(n) &amp;\leq cn\sum_{j=0}^{\log_2 {n-1}} \frac{1}{2^j} \newline
+&amp;= 2cn \newline
+&amp;= O(n)
+\end{align}</li>
+</ul>
+
+<h3 id="another-look-at-mergesort">Another Look at Mergesort</h3>
+
+<p>if divide and combine takes $O(n^2)$
+The recurrence relation becomes
+$$T(n) \leq 2T(n/2) + cn^2$$</p>
+
+<ul>
+<li>First level, size n, takes $cn^2$. In next level, it takes $c(n/2)^2 = c{n^2}/4$, total of $c{n^2}/2$. Third level, total of $c{n^2}/4$.</li>
+<li>for level j, then we have $c{n^2}/2^j$</li>
+<li>So
+$$T(n) \leq cn^2 \sum_{j=0}^{\log_2 {n - 1}} (\frac{1}{2^j}) \leq 2cn^2 = O(n^2)$$</li>
+</ul>
 
                         </div>
 
@@ -172,7 +227,7 @@ $$T(n) \leq \frac{c}{r - 1}nn^{\log_2 q - 1} \leq \frac{c}{r - 1}n^{\log_2 q} = 
                             
                             <ul class="clearfix">
                                 
-                                <li><a href="https://keithzeng.github.io/tags/cse202">CSE202</a></li>
+                                <li><a href="https://keithzeng.github.io/tags/cse202">cse202</a></li>
                                 
                                 <li><a href="https://keithzeng.github.io/tags/notes">notes</a></li>
                                 
@@ -212,6 +267,22 @@ $$T(n) \leq \frac{c}{r - 1}nn^{\log_2 q - 1} \leq \frac{c}{r - 1}n^{\log_2 q} = 
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/" title="Fast Fourtier Transform">Fast Fourtier Transform</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/integer-multiplication/" title="Integer Multiplication">Integer Multiplication</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/closest-point/" title="Closest Point">Closest Point</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/counting-inversion/" title="Counting Inversion">Counting Inversion</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort">Merge Sort</a>
     </li>
     
@@ -245,7 +316,7 @@ $$T(n) \leq \frac{c}{r - 1}nn^{\log_2 q - 1} \leq \frac{c}{r - 1}n^{\log_2 q} = 
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(2)</a>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(6)</a>
     </li>
     
     <li>
@@ -268,7 +339,7 @@ $$T(n) \leq \frac{c}{r - 1}nn^{\log_2 q - 1} \leq \frac{c}{r - 1}n^{\log_2 q} = 
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/divide-and-conquer/">divide-and-conquer(1)</a>
+        <a href="https://keithzeng.github.io/categories/divide-and-conquer/">divide-and-conquer(5)</a>
     </li>
     
     <li>
@@ -323,10 +394,7 @@ $$T(n) \leq \frac{c}{r - 1}nn^{\log_2 q - 1} \leq \frac{c}{r - 1}n^{\log_2 q} = 
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2018 <a href="https://keithzeng.github.io">k317h By k317h</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
     </div>
 </footer>
 

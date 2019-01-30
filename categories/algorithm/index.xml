@@ -6,10 +6,58 @@
     <description>Recent content in Algorithm on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Jan 2019 01:14:32 -0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Jan 2019 00:31:46 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fast Fourtier Transform</title>
+      <link>https://keithzeng.github.io/posts/fast-fourtier-transform/</link>
+      <pubDate>Wed, 30 Jan 2019 00:31:46 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/fast-fourtier-transform/</guid>
+      <description>Problem Given two vectors $a = (a_1, a_2, a_{n-1})$ and $b = (a_1, b_2, b_{n-1})$.
+The convolution of a * b is a vector with 2n - 1 coordinates, where coordinate k is $\sum_{(i,j):i+j=k|i,j &amp;lt; n} a_ib_j$, which is can be written as
+$$a ∗ b = (a_0b_0, a_0b_1 + a_1b_0, a_0b_2 + a_1b_1 + a_2b_0, &amp;hellip; , a_{n−2}b_{n−1} + a_{n−1}b_{n−2}, a_{n−1}b_{n−1})$$
+Or an n x n table, whose (i, j) entry is $a_ib_j$</description>
+    </item>
+    
+    <item>
+      <title>Integer Multiplication</title>
+      <link>https://keithzeng.github.io/posts/integer-multiplication/</link>
+      <pubDate>Wed, 30 Jan 2019 00:02:09 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/integer-multiplication/</guid>
+      <description>Problem Algorithm Let&amp;rsquo;s say we define $x = x_1 2^{n/2} + x_0$, then xy become \begin{align} xy &amp;amp;= (x_1 2^{n/2} + x_0)(y_1 2^{n/2} + y_0) \newline &amp;amp;= x_1 y_1 2^n + (x_1 y_0 + x_0 y_1)2^{n/2} + x_0 y_0 \end{align}
+So we have $$T(n) \leq 4T(n/2) + cn$$ But this is essentially $$T(n) \leq O(n^{\log_2 q}) = O(n^2)$$
+However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y_1 + x_1y_0 + x_0y_1 + x_0y_0$.</description>
+    </item>
+    
+    <item>
+      <title>Closest Point</title>
+      <link>https://keithzeng.github.io/posts/closest-point/</link>
+      <pubDate>Tue, 29 Jan 2019 23:36:54 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/closest-point/</guid>
+      <description>Problem Given n points in the plane, find the pair that is closest together.
+Brute force takes $O(n^2)$.
+Algorithm Let&amp;rsquo;s $d(p_i, p_j)$ = Euclidean distance.
+In 1-d, we can simply sort points and compute the distance with the next point, we then have complexity of O(nlogn). In 2-d, we can&amp;rsquo;t applied the same thing.
+We will use divide and conquer. We find the closest pair in the left and closest pair in the right, and hoping to get it in linear time.</description>
+    </item>
+    
+    <item>
+      <title>Counting Inversion</title>
+      <link>https://keithzeng.github.io/posts/counting-inversion/</link>
+      <pubDate>Tue, 29 Jan 2019 22:37:45 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/counting-inversion/</guid>
+      <description>Problem Application in ranking, also called corraborative filtering.
+Comparing two rankings and decide how similar they are, or how many pairs are out of order.
+To quantify this, we count the number of inversions. The inversion is defined as two indices i &amp;lt; j that $a_i &amp;gt; a_j$. Algorithm Brute-Force $T(n) = O(n^2)$
+Modified Merge-Sort By leverage the merge process form merger-sort, we can count the number of inversion. Basically, when the element from A is appended, there is not inversion.</description>
+    </item>
     
     <item>
       <title>Merge Sort</title>
@@ -20,9 +68,8 @@
       <description>Problem Sort the elements
 Abstract the behavior:
 1. Divide the input into two pieces of equal size O(n) 1. solve the two subproblems on these pieces separately by recursion 1. combine the two results into an overall solution O(n)
-Recurrence Time Complexity:
-T(n) ≤ 2T(n/2) + cn
-To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  For more general case</description>
+Recurrence Time Complexity q = 2 T(n) ≤ 2T(n/2) + cn
+To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  General Case For q &amp;gt; 2 T(n) ≤ qT(n/2) + cn</description>
     </item>
     
     <item>

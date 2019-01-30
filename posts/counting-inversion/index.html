@@ -7,22 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Mathematic | k317h</title>
-    <meta property="og:title" content="Mathematic - k317h">
+    <title>Counting Inversion | k317h</title>
+    <meta property="og:title" content="Counting Inversion - k317h">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2019-01-29T22:37:45&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-01-29T22:37:45&#43;08:00">
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Mathematic">
+    <meta name="description" content="Counting Inversion">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/categories/mathematic/">
+    <meta property="og:url" content="https://keithzeng.github.io/posts/counting-inversion/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
+        <link rel="stylesheet" href="/css/prism.css">
+    
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/categories/mathematic/index.xml" title="k317h" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -31,7 +36,6 @@
     
     
 </head>
-
 
 <body>
 <header id="header" class="clearfix">
@@ -68,77 +72,111 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        Archived
-                        <span class="keyword">mathematic</span>
-                        Articles
-                    </h3>
-                    
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/margin-error/">Margin of Error</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/27
-                            </date>
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Counting Inversion</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019/1/29
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
                             
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://keithzeng.github.io/categories/mathematic">mathematic</a>
-                                
-                            </div>
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
                             
-                            <div class="post-content">
-                                Z-Score vs T-Score Z-Score Link
-Z-Score&rsquo;s formula $$z = \frac{X - \mu}{\sigma}$$ where X = sample mean, $\mu$ = population means, $\sigma$ = population standard deviation.
-Also, we use Z Score when sample size &gt;= 30 or we know the population&rsquo;s mean dna SD.
-Z Table
-T-Score T-Score T-Score&rsquo;s formula $$T = \frac{X - \mu}{s/ \sqrt{n}}$$ where X = sample mean, $\mu$ = population mean, s = sample standard deviation, and n = sample size.……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/margin-error/">Read More</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/probability/">Probability</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/24
-                            </date>
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Views</span></span>
+                        </div>
+                        
+                        <div class="post-content">
                             
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://keithzeng.github.io/categories/mathematic">mathematic</a>
-                                
-                            </div>
+
+<h2 id="problem">Problem</h2>
+
+<p>Application in ranking, also called corraborative filtering.</p>
+
+<p>Comparing two rankings and decide how similar they are,
+or how many pairs are out of order.</p>
+
+<p>To quantify this, we count the number of inversions. The inversion is defined as two indices i &lt; j that $a_i &gt; a_j$.
+<img src="/img/cse202/inversion.png" alt="Inversion Example" /></p>
+
+<h2 id="algorithm">Algorithm</h2>
+
+<h3 id="brute-force">Brute-Force</h3>
+
+<p>$T(n) = O(n^2)$</p>
+
+<h3 id="modified-merge-sort">Modified Merge-Sort</h3>
+
+<p>By leverage the merge process form merger-sort, we can count the number of inversion.
+<img src="/img/cse202/merge-and-count.png" alt="merge and count" /></p>
+
+<p>Basically, when the element from A is appended, there is not inversion. When we append element from B, the reamining number in the A is the number of inversion.</p>
+
+<h4 id="merge-and-count">Merge and Count</h4>
+
+<p><img src="/img/cse202/inversion-merge-count-algorithm.png" alt="inversion-merge-count-algorithm" /></p>
+
+<h4 id="sort-and-count">Sort and Count</h4>
+
+<p><img src="/img/cse202/inversion-sort-count-algorithm.png" alt="inversion-sort-count-algorithm" /></p>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/merge-sort/">Merge Sort</a></li>
+        
+        <li><a href="/posts/k-clustering/">K Clustering</a></li>
+        
+        <li><a href="/posts/probability/">Probability</a></li>
+        
+        <li><a href="/posts/margin-error/">Margin of Error</a></li>
+        
+        <li><a href="/posts/prototype-selection/">Prototype Selection</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
                             
-                            <div class="post-content">
-                                Discrete Random Variables A random variable is a number whose value depends upon the outcome of a random experiement. Such as tossing a coin 10 times and let X be the number of Head.
-A discrete random variable X has finitely countable values $x_i = 1, 2&hellip;$ and $p(x_i) = P(X = x_i)$ is called probability mass function.
-Probability mass functions has following properties:
- For all i, $p(x_i) &gt; 0$ For any interval $P(X \in B) = \sum_{x_i \in B}p(x_i)$ $\sum_{i}p(x_i) = 1$  There are many types of discrete random variable……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/probability/">Read More</a></p>
-                            </div>
-                        </article>
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://keithzeng.github.io/tags/cse202">cse202</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/notes">notes</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
                     
+    
 
-                    
-
-
-
-
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "keithzeng/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
                 </div>
             </div>
-
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -307,7 +345,6 @@ Probability mass functions has following properties:
 
 
 <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
 
 
 
