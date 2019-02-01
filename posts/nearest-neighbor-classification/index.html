@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.53" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Nearest Neighbor Classification | k317h</title>
+    <meta property="og:title" content="Nearest Neighbor Classification - k317h">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-01-31T16:08:27&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-01-31T16:08:27&#43;08:00">
+        
+    <meta name="Keywords" content="Java,Web,Software">
+    <meta name="description" content="Nearest Neighbor Classification">
+        
+    <meta name="author" content="k317h">
+    <meta property="og:url" content="https://keithzeng.github.io/posts/nearest-neighbor-classification/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://keithzeng.github.io">
+                        k317h
+                    </a>
+                
+                <p class="description">A Blog to Record My Progress...</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://keithzeng.github.io">Main</a>
+                    
+                    <a  href="https://keithzeng.github.io/books/" title="Books">Books</a>
+                    
+                    <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
+                    
+                    <a  href="https://keithzeng.github.io/about/" title="About">About</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Nearest Neighbor Classification</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019/1/31
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Views</span></span>
+                        </div>
+                        
+                        <div class="post-content">
+                            
+
+<h2 id="nearest-neighbor-classification">Nearest Neighbor Classification</h2>
+
+<h3 id="procedures">Procedures</h3>
+
+<ol>
+<li>Assemble a data set (training set)
+<img src="/img/cse250/mnist.png" alt="MNIST data" /></li>
+<li>How to classify a new image x?
+
+<ul>
+<li>find its closest neighbor y, and label it the same</li>
+</ul></li>
+</ol>
+
+<p>Notes:</p>
+
+<ul>
+<li>training set of 60000 images</li>
+<li>test set of 10000 test</li>
+</ul>
+
+<h3 id="how-do-we-determine-if-two-data-images-are-closest">How do we determine if two data (images) are closest?</h3>
+
+<p>With 28 x 28 image, we can strech it to become a vector of 784.
+<img src="/img/cse250/3.png" alt="3" /></p>
+
+<p>We then use Euclidean distance formula to find the distance betwen them.</p>
+
+<p>$$||x - z|| = \sqrt{\sum_{i=1}^{784}(x_i - z_i)^2}$$</p>
+
+<p>With 1 closest neighbor, we are getting 3.09% on the test set.</p>
+
+<h3 id="ideas-for-improvement">Ideas for Improvement</h3>
+
+<ol>
+<li>Choose different number of neighbors (kNN instead of 1NN)</li>
+<li>Better distance functions</li>
+</ol>
+
+<p>With different K</p>
+
+<table>
+<thead>
+<tr>
+<th align="right">k</th>
+<th align="right">1</th>
+<th align="right">3</th>
+<th align="right">5</th>
+<th align="right">7</th>
+<th align="right">9</th>
+<th align="right">11</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="right">Test Error %</td>
+<td align="right">3.09</td>
+<td align="right">2.94</td>
+<td align="right">3.13</td>
+<td align="right">3.10</td>
+<td align="right">3.43</td>
+<td align="right">3.34</td>
+</tr>
+</tbody>
+</table>
+
+<p>With different distance functions<br />
+There are many active researches on accodmading translations and rotations and also the deformation.</p>
+
+<p>For example, the 1 in the right is generated by shifting 1 in the left by few pixel.
+<img src="/img/cse250/1.png" alt="1" /></p>
+
+<table>
+<thead>
+<tr>
+<th align="right">dist function</th>
+<th align="right">l2</th>
+<th align="right">tangent distance</th>
+<th align="right">shape context</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="right">error rate</td>
+<td align="right">3.09</td>
+<td align="right">1.10</td>
+<td align="right">0.63</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="problem">Problem</h3>
+
+<p><strong>The curse of Dimension</strong></p>
+
+<p>Although the kNN search provides very good algorithm, the search time is slow. It takes time proportion to the size of data, n, and dimension, d, O(nd).</p>
+
+<p>Ideas for addressing the issues:</p>
+
+<ul>
+<li>Different Data Structure
+
+<ul>
+<li><a href="link">Locality Sensitive Search</a> #TODO</li>
+<li><a href="link">Ball Tree</a> #TODO</li>
+<li><a href="link">K-d tree</a> #TODO</li>
+</ul></li>
+<li>Different distance function
+
+<ul>
+<li>Approximate Distance (link) #TODO</li>
+</ul></li>
+<li>Data Reduction
+
+<ul>
+<li><a href="../prototype-selection">Prototype Section</a></li>
+</ul></li>
+</ul>
+
+<h4 id="k-d-tree">k-d Tree</h4>
+
+<p><img src="/img/cse250/kd-tree.png" alt="kd-tree" /></p>
+
+<p>Credit to CSE 250 Class notes.</p>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/fast-fourtier-transform/">Fast Fourtier Transform</a></li>
+        
+        <li><a href="/posts/integer-multiplication/">Integer Multiplication</a></li>
+        
+        <li><a href="/posts/closest-point/">Closest Point</a></li>
+        
+        <li><a href="/posts/counting-inversion/">Counting Inversion</a></li>
+        
+        <li><a href="/posts/merge-sort/">Merge Sort</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://keithzeng.github.io/tags/mnist">mnist</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/distance">distance</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/metric">metric</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "keithzeng/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://keithzeng.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">Most Recents</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/" title="Nearest Neighbor Classification">Nearest Neighbor Classification</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/" title="Fast Fourtier Transform">Fast Fourtier Transform</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/integer-multiplication/" title="Integer Multiplication">Integer Multiplication</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/closest-point/" title="Closest Point">Closest Point</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/counting-inversion/" title="Counting Inversion">Counting Inversion</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort">Merge Sort</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/margin-error/" title="Margin of Error">Margin of Error</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/prototype-selection/" title="Prototype Selection">Prototype Selection</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/k-clustering/" title="K Clustering">K Clustering</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/probability/" title="Probability">Probability</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Categories</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/other/">other(3)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Series</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/divide-and-conquer/">divide-and-conquer(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/greedy/">greedy(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/other/">other(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/statistical-learning/">statistical-learning(4)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+    
+    <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
+    
+    <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/metric/">metric</a>
+    
+    <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
+    
+    <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/other/">other</a>
+    
+    <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Other</h3>
+        <ul class="widget-list">
+            <li><a href="https://keithzeng.github.io/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
+    </div>
+</footer>
+
+<script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+</script>
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+</html>

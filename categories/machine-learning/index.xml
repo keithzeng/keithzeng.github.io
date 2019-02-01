@@ -6,10 +6,20 @@
     <description>Recent content in Machine Learning on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Jan 2019 20:25:22 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jan 2019 16:08:27 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nearest Neighbor Classification</title>
+      <link>https://keithzeng.github.io/posts/nearest-neighbor-classification/</link>
+      <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/nearest-neighbor-classification/</guid>
+      <description>Nearest Neighbor Classification Procedures  Assemble a data set (training set)  How to classify a new image x?  find its closest neighbor y, and label it the same   Notes:
+ training set of 60000 images test set of 10000 test  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.</description>
+    </item>
     
     <item>
       <title>Prototype Selection</title>
