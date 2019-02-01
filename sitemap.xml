@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://keithzeng.github.io/posts/matrix/</loc>
+    <lastmod>2019-02-01T02:06:44-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/posts/logistic-regression/</loc>
+    <lastmod>2019-02-01T00:39:49-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/posts/linear-regression/</loc>
     <lastmod>2019-01-31T22:30:23-08:00</lastmod>
   </url>
@@ -124,6 +134,12 @@
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/tags/determinant/</loc>
+    <lastmod>2019-02-01T02:06:44-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/tags/distance/</loc>
     <lastmod>2019-01-31T16:08:27-08:00</lastmod>
     <priority>0</priority>
@@ -154,6 +170,12 @@
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/tags/logistic/</loc>
+    <lastmod>2019-02-01T00:39:49-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/tags/lpnorm/</loc>
     <lastmod>2019-01-31T17:02:35-08:00</lastmod>
     <priority>0</priority>
@@ -161,13 +183,19 @@
   
   <url>
     <loc>https://keithzeng.github.io/categories/machine-learning/</loc>
-    <lastmod>2019-01-31T22:30:23-08:00</lastmod>
+    <lastmod>2019-02-01T00:39:49-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://keithzeng.github.io/categories/mathematic/</loc>
-    <lastmod>2019-01-31T17:57:34-08:00</lastmod>
+    <lastmod>2019-02-01T02:06:44-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/series/matrix/</loc>
+    <lastmod>2019-02-01T02:06:44-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -209,7 +237,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/posts/</loc>
-    <lastmod>2019-01-31T22:30:23-08:00</lastmod>
+    <lastmod>2019-02-01T02:06:44-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -222,6 +250,12 @@
   <url>
     <loc>https://keithzeng.github.io/tags/probability/</loc>
     <lastmod>2019-01-24T22:27:30-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/tags/rank/</loc>
+    <lastmod>2019-02-01T02:06:44-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -245,7 +279,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/series/statistical-learning/</loc>
-    <lastmod>2019-01-31T22:30:23-08:00</lastmod>
+    <lastmod>2019-02-01T00:39:49-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -257,7 +291,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/</loc>
-    <lastmod>2019-01-31T22:30:23-08:00</lastmod>
+    <lastmod>2019-02-01T02:06:44-08:00</lastmod>
     <priority>0</priority>
   </url>
   

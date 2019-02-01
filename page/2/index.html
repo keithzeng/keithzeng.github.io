@@ -70,6 +70,59 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/counting-inversion/" title="Counting Inversion" >Counting Inversion</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/29
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Application in ranking, also called corraborative filtering.
+Comparing two rankings and decide how similar they are, or how many pairs are out of order.
+To quantify this, we count the number of inversions. The inversion is defined as two indices i &lt; j that $a_i &gt; a_j$. Algorithm Brute-Force $T(n) = O(n^2)$
+Modified Merge-Sort By leverage the merge process form merger-sort, we can count the number of inversion. Basically, when the element from A is appended, there is not inversion.……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/counting-inversion/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort" >Merge Sort</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/29
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Sort the elements
+Abstract the behavior:
+1. Divide the input into two pieces of equal size O(n) 1. solve the two subproblems on these pieces separately by recursion 1. combine the two results into an overall solution O(n)
+Recurrence Time Complexity q = 2 T(n) ≤ 2T(n/2) + cn
+To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  General Case For q &gt; 2 T(n) ≤ qT(n/2) + cn……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/merge-sort/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/margin-error/" title="Margin of Error" >Margin of Error</a>
                                 </h1>
                             </header>
@@ -239,6 +292,14 @@ Probability mass functions has following properties:
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/matrix/" title="Matrix">Matrix</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/logistic-regression/" title="Logistic Regression">Logistic Regression</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/linear-regression/" title="Linear Regression">Linear Regression</a>
     </li>
     
@@ -270,14 +331,6 @@ Probability mass functions has following properties:
         <a href="https://keithzeng.github.io/posts/closest-point/" title="Closest Point">Closest Point</a>
     </li>
     
-    <li>
-        <a href="https://keithzeng.github.io/posts/counting-inversion/" title="Counting Inversion">Counting Inversion</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort">Merge Sort</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -292,11 +345,11 @@ Probability mass functions has following properties:
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(5)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(6)</a>
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(3)</a>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(4)</a>
     </li>
     
     <li>
@@ -319,6 +372,10 @@ Probability mass functions has following properties:
     </li>
     
     <li>
+        <a href="https://keithzeng.github.io/series/matrix/">matrix(1)</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/series/other/">other(3)</a>
     </li>
     
@@ -327,7 +384,7 @@ Probability mass functions has following properties:
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(7)</a>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(8)</a>
     </li>
     
 </ul>
@@ -345,11 +402,15 @@ Probability mass functions has following properties:
     
     <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
     
+    <a href="https://keithzeng.github.io/tags/determinant/">determinant</a>
+    
     <a href="https://keithzeng.github.io/tags/distance/">distance</a>
     
     <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
     
     <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/logistic/">logistic</a>
     
     <a href="https://keithzeng.github.io/tags/lpnorm/">lpnorm</a>
     
@@ -362,6 +423,8 @@ Probability mass functions has following properties:
     <a href="https://keithzeng.github.io/tags/other/">other</a>
     
     <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/rank/">rank</a>
     
     <a href="https://keithzeng.github.io/tags/regression/">regression</a>
     

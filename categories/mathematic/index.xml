@@ -6,10 +6,24 @@
     <description>Recent content in Mathematic on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Jan 2019 17:57:34 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Feb 2019 02:06:44 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/categories/mathematic/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Matrix</title>
+      <link>https://keithzeng.github.io/posts/matrix/</link>
+      <pubDate>Fri, 01 Feb 2019 02:06:44 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/matrix/</guid>
+      <description>Determinant Calculation Determinant of 2x2 matrix
+$$ A= \begin{bmatrix} a &amp;amp; b \newline c &amp;amp; d \end{bmatrix} $$
+$|A| = det(A) = ad -bc$
+Determinant of 3x3 matrix, also called expansion of the determinant by first row. Link.
+$$ B= \begin{bmatrix} a &amp;amp; b &amp;amp; c \newline d &amp;amp; e &amp;amp; f \newline g &amp;amp; h &amp;amp; k \end{bmatrix} $$
+$|B| = det(B) = a\begin{vmatrix} e &amp;amp; f \newline h &amp;amp; k \end{vmatrix} -b\begin{vmatrix} d &amp;amp; f \newline g &amp;amp; k \end{vmatrix} +c\begin{vmatrix} d &amp;amp; e \newline g &amp;amp; h \end{vmatrix}$</description>
+    </item>
     
     <item>
       <title>Marginal Distribution</title>

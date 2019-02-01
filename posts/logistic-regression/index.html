@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.53" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Logistic Regression | k317h</title>
+    <meta property="og:title" content="Logistic Regression - k317h">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-02-01T00:39:49&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-02-01T00:39:49&#43;08:00">
+        
+    <meta name="Keywords" content="Java,Web,Software">
+    <meta name="description" content="Logistic Regression">
+        
+    <meta name="author" content="k317h">
+    <meta property="og:url" content="https://keithzeng.github.io/posts/logistic-regression/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://keithzeng.github.io">
+                        k317h
+                    </a>
+                
+                <p class="description">A Blog to Record My Progress...</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://keithzeng.github.io">Main</a>
+                    
+                    <a  href="https://keithzeng.github.io/books/" title="Books">Books</a>
+                    
+                    <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
+                    
+                    <a  href="https://keithzeng.github.io/about/" title="About">About</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Logistic Regression</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019/2/1
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Views</span></span>
+                        </div>
+                        
+                        <div class="post-content">
+                            
+
+<h2 id="uncertainty-in-prediction">Uncertainty in Prediction</h2>
+
+<p>Related to <a href="../logistic-regression">Linear Regression</a>.</p>
+
+<p>The available features x do not contain enough information to perfectly predict y, such as</p>
+
+<ul>
+<li>x = medical record for patients at risk for a disease</li>
+<li>y = will he contact disease in next 5 years</li>
+</ul>
+
+<h2 id="model">Model</h2>
+
+<p>We still going to use linear model for conditional probability estmation</p>
+
+<p>$$w_1x_1 + w_2x_2 + &hellip; + w_dx_d + b = w \cdot x + b$$</p>
+
+<p>We want the Pr(y=1):</p>
+
+<ul>
+<li>increases as linear function grows</li>
+<li>0.5 when linear function is 0</li>
+</ul>
+
+<p>This leads to the sigmoid function</p>
+
+<p><img src="/img/cse250/sigmoid.png" alt="sigmoid" /></p>
+
+<h2 id="logistic-regression-model">Logistic Regression Model</h2>
+
+<p>Let $y \in$ {-1, 1}</p>
+
+<p>$$Pr(y = 1 | x) = \frac{1}{1 + e^{-(w \cdot x + b)}}$$</p>
+
+<p>and</p>
+
+<p>$$Pr(y = -1 | x) = 1 - Pr(y = 1 | x)  = \frac{1}{1 + e^{w \cdot x + b}}$$</p>
+
+<p>Or consisely</p>
+
+<p>$$Pr(y | x) = \frac{1}{1 + e^{-y(w \cdot x + b)}}$$</p>
+
+<h2 id="maximum-likelihood">Maximum-likelihood</h2>
+
+<p>We want to maximize the probability:</p>
+
+<p>$$\prod_{i=1}^n Pr_{w,b}(y^{(i)}|x^{(i)})$$</p>
+
+<h2 id="loss-function">Loss function</h2>
+
+<p>After taking log of maximum-likelihood formula, we convert it to the loss function</p>
+
+<p>$$L(w, b) = - \sum_{i=1}^n \ln Pr_{w,b}(y^{(i)}|x^{(i)}) = \sum_{i=1}^n \ln (1 + e^{-y^{(i)}(w \cdot x^{(i)} + b)})$$</p>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/linear-regression/">Linear Regression</a></li>
+        
+        <li><a href="/posts/bayes-optimal-classifier/">Bayes Optimal Classifier</a></li>
+        
+        <li><a href="/posts/marginal-distribution/">Marginal Distribution</a></li>
+        
+        <li><a href="/posts/lp-norm/">lp norm</a></li>
+        
+        <li><a href="/posts/nearest-neighbor-classification/">Nearest Neighbor Classification</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://keithzeng.github.io/tags/logistic">logistic</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "keithzeng/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://keithzeng.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">Most Recents</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/matrix/" title="Matrix">Matrix</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/logistic-regression/" title="Logistic Regression">Logistic Regression</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/linear-regression/" title="Linear Regression">Linear Regression</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/" title="Bayes Optimal Classifier">Bayes Optimal Classifier</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/marginal-distribution/" title="Marginal Distribution">Marginal Distribution</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/lp-norm/" title="lp norm">lp norm</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/" title="Nearest Neighbor Classification">Nearest Neighbor Classification</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/" title="Fast Fourtier Transform">Fast Fourtier Transform</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/integer-multiplication/" title="Integer Multiplication">Integer Multiplication</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/closest-point/" title="Closest Point">Closest Point</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Categories</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/other/">other(3)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Series</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/greedy/">greedy(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/matrix/">matrix(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/other/">other(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/probability/">probability(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(8)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+    
+    <a href="https://keithzeng.github.io/tags/bayes/">bayes</a>
+    
+    <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
+    
+    <a href="https://keithzeng.github.io/tags/determinant/">determinant</a>
+    
+    <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
+    
+    <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/logistic/">logistic</a>
+    
+    <a href="https://keithzeng.github.io/tags/lpnorm/">lpnorm</a>
+    
+    <a href="https://keithzeng.github.io/tags/metric/">metric</a>
+    
+    <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
+    
+    <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/other/">other</a>
+    
+    <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/rank/">rank</a>
+    
+    <a href="https://keithzeng.github.io/tags/regression/">regression</a>
+    
+    <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Other</h3>
+        <ul class="widget-list">
+            <li><a href="https://keithzeng.github.io/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
+    </div>
+</footer>
+
+<script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+</script>
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+</html>
