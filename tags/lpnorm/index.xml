@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lpnorm on k317h</title>
+    <link>https://keithzeng.github.io/tags/lpnorm/</link>
+    <description>Recent content in Lpnorm on k317h</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jan 2019 17:02:35 -0800</lastBuildDate>
+    
+	<atom:link href="https://keithzeng.github.io/tags/lpnorm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>lp norm</title>
+      <link>https://keithzeng.github.io/posts/lp-norm/</link>
+      <pubDate>Thu, 31 Jan 2019 17:02:35 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/lp-norm/</guid>
+      <description>Families of Distance Function $l_p$ norm The most common one is $l_2$ norm (Euclidean distance):
+$$||x - z||_2 = \sqrt{\sum_{i=1}^{m}(x_i - z_i)^2}$$
+Notes: sometime 2 is dropped.
+For $p \geq 1$, the $l_p$ distance:
+$$||x - z||_p = (\sum_{i=1}^{m}(x_i - z_i)^p)^{1/p}$$
+Special case:
+$l_1$ distance: $$||x - z||_1 = \sum_{i=1}^{m}|x_i - z_i|$$
+$l_\infty$ distance:
+$$||x - z||_1 = max_i |x_i - z_i|$$
+Metric space Let $X$ be the space that data lie.</description>
+    </item>
+    
+  </channel>
+</rss>

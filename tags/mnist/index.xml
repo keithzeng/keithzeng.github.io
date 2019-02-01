@@ -18,7 +18,7 @@
       
       <guid>https://keithzeng.github.io/posts/nearest-neighbor-classification/</guid>
       <description>Nearest Neighbor Classification Procedures  Assemble a data set (training set)  How to classify a new image x?  find its closest neighbor y, and label it the same   Notes:
- training set of 60000 images test set of 10000 test  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.</description>
+ training set of 60000 images test set of 10000 images  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.</description>
     </item>
     
   </channel>

@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Confidence Interval | k317h</title>
-    <meta property="og:title" content="Confidence Interval - k317h">
+    <title>Lpnorm | k317h</title>
+    <meta property="og:title" content="Lpnorm - k317h">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Confidence Interval">
+    <meta name="description" content="Lpnorm">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/tags/confidence-interval/">
+    <meta property="og:url" content="https://keithzeng.github.io/tags/lpnorm/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/confidence-interval/index.xml" title="k317h" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/lpnorm/index.xml" title="k317h" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -71,7 +71,7 @@
                     
                     <h3 class="archive-title">
                         Tagged
-                        <span class="keyword">confidence-interval</span>
+                        <span class="keyword">lpnorm</span>
                         Articles
                     </h3>
                     
@@ -80,27 +80,32 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/margin-error/">Margin of Error</a>
+                                    <a href="https://keithzeng.github.io/posts/lp-norm/">lp norm</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2019/1/27
+                                2019/1/31
                             </date>
                             
                             <div class="post-meta meta-category">
                                 |
                                 
-                                    <a href="https://keithzeng.github.io/categories/mathematic">mathematic</a>
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
                                 
                             </div>
                             
                             <div class="post-content">
-                                Z-Score vs T-Score Z-Score Link
-Z-Score&rsquo;s formula $$z = \frac{X - \mu}{\sigma}$$ where X = sample mean, $\mu$ = population means, $\sigma$ = population standard deviation.
-Also, we use Z Score when sample size &gt;= 30 or we know the population&rsquo;s mean dna SD.
-Z Table
-T-Score T-Score T-Score&rsquo;s formula $$T = \frac{X - \mu}{s/ \sqrt{n}}$$ where X = sample mean, $\mu$ = population mean, s = sample standard deviation, and n = sample size.……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/margin-error/">Read More</a></p>
+                                Families of Distance Function $l_p$ norm The most common one is $l_2$ norm (Euclidean distance):
+$$||x - z||_2 = \sqrt{\sum_{i=1}^{m}(x_i - z_i)^2}$$
+Notes: sometime 2 is dropped.
+For $p \geq 1$, the $l_p$ distance:
+$$||x - z||_p = (\sum_{i=1}^{m}(x_i - z_i)^p)^{1/p}$$
+Special case:
+$l_1$ distance: $$||x - z||_1 = \sum_{i=1}^{m}|x_i - z_i|$$
+$l_\infty$ distance:
+$$||x - z||_1 = max_i |x_i - z_i|$$
+Metric space Let $X$ be the space that data lie.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/lp-norm/">Read More</a></p>
                             </div>
                         </article>
                     

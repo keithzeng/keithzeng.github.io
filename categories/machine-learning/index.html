@@ -80,6 +80,38 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/lp-norm/">lp norm</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Families of Distance Function $l_p$ norm The most common one is $l_2$ norm (Euclidean distance):
+$$||x - z||_2 = \sqrt{\sum_{i=1}^{m}(x_i - z_i)^2}$$
+Notes: sometime 2 is dropped.
+For $p \geq 1$, the $l_p$ distance:
+$$||x - z||_p = (\sum_{i=1}^{m}(x_i - z_i)^p)^{1/p}$$
+Special case:
+$l_1$ distance: $$||x - z||_1 = \sum_{i=1}^{m}|x_i - z_i|$$
+$l_\infty$ distance:
+$$||x - z||_1 = max_i |x_i - z_i|$$
+Metric space Let $X$ be the space that data lie.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/lp-norm/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/">Nearest Neighbor Classification</a>
                                 </h1>
                             </header>
@@ -96,7 +128,7 @@
                             
                             <div class="post-content">
                                 Nearest Neighbor Classification Procedures  Assemble a data set (training set)  How to classify a new image x?  find its closest neighbor y, and label it the same   Notes:
- training set of 60000 images test set of 10000 test  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.……
+ training set of 60000 images test set of 10000 images  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.……
                                 <p class="readmore"><a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/">Read More</a></p>
                             </div>
                         </article>
@@ -151,6 +183,10 @@ There are couple drawbacks for KNN
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/lp-norm/" title="lp norm">lp norm</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/" title="Nearest Neighbor Classification">Nearest Neighbor Classification</a>
     </li>
     
@@ -186,10 +222,6 @@ There are couple drawbacks for KNN
         <a href="https://keithzeng.github.io/posts/k-clustering/" title="K Clustering">K Clustering</a>
     </li>
     
-    <li>
-        <a href="https://keithzeng.github.io/posts/probability/" title="Probability">Probability</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -204,7 +236,7 @@ There are couple drawbacks for KNN
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(2)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(3)</a>
     </li>
     
     <li>
@@ -235,7 +267,7 @@ There are couple drawbacks for KNN
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/statistical-learning/">statistical-learning(4)</a>
+        <a href="https://keithzeng.github.io/categories/statistical-learning/">statistical-learning(5)</a>
     </li>
     
 </ul>
@@ -254,6 +286,8 @@ There are couple drawbacks for KNN
     <a href="https://keithzeng.github.io/tags/distance/">distance</a>
     
     <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/lpnorm/">lpnorm</a>
     
     <a href="https://keithzeng.github.io/tags/metric/">metric</a>
     

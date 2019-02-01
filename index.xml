@@ -6,10 +6,28 @@
     <description>Recent content on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Jan 2019 16:08:27 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jan 2019 17:02:35 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>lp norm</title>
+      <link>https://keithzeng.github.io/posts/lp-norm/</link>
+      <pubDate>Thu, 31 Jan 2019 17:02:35 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/lp-norm/</guid>
+      <description>Families of Distance Function $l_p$ norm The most common one is $l_2$ norm (Euclidean distance):
+$$||x - z||_2 = \sqrt{\sum_{i=1}^{m}(x_i - z_i)^2}$$
+Notes: sometime 2 is dropped.
+For $p \geq 1$, the $l_p$ distance:
+$$||x - z||_p = (\sum_{i=1}^{m}(x_i - z_i)^p)^{1/p}$$
+Special case:
+$l_1$ distance: $$||x - z||_1 = \sum_{i=1}^{m}|x_i - z_i|$$
+$l_\infty$ distance:
+$$||x - z||_1 = max_i |x_i - z_i|$$
+Metric space Let $X$ be the space that data lie.</description>
+    </item>
     
     <item>
       <title>Nearest Neighbor Classification</title>
@@ -18,7 +36,7 @@
       
       <guid>https://keithzeng.github.io/posts/nearest-neighbor-classification/</guid>
       <description>Nearest Neighbor Classification Procedures  Assemble a data set (training set)  How to classify a new image x?  find its closest neighbor y, and label it the same   Notes:
- training set of 60000 images test set of 10000 test  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.</description>
+ training set of 60000 images test set of 10000 images  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.</description>
     </item>
     
     <item>
