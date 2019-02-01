@@ -190,12 +190,6 @@
   </url>
   
   <url>
-    <loc>https://keithzeng.github.io/tags/other/</loc>
-    <lastmod>2019-01-27T03:17:07-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://keithzeng.github.io/categories/other/</loc>
     <lastmod>2019-01-27T03:17:07-08:00</lastmod>
     <priority>0</priority>
@@ -208,20 +202,26 @@
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/tags/other/</loc>
+    <lastmod>2019-01-27T03:17:07-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/posts/</loc>
     <lastmod>2019-01-31T22:30:23-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://keithzeng.github.io/tags/probability/</loc>
-    <lastmod>2019-01-24T22:27:30-08:00</lastmod>
+    <loc>https://keithzeng.github.io/series/probability/</loc>
+    <lastmod>2019-01-31T17:57:34-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://keithzeng.github.io/series/probability/</loc>
-    <lastmod>2019-01-31T17:57:34-08:00</lastmod>
+    <loc>https://keithzeng.github.io/tags/probability/</loc>
+    <lastmod>2019-01-24T22:27:30-08:00</lastmod>
     <priority>0</priority>
   </url>
   
