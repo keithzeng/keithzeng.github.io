@@ -6,10 +6,69 @@
     <description>Recent content in Notes on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Jan 2019 00:31:46 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jan 2019 22:30:23 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linear Regression</title>
+      <link>https://keithzeng.github.io/posts/linear-regression/</link>
+      <pubDate>Thu, 31 Jan 2019 22:30:23 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/linear-regression/</guid>
+      <description>Basic Idea Fit a line to a bunch of points.
+Example Without extra information, we will predict the mean 2.47.
+Average squared error = $\mathbb{E} [(studentGPA - predictedGPA)^2]$ = Variance
+If we have SAT scores, then we can fit a line.
+Now if we predict based on this line, the MSE drops to 0.43.
+This is a regression problem with:
+ Predictor variable: SAT score Response variable: College GPA  Formula For $\mathbb{R}$ $$y = ax + b$$</description>
+    </item>
+    
+    <item>
+      <title>Bayes Optimal Classifier</title>
+      <link>https://keithzeng.github.io/posts/bayes-optimal-classifier/</link>
+      <pubDate>Thu, 31 Jan 2019 18:00:14 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/bayes-optimal-classifier/</guid>
+      <description>Background Marginal Distribution
+Three ways to sample from P
+ Draw (x,y) Draw y according to its marginal distribution, then x according to the conditional distribution of x | y Draw X according to its marginal distribution, then Y according to the conditional distribution of y | x  Define:
+$\mu$: distribution on $X$
+$\eta$: conditional distribution y|x
+Classifier Normal Classifier
+$h : x \rightarrow y$
+$R(h) = Pr_{(x,y) \in p} (h(x) \neq y)$, where R = risk</description>
+    </item>
+    
+    <item>
+      <title>lp norm</title>
+      <link>https://keithzeng.github.io/posts/lp-norm/</link>
+      <pubDate>Thu, 31 Jan 2019 17:02:35 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/lp-norm/</guid>
+      <description>Families of Distance Function $l_p$ norm The most common one is $l_2$ norm (Euclidean distance):
+$$||x - z||_2 = \sqrt{\sum_{i=1}^{m}(x_i - z_i)^2}$$
+Notes: sometime 2 is dropped.
+For $p \geq 1$, the $l_p$ distance:
+$$||x - z||_p = (\sum_{i=1}^{m}(x_i - z_i)^p)^{1/p}$$
+Special case:
+$l_1$ distance: $$||x - z||_1 = \sum_{i=1}^{m}|x_i - z_i|$$
+$l_\infty$ distance:
+$$||x - z||_1 = max_i |x_i - z_i|$$
+Metric space Let $X$ be the space that data lie.</description>
+    </item>
+    
+    <item>
+      <title>Nearest Neighbor Classification</title>
+      <link>https://keithzeng.github.io/posts/nearest-neighbor-classification/</link>
+      <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/nearest-neighbor-classification/</guid>
+      <description>Nearest Neighbor Classification Procedures  Assemble a data set (training set)  How to classify a new image x?  find its closest neighbor y, and label it the same   Notes:
+ training set of 60000 images test set of 10000 images  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.</description>
+    </item>
     
     <item>
       <title>Fast Fourtier Transform</title>

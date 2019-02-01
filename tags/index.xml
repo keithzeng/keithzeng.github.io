@@ -6,10 +6,19 @@
     <description>Recent content in Tags on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Jan 2019 22:33:16 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jan 2019 18:00:14 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bayes</title>
+      <link>https://keithzeng.github.io/tags/bayes/</link>
+      <pubDate>Thu, 31 Jan 2019 18:00:14 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/bayes/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Confidence Interval</title>
@@ -44,6 +53,15 @@
       <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/tags/distance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distribution</title>
+      <link>https://keithzeng.github.io/tags/distribution/</link>
+      <pubDate>Thu, 31 Jan 2019 17:57:34 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/distribution/</guid>
       <description></description>
     </item>
     
@@ -86,7 +104,7 @@
     <item>
       <title>Notes</title>
       <link>https://keithzeng.github.io/tags/notes/</link>
-      <pubDate>Wed, 30 Jan 2019 00:31:46 -0800</pubDate>
+      <pubDate>Thu, 31 Jan 2019 22:30:23 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/tags/notes/</guid>
       <description></description>
@@ -107,6 +125,15 @@
       <pubDate>Thu, 24 Jan 2019 22:27:30 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/tags/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regression</title>
+      <link>https://keithzeng.github.io/tags/regression/</link>
+      <pubDate>Thu, 31 Jan 2019 22:30:23 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/regression/</guid>
       <description></description>
     </item>
     

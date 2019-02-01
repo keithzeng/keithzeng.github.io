@@ -80,6 +80,121 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/linear-regression/">Linear Regression</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Basic Idea Fit a line to a bunch of points.
+Example Without extra information, we will predict the mean 2.47.
+Average squared error = $\mathbb{E} [(studentGPA - predictedGPA)^2]$ = Variance
+If we have SAT scores, then we can fit a line.
+Now if we predict based on this line, the MSE drops to 0.43.
+This is a regression problem with:
+ Predictor variable: SAT score Response variable: College GPA  Formula For $\mathbb{R}$ $$y = ax + b$$……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/linear-regression/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/">Bayes Optimal Classifier</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Background Marginal Distribution
+Three ways to sample from P
+ Draw (x,y) Draw y according to its marginal distribution, then x according to the conditional distribution of x | y Draw X according to its marginal distribution, then Y according to the conditional distribution of y | x  Define:
+$\mu$: distribution on $X$
+$\eta$: conditional distribution y|x
+Classifier Normal Classifier
+$h : x \rightarrow y$
+$R(h) = Pr_{(x,y) \in p} (h(x) \neq y)$, where R = risk……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/lp-norm/">lp norm</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Families of Distance Function $l_p$ norm The most common one is $l_2$ norm (Euclidean distance):
+$$||x - z||_2 = \sqrt{\sum_{i=1}^{m}(x_i - z_i)^2}$$
+Notes: sometime 2 is dropped.
+For $p \geq 1$, the $l_p$ distance:
+$$||x - z||_p = (\sum_{i=1}^{m}(x_i - z_i)^p)^{1/p}$$
+Special case:
+$l_1$ distance: $$||x - z||_1 = \sum_{i=1}^{m}|x_i - z_i|$$
+$l_\infty$ distance:
+$$||x - z||_1 = max_i |x_i - z_i|$$
+Metric space Let $X$ be the space that data lie.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/lp-norm/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/">Nearest Neighbor Classification</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Nearest Neighbor Classification Procedures  Assemble a data set (training set)  How to classify a new image x?  find its closest neighbor y, and label it the same   Notes:
+ training set of 60000 images test set of 10000 images  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/">Fast Fourtier Transform</a>
                                 </h1>
                             </header>
@@ -234,35 +349,29 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
                             </div>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/probability/">Probability</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/24
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://keithzeng.github.io/categories/mathematic">mathematic</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Discrete Random Variables A random variable is a number whose value depends upon the outcome of a random experiement. Such as tossing a coin 10 times and let X be the number of Head.
-A discrete random variable X has finitely countable values $x_i = 1, 2&hellip;$ and $p(x_i) = P(X = x_i)$ is called probability mass function.
-Probability mass functions has following properties:
- For all i, $p(x_i) &gt; 0$ For any interval $P(X \in B) = \sum_{x_i \in B}p(x_i)$ $\sum_{i}p(x_i) = 1$  There are many types of discrete random variable……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/probability/">Read More</a></p>
-                            </div>
-                        </article>
-                    
 
                     
 
+
+<ol class="page-navigator">
+    
+
+    
+    <li  class="current">
+        <a href="https://keithzeng.github.io/tags/notes/">1</a>
+    </li>
+    
+    <li >
+        <a href="https://keithzeng.github.io/tags/notes/page/2/">2</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="https://keithzeng.github.io/tags/notes/page/2/">Next</a>
+    </li>
+    
+</ol>
 
 
 
@@ -282,6 +391,18 @@ Probability mass functions has following properties:
     <section class="widget">
         <h3 class="widget-title">Most Recents</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/linear-regression/" title="Linear Regression">Linear Regression</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/" title="Bayes Optimal Classifier">Bayes Optimal Classifier</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/marginal-distribution/" title="Marginal Distribution">Marginal Distribution</a>
+    </li>
     
     <li>
         <a href="https://keithzeng.github.io/posts/lp-norm/" title="lp norm">lp norm</a>
@@ -311,18 +432,6 @@ Probability mass functions has following properties:
         <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort">Merge Sort</a>
     </li>
     
-    <li>
-        <a href="https://keithzeng.github.io/posts/margin-error/" title="Margin of Error">Margin of Error</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/prototype-selection/" title="Prototype Selection">Prototype Selection</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/k-clustering/" title="K Clustering">K Clustering</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -337,11 +446,11 @@ Probability mass functions has following properties:
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(3)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(5)</a>
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(2)</a>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(3)</a>
     </li>
     
     <li>
@@ -368,7 +477,11 @@ Probability mass functions has following properties:
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/statistical-learning/">statistical-learning(5)</a>
+        <a href="https://keithzeng.github.io/categories/probability/">probability(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/statistical-learning/">statistical-learning(7)</a>
     </li>
     
 </ul>
@@ -378,6 +491,8 @@ Probability mass functions has following properties:
         <h3 class="widget-title">Tags</h3>
 <div class="tagcloud">
     
+    <a href="https://keithzeng.github.io/tags/bayes/">bayes</a>
+    
     <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
     
     <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
@@ -385,6 +500,8 @@ Probability mass functions has following properties:
     <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
     
     <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
     
     <a href="https://keithzeng.github.io/tags/knn/">knn</a>
     
@@ -399,6 +516,8 @@ Probability mass functions has following properties:
     <a href="https://keithzeng.github.io/tags/other/">other</a>
     
     <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/regression/">regression</a>
     
     <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
     

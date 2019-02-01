@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regression on k317h</title>
+    <link>https://keithzeng.github.io/tags/regression/</link>
+    <description>Recent content in Regression on k317h</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jan 2019 22:30:23 -0800</lastBuildDate>
+    
+	<atom:link href="https://keithzeng.github.io/tags/regression/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linear Regression</title>
+      <link>https://keithzeng.github.io/posts/linear-regression/</link>
+      <pubDate>Thu, 31 Jan 2019 22:30:23 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/linear-regression/</guid>
+      <description>Basic Idea Fit a line to a bunch of points.
+Example Without extra information, we will predict the mean 2.47.
+Average squared error = $\mathbb{E} [(studentGPA - predictedGPA)^2]$ = Variance
+If we have SAT scores, then we can fit a line.
+Now if we predict based on this line, the MSE drops to 0.43.
+This is a regression problem with:
+ Predictor variable: SAT score Response variable: College GPA  Formula For $\mathbb{R}$ $$y = ax + b$$</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bayes on k317h</title>
+    <link>https://keithzeng.github.io/tags/bayes/</link>
+    <description>Recent content in Bayes on k317h</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jan 2019 18:00:14 -0800</lastBuildDate>
+    
+	<atom:link href="https://keithzeng.github.io/tags/bayes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bayes Optimal Classifier</title>
+      <link>https://keithzeng.github.io/posts/bayes-optimal-classifier/</link>
+      <pubDate>Thu, 31 Jan 2019 18:00:14 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/bayes-optimal-classifier/</guid>
+      <description>Background Marginal Distribution
+Three ways to sample from P
+ Draw (x,y) Draw y according to its marginal distribution, then x according to the conditional distribution of x | y Draw X according to its marginal distribution, then Y according to the conditional distribution of y | x  Define:
+$\mu$: distribution on $X$
+$\eta$: conditional distribution y|x
+Classifier Normal Classifier
+$h : x \rightarrow y$
+$R(h) = Pr_{(x,y) \in p} (h(x) \neq y)$, where R = risk</description>
+    </item>
+    
+  </channel>
+</rss>

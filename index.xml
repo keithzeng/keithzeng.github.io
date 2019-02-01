@@ -6,10 +6,56 @@
     <description>Recent content on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Jan 2019 17:02:35 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jan 2019 22:30:23 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linear Regression</title>
+      <link>https://keithzeng.github.io/posts/linear-regression/</link>
+      <pubDate>Thu, 31 Jan 2019 22:30:23 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/linear-regression/</guid>
+      <description>Basic Idea Fit a line to a bunch of points.
+Example Without extra information, we will predict the mean 2.47.
+Average squared error = $\mathbb{E} [(studentGPA - predictedGPA)^2]$ = Variance
+If we have SAT scores, then we can fit a line.
+Now if we predict based on this line, the MSE drops to 0.43.
+This is a regression problem with:
+ Predictor variable: SAT score Response variable: College GPA  Formula For $\mathbb{R}$ $$y = ax + b$$</description>
+    </item>
+    
+    <item>
+      <title>Bayes Optimal Classifier</title>
+      <link>https://keithzeng.github.io/posts/bayes-optimal-classifier/</link>
+      <pubDate>Thu, 31 Jan 2019 18:00:14 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/bayes-optimal-classifier/</guid>
+      <description>Background Marginal Distribution
+Three ways to sample from P
+ Draw (x,y) Draw y according to its marginal distribution, then x according to the conditional distribution of x | y Draw X according to its marginal distribution, then Y according to the conditional distribution of y | x  Define:
+$\mu$: distribution on $X$
+$\eta$: conditional distribution y|x
+Classifier Normal Classifier
+$h : x \rightarrow y$
+$R(h) = Pr_{(x,y) \in p} (h(x) \neq y)$, where R = risk</description>
+    </item>
+    
+    <item>
+      <title>Marginal Distribution</title>
+      <link>https://keithzeng.github.io/posts/marginal-distribution/</link>
+      <pubDate>Thu, 31 Jan 2019 17:57:34 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/marginal-distribution/</guid>
+      <description>Marginal Distribution: It&amp;rsquo;s a function that gives the probability based on only subset of the variables.1. For example,
+Or in mathematical way, for discrete
+$$Pr(X = x) = \sum_y Pr(X = x, Y = y) = \sum_y Pr(X = x | Y = y) Pr(Y = y)$$
+and for continuous
+$$p_X(x) = \int_y p_{X,Y}(x,y) dy = \int_y p_{X|Y}(x|y)p_Y(y) dy$$
+and it can also be written as Expected Vaue
+$$p_X(x) = \int_y p_{X|Y} (x|y) p_Y(y) dy = \mathbb{E}_Y[p_{X|Y} (x|y)]$$</description>
+    </item>
     
     <item>
       <title>lp norm</title>

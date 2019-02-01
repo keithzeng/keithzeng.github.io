@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distribution on k317h</title>
+    <link>https://keithzeng.github.io/tags/distribution/</link>
+    <description>Recent content in Distribution on k317h</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jan 2019 17:57:34 -0800</lastBuildDate>
+    
+	<atom:link href="https://keithzeng.github.io/tags/distribution/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Marginal Distribution</title>
+      <link>https://keithzeng.github.io/posts/marginal-distribution/</link>
+      <pubDate>Thu, 31 Jan 2019 17:57:34 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/marginal-distribution/</guid>
+      <description>Marginal Distribution: It&amp;rsquo;s a function that gives the probability based on only subset of the variables.1. For example,
+Or in mathematical way, for discrete
+$$Pr(X = x) = \sum_y Pr(X = x, Y = y) = \sum_y Pr(X = x | Y = y) Pr(Y = y)$$
+and for continuous
+$$p_X(x) = \int_y p_{X,Y}(x,y) dy = \int_y p_{X|Y}(x|y)p_Y(y) dy$$
+and it can also be written as Expected Vaue
+$$p_X(x) = \int_y p_{X|Y} (x|y) p_Y(y) dy = \mathbb{E}_Y[p_{X|Y} (x|y)]$$</description>
+    </item>
+    
+  </channel>
+</rss>

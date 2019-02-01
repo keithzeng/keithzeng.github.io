@@ -70,6 +70,94 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/linear-regression/" title="Linear Regression" >Linear Regression</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Basic Idea Fit a line to a bunch of points.
+Example Without extra information, we will predict the mean 2.47.
+Average squared error = $\mathbb{E} [(studentGPA - predictedGPA)^2]$ = Variance
+If we have SAT scores, then we can fit a line.
+Now if we predict based on this line, the MSE drops to 0.43.
+This is a regression problem with:
+ Predictor variable: SAT score Response variable: College GPA  Formula For $\mathbb{R}$ $$y = ax + b$$……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/linear-regression/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/" title="Bayes Optimal Classifier" >Bayes Optimal Classifier</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Background Marginal Distribution
+Three ways to sample from P
+ Draw (x,y) Draw y according to its marginal distribution, then x according to the conditional distribution of x | y Draw X according to its marginal distribution, then Y according to the conditional distribution of y | x  Define:
+$\mu$: distribution on $X$
+$\eta$: conditional distribution y|x
+Classifier Normal Classifier
+$h : x \rightarrow y$
+$R(h) = Pr_{(x,y) \in p} (h(x) \neq y)$, where R = risk……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/marginal-distribution/" title="Marginal Distribution" >Marginal Distribution</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/mathematic">mathematic</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Marginal Distribution: It&rsquo;s a function that gives the probability based on only subset of the variables.1. For example,
+Or in mathematical way, for discrete
+$$Pr(X = x) = \sum_y Pr(X = x, Y = y) = \sum_y Pr(X = x | Y = y) Pr(Y = y)$$
+and for continuous
+$$p_X(x) = \int_y p_{X,Y}(x,y) dy = \int_y p_{X|Y}(x|y)p_Y(y) dy$$
+and it can also be written as Expected Vaue
+$$p_X(x) = \int_y p_{X|Y} (x|y) p_Y(y) dy = \mathbb{E}_Y[p_{X|Y} (x|y)]$$……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/marginal-distribution/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/lp-norm/" title="lp norm" >lp norm</a>
                                 </h1>
                             </header>
@@ -254,59 +342,6 @@ To analyze the above recurrence relation, check below image.  At level j, we hav
                             <p class="readmore"><a href="https://keithzeng.github.io/posts/merge-sort/">Read More</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/margin-error/" title="Margin of Error" >Margin of Error</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/27
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/mathematic">mathematic</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Z-Score vs T-Score Z-Score Link
-Z-Score&rsquo;s formula $$z = \frac{X - \mu}{\sigma}$$ where X = sample mean, $\mu$ = population means, $\sigma$ = population standard deviation.
-Also, we use Z Score when sample size &gt;= 30 or we know the population&rsquo;s mean dna SD.
-Z Table
-T-Score T-Score T-Score&rsquo;s formula $$T = \frac{X - \mu}{s/ \sqrt{n}}$$ where X = sample mean, $\mu$ = population mean, s = sample standard deviation, and n = sample size.……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/margin-error/">Read More</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/prototype-selection/" title="Prototype Selection" >Prototype Selection</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/27
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Backgrond kNN prototype selection Summary List
-There are couple drawbacks for KNN
- high storage for data computation for decision boundary intolerance to noise  There are couple methods address above issue
- better similarity metric or better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/prototype-selection/">Read More</a></p>
-                        </article>
-                    
 
                     
 
@@ -351,6 +386,18 @@ There are couple drawbacks for KNN
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/linear-regression/" title="Linear Regression">Linear Regression</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/" title="Bayes Optimal Classifier">Bayes Optimal Classifier</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/marginal-distribution/" title="Marginal Distribution">Marginal Distribution</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/lp-norm/" title="lp norm">lp norm</a>
     </li>
     
@@ -378,18 +425,6 @@ There are couple drawbacks for KNN
         <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort">Merge Sort</a>
     </li>
     
-    <li>
-        <a href="https://keithzeng.github.io/posts/margin-error/" title="Margin of Error">Margin of Error</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/prototype-selection/" title="Prototype Selection">Prototype Selection</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/k-clustering/" title="K Clustering">K Clustering</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -404,11 +439,11 @@ There are couple drawbacks for KNN
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(3)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(5)</a>
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(2)</a>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(3)</a>
     </li>
     
     <li>
@@ -435,7 +470,11 @@ There are couple drawbacks for KNN
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/statistical-learning/">statistical-learning(5)</a>
+        <a href="https://keithzeng.github.io/categories/probability/">probability(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/statistical-learning/">statistical-learning(7)</a>
     </li>
     
 </ul>
@@ -445,6 +484,8 @@ There are couple drawbacks for KNN
         <h3 class="widget-title">Tags</h3>
 <div class="tagcloud">
     
+    <a href="https://keithzeng.github.io/tags/bayes/">bayes</a>
+    
     <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
     
     <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
@@ -452,6 +493,8 @@ There are couple drawbacks for KNN
     <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
     
     <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
     
     <a href="https://keithzeng.github.io/tags/knn/">knn</a>
     
@@ -466,6 +509,8 @@ There are couple drawbacks for KNN
     <a href="https://keithzeng.github.io/tags/other/">other</a>
     
     <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/regression/">regression</a>
     
     <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
     
