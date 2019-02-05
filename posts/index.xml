@@ -6,10 +6,22 @@
     <description>Recent content in Posts on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Feb 2019 02:06:44 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Feb 2019 14:39:49 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Logistic Regression</title>
+      <link>https://keithzeng.github.io/posts/logistic-regression/</link>
+      <pubDate>Fri, 01 Feb 2019 14:39:49 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/logistic-regression/</guid>
+      <description>Uncertainty in Prediction Related to Linear Regression.
+The available features x do not contain enough information to perfectly predict y, such as
+ x = medical record for patients at risk for a disease y = will he contact disease in next 5 years  Model We still going to use linear model for conditional probability estmation
+$$w_1x_1 + w_2x_2 + &amp;hellip; + w_dx_d + b = w \cdot x + b$$</description>
+    </item>
     
     <item>
       <title>Matrix</title>
@@ -23,18 +35,6 @@ $|A| = det(A) = ad -bc$
 Determinant of 3x3 matrix, also called expansion of the determinant by first row. Link.
 $$ B= \begin{bmatrix} a &amp;amp; b &amp;amp; c \newline d &amp;amp; e &amp;amp; f \newline g &amp;amp; h &amp;amp; k \end{bmatrix} $$
 $|B| = det(B) = a\begin{vmatrix} e &amp;amp; f \newline h &amp;amp; k \end{vmatrix} -b\begin{vmatrix} d &amp;amp; f \newline g &amp;amp; k \end{vmatrix} +c\begin{vmatrix} d &amp;amp; e \newline g &amp;amp; h \end{vmatrix}$</description>
-    </item>
-    
-    <item>
-      <title>Logistic Regression</title>
-      <link>https://keithzeng.github.io/posts/logistic-regression/</link>
-      <pubDate>Fri, 01 Feb 2019 00:39:49 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/posts/logistic-regression/</guid>
-      <description>Uncertainty in Prediction Related to Linear Regression.
-The available features x do not contain enough information to perfectly predict y, such as
- x = medical record for patients at risk for a disease y = will he contact disease in next 5 years  Model We still going to use linear model for conditional probability estmation
-$$w_1x_1 + w_2x_2 + &amp;hellip; + w_dx_d + b = w \cdot x + b$$</description>
     </item>
     
     <item>

@@ -6,7 +6,7 @@
     <description>Recent content in Machine Learning on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Feb 2019 00:39:49 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Feb 2019 14:39:49 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Logistic Regression</title>
       <link>https://keithzeng.github.io/posts/logistic-regression/</link>
-      <pubDate>Fri, 01 Feb 2019 00:39:49 -0800</pubDate>
+      <pubDate>Fri, 01 Feb 2019 14:39:49 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/posts/logistic-regression/</guid>
       <description>Uncertainty in Prediction Related to Linear Regression.
