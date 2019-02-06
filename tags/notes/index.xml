@@ -88,7 +88,8 @@ Or an n x n table, whose (i, j) entry is $a_ib_j$</description>
       <pubDate>Wed, 30 Jan 2019 00:02:09 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/posts/integer-multiplication/</guid>
-      <description>Problem Algorithm Let&amp;rsquo;s say we define $x = x_1 2^{n/2} + x_0$, then xy become \begin{align} xy &amp;amp;= (x_1 2^{n/2} + x_0)(y_1 2^{n/2} + y_0) \newline &amp;amp;= x_1 y_1 2^n + (x_1 y_0 + x_0 y_1)2^{n/2} + x_0 y_0 \end{align}
+      <description>Problem Wiki Explanation
+Algorithm Let&amp;rsquo;s say we define $x = x_1 2^{n/2} + x_0$, then xy become \begin{align} xy &amp;amp;= (x_1 2^{n/2} + x_0)(y_1 2^{n/2} + y_0) \newline &amp;amp;= x_1 y_1 2^n + (x_1 y_0 + x_0 y_1)2^{n/2} + x_0 y_0 \end{align}
 So we have $$T(n) \leq 4T(n/2) + cn$$ But this is essentially $$T(n) \leq O(n^{\log_2 q}) = O(n^2)$$
 However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y_1 + x_1y_0 + x_0y_1 + x_0y_0$.</description>
     </item>

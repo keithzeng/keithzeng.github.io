@@ -6,10 +6,21 @@
     <description>Recent content in Posts on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Feb 2019 14:39:49 -0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Feb 2019 00:35:35 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Convex Optimization</title>
+      <link>https://keithzeng.github.io/posts/convex-optimization/</link>
+      <pubDate>Wed, 06 Feb 2019 00:35:35 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/convex-optimization/</guid>
+      <description>Gradient &amp;amp;&amp;amp; Hessian The gradient of a f, d x 1, can be represented as follow $$ \nabla f(x) = \begin{bmatrix} \frac {\partial f(x)} {\partial x_1} \newline &amp;hellip;\newline \frac {\partial f(x)} {\partial x_d} \end{bmatrix} $$
+and the Hessian, d x d, can be represented as
+$$ \nabla^2 f(x) = \begin{bmatrix} \frac {\partial^2 f(x)} {\partial x_1^2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_1x_2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_1x_d} \newline &amp;hellip; &amp;amp; &amp;hellip; &amp;amp; &amp;hellip;\newline \frac {\partial^2 f(x)} {\partial x_d^2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_dx_2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_dx_d} \newline \end{bmatrix} $$</description>
+    </item>
     
     <item>
       <title>Logistic Regression</title>
@@ -129,7 +140,8 @@ Or an n x n table, whose (i, j) entry is $a_ib_j$</description>
       <pubDate>Wed, 30 Jan 2019 00:02:09 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/posts/integer-multiplication/</guid>
-      <description>Problem Algorithm Let&amp;rsquo;s say we define $x = x_1 2^{n/2} + x_0$, then xy become \begin{align} xy &amp;amp;= (x_1 2^{n/2} + x_0)(y_1 2^{n/2} + y_0) \newline &amp;amp;= x_1 y_1 2^n + (x_1 y_0 + x_0 y_1)2^{n/2} + x_0 y_0 \end{align}
+      <description>Problem Wiki Explanation
+Algorithm Let&amp;rsquo;s say we define $x = x_1 2^{n/2} + x_0$, then xy become \begin{align} xy &amp;amp;= (x_1 2^{n/2} + x_0)(y_1 2^{n/2} + y_0) \newline &amp;amp;= x_1 y_1 2^n + (x_1 y_0 + x_0 y_1)2^{n/2} + x_0 y_0 \end{align}
 So we have $$T(n) \leq 4T(n/2) + cn$$ But this is essentially $$T(n) \leq O(n^{\log_2 q}) = O(n^2)$$
 However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y_1 + x_1y_0 + x_0y_1 + x_0y_0$.</description>
     </item>

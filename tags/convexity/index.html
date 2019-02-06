@@ -7,27 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Merge Sort | k317h</title>
-    <meta property="og:title" content="Merge Sort - k317h">
+    <title>Convexity | k317h</title>
+    <meta property="og:title" content="Convexity - k317h">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-01-29T01:14:32&#43;08:00">
-        
-        
-    <meta property="article:modified_time" content="2019-01-29T01:14:32&#43;08:00">
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Merge Sort">
+    <meta name="description" content="Convexity">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/posts/merge-sort/">
+    <meta property="og:url" content="https://keithzeng.github.io/tags/convexity/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
-        <link rel="stylesheet" href="/css/prism.css">
-    
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/convexity/index.xml" title="k317h" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -36,6 +31,7 @@
     
     
 </head>
+
 
 <body>
 <header id="header" class="clearfix">
@@ -72,186 +68,47 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Merge Sort</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            2019/1/29
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Views</span></span>
-                        </div>
-                        
-                        <div class="post-content">
-                            
+                    <h3 class="archive-title">
+                        Articles in
+                        <span class="keyword">convexity</span>
+                        tag
+                    </h3>
 
-<h2 id="problem">Problem</h2>
-
-<p>Sort the elements</p>
-
-<p>Abstract the behavior:<br />
-1. Divide the input into two pieces of equal size O(n)
-1. solve the two subproblems on these pieces separately by recursion
-1. combine the two results into an overall solution O(n)</p>
-
-<h2 id="recurrence">Recurrence</h2>
-
-<h3 id="time-complexity">Time Complexity</h3>
-
-<h4 id="q-2">q = 2</h4>
-
-<p>T(n) ≤ 2T(n/2) + cn</p>
-
-<p>To analyze the above recurrence relation, check below image.
-<img src="/img/cse202/recurrence-tree.png" alt="Recurrence" /></p>
-
-<ul>
-<li>At level j, we have $2^j$ nodes with size $n/2^j$</li>
-<li>Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$</li>
-<li>There are logn levels, so T(n) = O(nlogn)</li>
-</ul>
-
-<h3 id="general-case">General Case</h3>
-
-<h4 id="for-q-2">For q &gt; 2</h4>
-
-<p>T(n) ≤ qT(n/2) + cn</p>
-
-<h4 id="solving-directly">Solving directly</h4>
-
-<p><img src="/img/cse202/recurrence-tree-q.png" alt="Recurrence" /></p>
-
-<ul>
-<li>At level j, we have $q^j$ nodes with size $n/2^j$</li>
-<li>Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $q^j = (q/2)^jcn$</li>
-<li>So
-$$T(n) \leq cn\sum_{j=0}^{\log_2 {n-1}}(\frac{q}{2})^j$$</li>
-</ul>
-
-<p>Since this is a geometric series with r = q/2
-$$T(n) \leq cn\frac{r^{\log_2 n} - 1}{r - 1} \leq cn\frac{r^{\log_2 n}}{r - 1}$$</p>
-
-<p>We then move the r - 1 out to form the constant
-$$T(n) \leq \frac{c}{r - 1}nr^{\log_2 n}$$</p>
-
-<p>To figure out what is $r^{\log_2 n}$, we use $a^{\log b} = b^{\log a}$ when a &gt; 1 and b &gt; 1.</p>
-
-<p>So, $r^{log_2 n} = n^{\log_2 r} = n^{\log_2 \frac{q}{2}} = n^{{\log_2 q} - 1}$</p>
-
-<p>Thus, we have
-$$T(n) \leq \frac{c}{r - 1}nn^{\log_2 q - 1} \leq \frac{c}{r - 1}n^{\log_2 q} = O(n^{\log_2 q})$$</p>
-
-<h4 id="alternative">Alternative</h4>
-
-<p>We guess
-$$T(n) \leq kn^d$$
-which leads to
-\begin{align}
-T(n) &amp;\leq qT(n/2) + cn \newline
-     &amp; = qk(n/2)^d +cn \newline
-     &amp; = \frac{q}{2^d}kn^d + cn
-\end{align}
-Choosing $2^d = q$ -&gt; $d = \log_2 q$
-$$T(n) \leq kn^{\log_2 q} + cn$$
-However, there is cn left. We guess another solution.
-$$T(n) \leq kn^d - ln$$
-which leads to
-\begin{align}
-T(n) &amp;\leq qk(n/2)^d - ql(n/2)+cn \newline
-     &amp; = \frac{q}{2^d}kn^d - \frac{ql}{2}n+cn \newline
-     &amp; = kn^d - \frac{ql}{2}n+cn \newline
-     &amp; = kn^d - (\frac{ql}{2} - c)n
-\end{align}</p>
-
-<h4 id="for-q-1">For q = 1</h4>
-
-<p><img src="/img/cse202/recurrence-tree-q1.png" alt="Recurrence" /></p>
-
-<ul>
-<li>At first level we have $O(cn)$, next level we have $O(cn/2)$</li>
-<li>At level j, we have work of $O(cn/2^j)$</li>
-<li>So total amount of work
-\begin{align}
-T(n) &amp;\leq cn\sum_{j=0}^{\log_2 {n-1}} \frac{1}{2^j} \newline
-&amp;= 2cn \newline
-&amp;= O(n)
-\end{align}</li>
-</ul>
-
-<h3 id="another-look-at-mergesort">Another Look at Mergesort</h3>
-
-<p>if divide and combine takes $O(n^2)$
-The recurrence relation becomes
-$$T(n) \leq 2T(n/2) + cn^2$$</p>
-
-<ul>
-<li>First level, size n, takes $cn^2$. In next level, it takes $c(n/2)^2 = c{n^2}/4$, total of $c{n^2}/2$. Third level, total of $c{n^2}/4$.</li>
-<li>for level j, then we have $c{n^2}/2^j$</li>
-<li>So
-$$T(n) \leq cn^2 \sum_{j=0}^{\log_2 {n - 1}} (\frac{1}{2^j}) \leq 2cn^2 = O(n^2)$$</li>
-</ul>
-
-                        </div>
-
-                        
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="/posts/k-clustering/">K Clustering</a></li>
-        
-        <li><a href="/posts/probability/">Probability</a></li>
-        
-        <li><a href="/posts/margin-error/">Margin of Error</a></li>
-        
-        <li><a href="/posts/prototype-selection/">Prototype Selection</a></li>
-        
-        <li><a href="/about/">About</a></li>
-        
-    </ul>
-</div>
-
-
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="https://keithzeng.github.io/tags/cse202">cse202</a></li>
-                                
-                                <li><a href="https://keithzeng.github.io/tags/notes">notes</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
                     
-    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/convex-optimization/">Convex Optimization</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/6
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Gradient &amp;&amp; Hessian The gradient of a f, d x 1, can be represented as follow $$ \nabla f(x) = \begin{bmatrix} \frac {\partial f(x)} {\partial x_1} \newline &hellip;\newline \frac {\partial f(x)} {\partial x_d} \end{bmatrix} $$
+and the Hessian, d x d, can be represented as
+$$ \nabla^2 f(x) = \begin{bmatrix} \frac {\partial^2 f(x)} {\partial x_1^2} &amp; \frac {\partial^2 f(x)} {\partial x_1x_2} &amp; \frac {\partial^2 f(x)} {\partial x_1x_d} \newline &hellip; &amp; &hellip; &amp; &hellip;\newline \frac {\partial^2 f(x)} {\partial x_d^2} &amp; \frac {\partial^2 f(x)} {\partial x_dx_2} &amp; \frac {\partial^2 f(x)} {\partial x_dx_d} \newline \end{bmatrix} $$……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/convex-optimization/">Read More</a></p>
+                            </div>
+                        </article>
+                    
 
-    
-    
-    <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= "keithzeng/blog"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-      </script>
-    </div>
-    
+                    
+
+
+
+
                 </div>
             </div>
+
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -461,6 +318,7 @@ if (!doNotTrack) {
 
 
 <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
 
 
 

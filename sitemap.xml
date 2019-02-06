@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://keithzeng.github.io/posts/convex-optimization/</loc>
+    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/posts/logistic-regression/</loc>
     <lastmod>2019-02-01T14:39:49-08:00</lastmod>
   </url>
@@ -122,6 +127,12 @@
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/tags/convexity/</loc>
+    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/tags/cse202/</loc>
     <lastmod>2019-01-30T00:31:46-08:00</lastmod>
     <priority>0</priority>
@@ -183,7 +194,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/categories/machine-learning/</loc>
-    <lastmod>2019-02-01T14:39:49-08:00</lastmod>
+    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -237,7 +248,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/posts/</loc>
-    <lastmod>2019-02-01T14:39:49-08:00</lastmod>
+    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -279,7 +290,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/series/statistical-learning/</loc>
-    <lastmod>2019-02-01T14:39:49-08:00</lastmod>
+    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -291,7 +302,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/</loc>
-    <lastmod>2019-02-01T14:39:49-08:00</lastmod>
+    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
