@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Linear Regression | k317h</title>
-    <meta property="og:title" content="Linear Regression - k317h">
+    <title>Positive Semi Definite | k317h</title>
+    <meta property="og:title" content="Positive Semi Definite - k317h">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-01-31T22:30:23&#43;08:00">
+    <meta property="article:published_time" content="2019-02-07T15:29:45&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-01-31T22:30:23&#43;08:00">
+    <meta property="article:modified_time" content="2019-02-07T15:29:45&#43;08:00">
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Linear Regression">
+    <meta name="description" content="Positive Semi Definite">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/posts/linear-regression/">
+    <meta property="og:url" content="https://keithzeng.github.io/posts/positive-semi-definite/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -74,16 +74,16 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">Linear Regression</h1>
+                            <h1 class="post-title">Positive Semi Definite</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019/1/31
+                            2019/2/7
                         </date>
                         
                         <div class="post-meta">
                             <span>|</span>
                             
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/mathematic">mathematic</a></span>
                             
                         </div>
                         
@@ -95,163 +95,195 @@
                         <div class="post-content">
                             
 
-<h2 id="basic-idea">Basic Idea</h2>
+<h2 id="psd">PSD</h2>
 
-<p>Fit a line to a bunch of points.</p>
+<p><a href="https://www.comp.nus.edu.sg/~cs5240/lecture/matrix-differentiation.pdf">differential equation</a></p>
 
-<h2 id="example">Example</h2>
+<p>Any matrix $A_{d \times d}$ is said to be PSD if $x^TAx \geq$ 0 $\forall$ vector $x_{d \times 1}$.</p>
 
-<p><img src="/img/cse250/linear-regression-gpa-distribution.png" alt="linear-regression-gpa-distribution" /></p>
+<h2 id="examples">Examples</h2>
 
-<p>Without extra information, we will predict the mean 2.47.</p>
+<h3 id="identity-matrix-i-d-times-d">Identity matrix $I_{d \times d}$:</h3>
 
-<p>Average squared error = $\mathbb{E} [(studentGPA - predictedGPA)^2]$ = Variance</p>
+<p>$$
+A =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \newline
+0 &amp; 1 &amp; 0 &amp; 0 \newline
+0 &amp; 0 &amp; 1 &amp; 0 \newline
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
 
-<p>If we have SAT scores, then we can fit a line.</p>
+<p>Then</p>
 
-<p><img src="/img/cse250/gpa-vs-sat.png" alt="gpa-vs-sat" /></p>
+<p>\begin{align}
+x^TAx &amp;= \sum_{i = 1}^d \sum_{i = 1}^d A_{i,j}x_ix_j \newline
+&amp;= \sum_{i = 1}^d A_{i,i} x_i^2\newline
+&amp;= \sum_{i = 1}^d x_i^2 \newline
+&amp;\geq 0
+\end{align}</p>
 
-<p>Now if we predict based on this line, the MSE drops to 0.43.</p>
+<h3 id="simple-matrix">Simple Matrix</h3>
 
-<p>This is a regression problem with:</p>
+<p>$$
+A =
+\begin{bmatrix}
+2 &amp; -1 \newline
+-1 &amp; 1 \newline
+\end{bmatrix}
+$$</p>
 
-<ul>
-<li><strong>Predictor variable</strong>: SAT score</li>
-<li><strong>Response variable</strong>: College GPA</li>
-</ul>
+<p>\begin{align}
+x^TAX &amp;=
+\begin{bmatrix}x_1 &amp; x_2\end{bmatrix}
+\begin{bmatrix}2 &amp; -1 \newline -1 &amp; 1\end{bmatrix}
+\begin{bmatrix}x_1 \newline x_2\end{bmatrix}\newline
+&amp;= 2x_1^2 + x_2^2 - 2x_1x_2 \newline
+&amp;= (x_1-x_2)^2 + x_1^2 \newline
+&amp;\geq 0
+\end{align}</p>
 
-<h2 id="formula">Formula</h2>
+<h3 id="diagonal-matrix">Diagonal Matrix</h3>
 
-<p>For $\mathbb{R}$
-$$y = ax + b$$</p>
+<p>$$
+A =
+\begin{bmatrix}
+A_{11} &amp; &hellip; &amp; 0 \newline
+0 &amp; A_{22} &amp; &hellip; \newline
+&hellip; &amp; &hellip; &amp; &hellip; \newline
+0 &amp; 0 &amp; A_{dd}
+\end{bmatrix}
+$$</p>
 
-<p>For $\mathbb{R}^10$
-$$f(x) = w_1x_1 + w_2x_2 + &hellip; + w_{10}x_{10} + b = wx + b$$</p>
+<p>$$x^TAX = \sum_{i=1}^d A_{ii}x_i^2$$</p>
 
-<p>where $w = (w_1, w_2, &hellip;, w_{10})$</p>
+<p>If we conisder vector x to be
+\begin{bmatrix}
+1 \newline
+0 \newline
+&hellip; \newline
+0 \newline
+\end{bmatrix}</p>
 
-<h2 id="loss-function">Loss Function</h2>
+<p>$A_{11}$ has to be $\geq$ 0, same logic applies to other A&rsquo;s.</p>
 
-<p>MSE is follow
-$$MSE(a, b) = \frac{1}{n} \sum_{i=1}^n (y^{(i)} -(ax^{(i)} + b))^2$$</p>
+<p>So if All $A_{ii} \geq$ 0, then A is PSD.</p>
 
-<p>and loss function for $\mathbb{R}$
-$$L(a, b) = \sum_{i=1}^n (y^{(i)} -(ax^{(i)} + b))^2$$</p>
-
-<p>Analagously for $\mathbb{R}^d$</p>
-
-<p>$$L(w, b) = \sum_{i=1}^n (y^{(i)} -(w \cdot x^{(i)} + b))^2$$
-where $x \in \mathbb{E}^d$, $y \in \mathbb{E}$, $w \in \mathbb{E}^d$, and $b \in \mathbb{E}$</p>
-
-<p>Alternatively, we can write as:
-$$f(x) = \tilde{w} \cdot \tilde{x}$$
-$$L( \tilde{w} ) = \sum_{i=1}^n (y^{(i)} - \tilde{w} \cdot \tilde{x}^{(i)})^2$$
-where $\tilde{x} = (1, x) \in \mathbb{E}^{d+1}$ and $\tilde{w} = (b, w) \in \mathbb{E}^{d+1}$, and minimized at $\tilde{w} = (X^TX)^{-1}(X^Ty)$</p>
-
-<h2 id="regularization">Regularization</h2>
-
-<p>Regularization term is crucial in avoiding complex model. This term is introduced as follow:</p>
-
-<p>$$L(w, b) = \sum_{i=1}^n (y^{(i)} -(w \cdot x^{(i)} + b))^2 + \lambda||w||^2$$
-and the solution is $w = (X^TX + \lambda I)^{-1}(X^Ty)$</p>
-
-<p>With the help of regularizer, we avoid the complex molde (overfitting the data), and obtain a better performance on test set.</p>
-
-<table>
-<thead>
-<tr>
-<th align="center">λ</th>
-<th align="center">training MSE</th>
-<th align="center">test MSE</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="center">0.00001</td>
-<td align="center">0</td>
-<td align="center">585.81</td>
-</tr>
-
-<tr>
-<td align="center">0.0001</td>
-<td align="center">0</td>
-<td align="center">564.28</td>
-</tr>
-
-<tr>
-<td align="center">0.001</td>
-<td align="center">0</td>
-<td align="center">404.08</td>
-</tr>
-
-<tr>
-<td align="center">0.01</td>
-<td align="center">0.01</td>
-<td align="center">83.48</td>
-</tr>
-
-<tr>
-<td align="center">0.1</td>
-<td align="center">0.03</td>
-<td align="center">19.26</td>
-</tr>
-
-<tr>
-<td align="center">1</td>
-<td align="center">0.07</td>
-<td align="center">7.02</td>
-</tr>
-
-<tr>
-<td align="center">10</td>
-<td align="center">0.35</td>
-<td align="center">2.84</td>
-</tr>
-
-<tr>
-<td align="center">100</td>
-<td align="center">2.4</td>
-<td align="center">5.79</td>
-</tr>
-
-<tr>
-<td align="center">1000</td>
-<td align="center">8.19</td>
-<td align="center">10.97</td>
-</tr>
-
-<tr>
-<td align="center">10000</td>
-<td align="center">10.83</td>
-<td align="center">12.63</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="ridge-regression">Ridge Regression</h3>
-
-<p>$$L(w, b) = \sum_{i=1}^n (y^{(i)} -(w \cdot x^{(i)} + b))^2 + \lambda||w||_2^2$$</p>
-
-<h3 id="lasso-regression-produce-sparse-w">Lasso Regression (Produce sparse w)</h3>
-
-<p>$$L(w, b) = \sum_{i=1}^n (y^{(i)} -(w \cdot x^{(i)} + b))^2 + \lambda||w||_1$$</p>
-
-<p>Key differene<sup class="footnote-ref" id="fnref:ridge"><a href="#fn:ridge">1</a></sup>:</p>
-
-<ul>
-<li>Ridge works well for overfitting</li>
-<li>Lasso shrinks less important features, good for feature selection</li>
-</ul>
-<div class="footnotes">
-
-<hr />
+<h2 id="properties-of-psd">Properties of PSD</h2>
 
 <ol>
-<li id="fn:ridge">L1 and L2 Regularization Methods, <a href="https://towardsdatascience.com/l1-and-l2-regularization-methods-ce25e7fc831c">https://towardsdatascience.com/l1-and-l2-regularization-methods-ce25e7fc831c</a>
- <a class="footnote-return" href="#fnref:ridge"><sup>[return]</sup></a></li>
+<li>For any matrix A that is PSD, cA is also PSD, if c $\geq$ 0.</li>
+<li>Given two PSD matrices, A and B, (A + B) is also PSD
+
+<ul>
+<li>Proof: $x^T(A + B)X = x^TAx + x^TBX \geq 0 \forall x \subseteq R^d$</li>
+</ul></li>
+<li>A matrix M is PSD iff M can be written as $M = UU^T$ for some matrix U.
+
+<ul>
+<li>Proof: $UU^T$ is square</li>
+<li>$x^TMx = x^TUU^Tx = (U^Tx)^T U^Tx = ||U^Tx||^2 \geq 0$</li>
+</ul></li>
 </ol>
-</div>
+
+<h2 id="convexity">Convexity</h2>
+
+<ol>
+<li>convexity: a function f: R $\rightarrow$ R is convex iff its second derivative $\geq$ 0 everywhere</li>
+<li>A function f: R $\rightarrow$ R is convex iff its Hessian is PSD</li>
+</ol>
+
+<h3 id="examples-1">Examples</h3>
+
+<p><strong>Example 1</strong></p>
+
+<p>Let $x \in R^d$$</p>
+
+<p>$$f(x) = ||x||^2 = x^T x$$</p>
+
+<p>$$\nabla f = 2x$$</p>
+
+<p>$$\nabla^2 f = 2I$$</p>
+
+<p>$\therefore$ it is PSD, since c $\geq$ 0 and I is PSD.</p>
+
+<p><strong>Example 2</strong></p>
+
+<p>Let $x = M_{1 \times d}$ and $u = M_{d \times 1}$</p>
+
+<p>$$f(x) = (ux)^2$$</p>
+
+<p>$$\nabla f = 2uxu$$</p>
+
+<p>$$\nabla^2 f = 2uu^T$$</p>
+
+<p>Since $uu^T$ is PSD, $2uu^T$ is also PSD.</p>
+
+<p><strong>Example 3</strong></p>
+
+<p>\begin{align}
+L(w) &amp;= \sum_{i=1}^n (y^{(i)} - (w \cdot x^{(i)}))^2 \newline
+&amp;= (y - xw)^T(y - xw) \newline
+&amp;= y^Ty - 2y^Txw + w^Tx^Txw
+\end{align}</p>
+
+<p>Then</p>
+
+<p>$$\nabla f = 2y^Tx + 2w^Tx^Tx$ using $\frac {dx^TAx}{dx} = x^T(A + A^T)$$</p>
+
+<p>$$\nabla^2 f = 2x^Tx$$</p>
+
+<p>Since $x^Tx$ is PSD, $2x^Tx$ is also PSD.</p>
+
+<p><strong>Example 4</strong></p>
+
+<p>$$L(w) = \sum_{i=1}^n \ln (1 + e^{-y^{(i)} w \cdot x^{(i)}})$$</p>
+
+<p>\begin{align}
+\frac {\partial L(w)} {\partial w_j} &amp;= \sum_{i=1}^n \frac{e^{-y^{(i)} w \cdot x^{(i)}}(-y^{(i)}x_j^{(i)})}{1 + e^{-y^{(i)} w \cdot x^{(i)}}} \newline
+&amp;= \sum_{i=1}^n \frac{-y^{(i)}x_j^{(i)}}{1 + e^{y^{(i)} w \cdot x^{(i)}}}
+\end{align}</p>
+
+<p>\begin{align}
+\frac {\partial L(w)} {\partial w_j w_k} &amp;= \sum_{i=1}^n \frac{e^{y^{(i)} w \cdot x^{(i)}}y^{(i)}x_j^{(i)}y^{(i)}x_k^{(i)}}{(1 + e^{y^{(i)} w \cdot x^{(i)}})^2} \newline
+&amp;= \sum_{i=1}^n \frac{e^{y^{(i)} w \cdot x^{(i)}}y^{(i)2} x_j^{(i)}x_k^{(i)}}{(1 + e^{y^{(i)} w \cdot x^{(i)}})^2} \newline
+\end{align}</p>
+
+<p>So Hessian</p>
+
+<p>$$H = \sum_{i=1}^n \frac{e^{y^{(i)} w \cdot x^{(i)}}y^{(i)2}(x^{(i)})^T(x^{(i)})}{(1 + e^{y^{(i)} w \cdot x^{(i)}})^2}$$</p>
+
+<p>$\therefore$ H is PSD.</p>
+
+<p><strong>Example 5</strong></p>
+
+<p>Let $u = M_{d \times 1}$</p>
+
+<p>$$f(x) = e^{u \cdot w}$$</p>
+
+<p>$$\nabla f = e^{u \cdot w}u$$</p>
+
+<p>$$\nabla^2 f = e^{u \cdot w}u^Tu$$</p>
+
+<p>Since $u^Tu$ is PSD, H is PSD.</p>
+
+<p><strong>Example 6</strong></p>
+
+<p>$$L(x) = \sum_{i=1}^n (y^{(i)} - (w \cdot x^{(i)}))^2 + \lambda ||w||^2$$</p>
+
+<p>$$\frac{\partial L}{\partial w_j} = -2 \sum_{i=1}^n (y^{(i)} - (w \cdot x^{(i)}))x_j^{(i)} + 2 \lambda w_j$$</p>
+
+<p>$$\frac{\partial L}{\partial w_j \partial w_k} =
+\begin{cases}
+2 \sum_{i=1}^n x_j^{(i)2} + 2\lambda \text{, if k = j}  \newline
+2 \sum_{i=1}^n x_j^{(i)}x_k^{(i)} \text{, if k != j}
+\end{cases}
+$$</p>
+
+<p>$$H = 2 x^Tx + 2\lambda I$$</p>
+
+<p>$\therefore$ H is PSD.</p>
 
                         </div>
 
@@ -261,15 +293,15 @@ and the solution is $w = (X^TX + \lambda I)^{-1}(X^Ty)$</p>
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/posts/convex-optimization/">Convex Optimization</a></li>
+        
+        <li><a href="/posts/logistic-regression/">Logistic Regression</a></li>
+        
+        <li><a href="/posts/matrix/">Matrix</a></li>
+        
+        <li><a href="/posts/linear-regression/">Linear Regression</a></li>
+        
         <li><a href="/posts/bayes-optimal-classifier/">Bayes Optimal Classifier</a></li>
-        
-        <li><a href="/posts/lp-norm/">lp norm</a></li>
-        
-        <li><a href="/posts/nearest-neighbor-classification/">Nearest Neighbor Classification</a></li>
-        
-        <li><a href="/posts/fast-fourtier-transform/">Fast Fourtier Transform</a></li>
-        
-        <li><a href="/posts/integer-multiplication/">Integer Multiplication</a></li>
         
     </ul>
 </div>
@@ -279,9 +311,7 @@ and the solution is $w = (X^TX + \lambda I)^{-1}(X^Ty)$</p>
                             
                             <ul class="clearfix">
                                 
-                                <li><a href="https://keithzeng.github.io/tags/regression">regression</a></li>
-                                
-                                <li><a href="https://keithzeng.github.io/tags/notes">notes</a></li>
+                                <li><a href="https://keithzeng.github.io/tags/psd">psd</a></li>
                                 
                             </ul>
                             

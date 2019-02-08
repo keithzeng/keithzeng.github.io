@@ -70,6 +70,33 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/positive-semi-definite/" title="Positive Semi Definite" >Positive Semi Definite</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/7
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/mathematic">mathematic</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                PSD differential equation
+Any matrix $A_{d \times d}$ is said to be PSD if $x^TAx \geq$ 0 $\forall$ vector $x_{d \times 1}$.
+Examples Identity matrix $I_{d \times d}$: $$ A = \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 1 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 1 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix} $$
+Then
+\begin{align} x^TAx &amp;= \sum_{i = 1}^d \sum_{i = 1}^d A_{i,j}x_ix_j \newline &amp;= \sum_{i = 1}^d A_{i,i} x_i^2\newline &amp;= \sum_{i = 1}^d x_i^2 \newline &amp;\geq 0 \end{align}……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/positive-semi-definite/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/convex-optimization/" title="Convex Optimization" >Convex Optimization</a>
                                 </h1>
                             </header>
@@ -316,32 +343,6 @@ Or an n x n table, whose (i, j) entry is $a_ib_j$……
                             <p class="readmore"><a href="https://keithzeng.github.io/posts/fast-fourtier-transform/">Read More</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/integer-multiplication/" title="Integer Multiplication" >Integer Multiplication</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/30
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Problem Wiki Explanation
-Algorithm Let&rsquo;s say we define $x = x_1 2^{n/2} + x_0$, then xy become \begin{align} xy &amp;= (x_1 2^{n/2} + x_0)(y_1 2^{n/2} + y_0) \newline &amp;= x_1 y_1 2^n + (x_1 y_0 + x_0 y_1)2^{n/2} + x_0 y_0 \end{align}
-So we have $$T(n) \leq 4T(n/2) + cn$$ But this is essentially $$T(n) \leq O(n^{\log_2 q}) = O(n^2)$$
-However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y_1 + x_1y_0 + x_0y_1 + x_0y_0$.……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/integer-multiplication/">Read More</a></p>
-                        </article>
-                    
 
                     
 
@@ -356,6 +357,10 @@ However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y
     
     <li >
         <a href="https://keithzeng.github.io/page/2/">2</a>
+    </li>
+    
+    <li >
+        <a href="https://keithzeng.github.io/page/3/">3</a>
     </li>
     
 
@@ -384,6 +389,10 @@ However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y
     <section class="widget">
         <h3 class="widget-title">Most Recents</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/positive-semi-definite/" title="Positive Semi Definite">Positive Semi Definite</a>
+    </li>
     
     <li>
         <a href="https://keithzeng.github.io/posts/convex-optimization/" title="Convex Optimization">Convex Optimization</a>
@@ -421,10 +430,6 @@ However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y
         <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/" title="Fast Fourtier Transform">Fast Fourtier Transform</a>
     </li>
     
-    <li>
-        <a href="https://keithzeng.github.io/posts/integer-multiplication/" title="Integer Multiplication">Integer Multiplication</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -443,7 +448,7 @@ However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(4)</a>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(5)</a>
     </li>
     
     <li>
@@ -466,7 +471,7 @@ However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/matrix/">matrix(1)</a>
+        <a href="https://keithzeng.github.io/series/matrix/">matrix(2)</a>
     </li>
     
     <li>
@@ -519,6 +524,8 @@ However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y
     <a href="https://keithzeng.github.io/tags/other/">other</a>
     
     <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/psd/">psd</a>
     
     <a href="https://keithzeng.github.io/tags/rank/">rank</a>
     

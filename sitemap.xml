@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://keithzeng.github.io/posts/positive-semi-definite/</loc>
+    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/posts/convex-optimization/</loc>
     <lastmod>2019-02-06T00:35:35-08:00</lastmod>
   </url>
@@ -200,13 +205,13 @@
   
   <url>
     <loc>https://keithzeng.github.io/categories/mathematic/</loc>
-    <lastmod>2019-02-01T02:06:44-08:00</lastmod>
+    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://keithzeng.github.io/series/matrix/</loc>
-    <lastmod>2019-02-01T02:06:44-08:00</lastmod>
+    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -248,7 +253,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/posts/</loc>
-    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
+    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -261,6 +266,12 @@
   <url>
     <loc>https://keithzeng.github.io/tags/probability/</loc>
     <lastmod>2019-01-24T22:27:30-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/tags/psd/</loc>
+    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -302,7 +313,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/</loc>
-    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
+    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,23 @@
     <description>Recent content on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Feb 2019 00:35:35 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Feb 2019 15:29:45 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Positive Semi Definite</title>
+      <link>https://keithzeng.github.io/posts/positive-semi-definite/</link>
+      <pubDate>Thu, 07 Feb 2019 15:29:45 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/positive-semi-definite/</guid>
+      <description>PSD differential equation
+Any matrix $A_{d \times d}$ is said to be PSD if $x^TAx \geq$ 0 $\forall$ vector $x_{d \times 1}$.
+Examples Identity matrix $I_{d \times d}$: $$ A = \begin{bmatrix} 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \end{bmatrix} $$
+Then
+\begin{align} x^TAx &amp;amp;= \sum_{i = 1}^d \sum_{i = 1}^d A_{i,j}x_ix_j \newline &amp;amp;= \sum_{i = 1}^d A_{i,i} x_i^2\newline &amp;amp;= \sum_{i = 1}^d x_i^2 \newline &amp;amp;\geq 0 \end{align}</description>
+    </item>
     
     <item>
       <title>Convex Optimization</title>

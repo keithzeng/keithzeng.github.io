@@ -7,27 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Linear Regression | k317h</title>
-    <meta property="og:title" content="Linear Regression - k317h">
+    <title>Psd | k317h</title>
+    <meta property="og:title" content="Psd - k317h">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-01-31T22:30:23&#43;08:00">
-        
-        
-    <meta property="article:modified_time" content="2019-01-31T22:30:23&#43;08:00">
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Linear Regression">
+    <meta name="description" content="Psd">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/posts/linear-regression/">
+    <meta property="og:url" content="https://keithzeng.github.io/tags/psd/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
-        <link rel="stylesheet" href="/css/prism.css">
-    
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/psd/index.xml" title="k317h" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -36,6 +31,7 @@
     
     
 </head>
+
 
 <body>
 <header id="header" class="clearfix">
@@ -72,238 +68,49 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Linear Regression</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            2019/1/31
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Views</span></span>
-                        </div>
-                        
-                        <div class="post-content">
-                            
+                    <h3 class="archive-title">
+                        Articles in
+                        <span class="keyword">psd</span>
+                        tag
+                    </h3>
 
-<h2 id="basic-idea">Basic Idea</h2>
-
-<p>Fit a line to a bunch of points.</p>
-
-<h2 id="example">Example</h2>
-
-<p><img src="/img/cse250/linear-regression-gpa-distribution.png" alt="linear-regression-gpa-distribution" /></p>
-
-<p>Without extra information, we will predict the mean 2.47.</p>
-
-<p>Average squared error = $\mathbb{E} [(studentGPA - predictedGPA)^2]$ = Variance</p>
-
-<p>If we have SAT scores, then we can fit a line.</p>
-
-<p><img src="/img/cse250/gpa-vs-sat.png" alt="gpa-vs-sat" /></p>
-
-<p>Now if we predict based on this line, the MSE drops to 0.43.</p>
-
-<p>This is a regression problem with:</p>
-
-<ul>
-<li><strong>Predictor variable</strong>: SAT score</li>
-<li><strong>Response variable</strong>: College GPA</li>
-</ul>
-
-<h2 id="formula">Formula</h2>
-
-<p>For $\mathbb{R}$
-$$y = ax + b$$</p>
-
-<p>For $\mathbb{R}^10$
-$$f(x) = w_1x_1 + w_2x_2 + &hellip; + w_{10}x_{10} + b = wx + b$$</p>
-
-<p>where $w = (w_1, w_2, &hellip;, w_{10})$</p>
-
-<h2 id="loss-function">Loss Function</h2>
-
-<p>MSE is follow
-$$MSE(a, b) = \frac{1}{n} \sum_{i=1}^n (y^{(i)} -(ax^{(i)} + b))^2$$</p>
-
-<p>and loss function for $\mathbb{R}$
-$$L(a, b) = \sum_{i=1}^n (y^{(i)} -(ax^{(i)} + b))^2$$</p>
-
-<p>Analagously for $\mathbb{R}^d$</p>
-
-<p>$$L(w, b) = \sum_{i=1}^n (y^{(i)} -(w \cdot x^{(i)} + b))^2$$
-where $x \in \mathbb{E}^d$, $y \in \mathbb{E}$, $w \in \mathbb{E}^d$, and $b \in \mathbb{E}$</p>
-
-<p>Alternatively, we can write as:
-$$f(x) = \tilde{w} \cdot \tilde{x}$$
-$$L( \tilde{w} ) = \sum_{i=1}^n (y^{(i)} - \tilde{w} \cdot \tilde{x}^{(i)})^2$$
-where $\tilde{x} = (1, x) \in \mathbb{E}^{d+1}$ and $\tilde{w} = (b, w) \in \mathbb{E}^{d+1}$, and minimized at $\tilde{w} = (X^TX)^{-1}(X^Ty)$</p>
-
-<h2 id="regularization">Regularization</h2>
-
-<p>Regularization term is crucial in avoiding complex model. This term is introduced as follow:</p>
-
-<p>$$L(w, b) = \sum_{i=1}^n (y^{(i)} -(w \cdot x^{(i)} + b))^2 + \lambda||w||^2$$
-and the solution is $w = (X^TX + \lambda I)^{-1}(X^Ty)$</p>
-
-<p>With the help of regularizer, we avoid the complex molde (overfitting the data), and obtain a better performance on test set.</p>
-
-<table>
-<thead>
-<tr>
-<th align="center">λ</th>
-<th align="center">training MSE</th>
-<th align="center">test MSE</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="center">0.00001</td>
-<td align="center">0</td>
-<td align="center">585.81</td>
-</tr>
-
-<tr>
-<td align="center">0.0001</td>
-<td align="center">0</td>
-<td align="center">564.28</td>
-</tr>
-
-<tr>
-<td align="center">0.001</td>
-<td align="center">0</td>
-<td align="center">404.08</td>
-</tr>
-
-<tr>
-<td align="center">0.01</td>
-<td align="center">0.01</td>
-<td align="center">83.48</td>
-</tr>
-
-<tr>
-<td align="center">0.1</td>
-<td align="center">0.03</td>
-<td align="center">19.26</td>
-</tr>
-
-<tr>
-<td align="center">1</td>
-<td align="center">0.07</td>
-<td align="center">7.02</td>
-</tr>
-
-<tr>
-<td align="center">10</td>
-<td align="center">0.35</td>
-<td align="center">2.84</td>
-</tr>
-
-<tr>
-<td align="center">100</td>
-<td align="center">2.4</td>
-<td align="center">5.79</td>
-</tr>
-
-<tr>
-<td align="center">1000</td>
-<td align="center">8.19</td>
-<td align="center">10.97</td>
-</tr>
-
-<tr>
-<td align="center">10000</td>
-<td align="center">10.83</td>
-<td align="center">12.63</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="ridge-regression">Ridge Regression</h3>
-
-<p>$$L(w, b) = \sum_{i=1}^n (y^{(i)} -(w \cdot x^{(i)} + b))^2 + \lambda||w||_2^2$$</p>
-
-<h3 id="lasso-regression-produce-sparse-w">Lasso Regression (Produce sparse w)</h3>
-
-<p>$$L(w, b) = \sum_{i=1}^n (y^{(i)} -(w \cdot x^{(i)} + b))^2 + \lambda||w||_1$$</p>
-
-<p>Key differene<sup class="footnote-ref" id="fnref:ridge"><a href="#fn:ridge">1</a></sup>:</p>
-
-<ul>
-<li>Ridge works well for overfitting</li>
-<li>Lasso shrinks less important features, good for feature selection</li>
-</ul>
-<div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:ridge">L1 and L2 Regularization Methods, <a href="https://towardsdatascience.com/l1-and-l2-regularization-methods-ce25e7fc831c">https://towardsdatascience.com/l1-and-l2-regularization-methods-ce25e7fc831c</a>
- <a class="footnote-return" href="#fnref:ridge"><sup>[return]</sup></a></li>
-</ol>
-</div>
-
-                        </div>
-
-                        
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="/posts/bayes-optimal-classifier/">Bayes Optimal Classifier</a></li>
-        
-        <li><a href="/posts/lp-norm/">lp norm</a></li>
-        
-        <li><a href="/posts/nearest-neighbor-classification/">Nearest Neighbor Classification</a></li>
-        
-        <li><a href="/posts/fast-fourtier-transform/">Fast Fourtier Transform</a></li>
-        
-        <li><a href="/posts/integer-multiplication/">Integer Multiplication</a></li>
-        
-    </ul>
-</div>
-
-
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="https://keithzeng.github.io/tags/regression">regression</a></li>
-                                
-                                <li><a href="https://keithzeng.github.io/tags/notes">notes</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
                     
-    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/positive-semi-definite/">Positive Semi Definite</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/7
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/mathematic">mathematic</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                PSD differential equation
+Any matrix $A_{d \times d}$ is said to be PSD if $x^TAx \geq$ 0 $\forall$ vector $x_{d \times 1}$.
+Examples Identity matrix $I_{d \times d}$: $$ A = \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \newline 0 &amp; 1 &amp; 0 &amp; 0 \newline 0 &amp; 0 &amp; 1 &amp; 0 \newline 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix} $$
+Then
+\begin{align} x^TAx &amp;= \sum_{i = 1}^d \sum_{i = 1}^d A_{i,j}x_ix_j \newline &amp;= \sum_{i = 1}^d A_{i,i} x_i^2\newline &amp;= \sum_{i = 1}^d x_i^2 \newline &amp;\geq 0 \end{align}……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/positive-semi-definite/">Read More</a></p>
+                            </div>
+                        </article>
+                    
 
-    
-    
-    <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= "keithzeng/blog"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-      </script>
-    </div>
-    
+                    
+
+
+
+
                 </div>
             </div>
+
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -515,6 +322,7 @@ if (!doNotTrack) {
 
 
 <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
 
 
 
