@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gradient Descent on k317h</title>
+    <link>https://keithzeng.github.io/tags/gradient-descent/</link>
+    <description>Recent content in Gradient Descent on k317h</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Feb 2019 22:21:16 -0800</lastBuildDate>
+    
+	<atom:link href="https://keithzeng.github.io/tags/gradient-descent/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gradient Descent</title>
+      <link>https://keithzeng.github.io/posts/gradient-descent/</link>
+      <pubDate>Thu, 07 Feb 2019 22:21:16 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/gradient-descent/</guid>
+      <description>Gradient Descent A simple algorithm to go &amp;ldquo;downward&amp;rdquo; against the gradient of the function. Algebrically: $$w_{t+1} = w_t - \eta \nabla f(w_t)$$ where $\eta$ is called learning rate or step size.
+Step Size  $\eta$ too small, slow convergence $\eta$ too large, solution will bounce around  In practice:
+ Set $\eta$ to be a smalle constant Backtracking line search (work when $\nabla f$ is continuous)  Parameter $\bar{\alpha}, c \in (0,1), \rho \in (0,1)$.</description>
+    </item>
+    
+  </channel>
+</rss>

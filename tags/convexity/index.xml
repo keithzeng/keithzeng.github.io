@@ -6,7 +6,7 @@
     <description>Recent content in Convexity on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Feb 2019 00:35:35 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Feb 2019 22:15:35 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/tags/convexity/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Convex Optimization</title>
       <link>https://keithzeng.github.io/posts/convex-optimization/</link>
-      <pubDate>Wed, 06 Feb 2019 00:35:35 -0800</pubDate>
+      <pubDate>Thu, 07 Feb 2019 22:15:35 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/posts/convex-optimization/</guid>
       <description>Gradient &amp;amp;&amp;amp; Hessian The gradient of a f, d x 1, can be represented as follow $$ \nabla f(x) = \begin{bmatrix} \frac {\partial f(x)} {\partial x_1} \newline &amp;hellip;\newline \frac {\partial f(x)} {\partial x_d} \end{bmatrix} $$

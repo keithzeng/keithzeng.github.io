@@ -3,13 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://keithzeng.github.io/posts/positive-semi-definite/</loc>
-    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
+    <loc>https://keithzeng.github.io/posts/gradient-descent/</loc>
+    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://keithzeng.github.io/posts/convex-optimization/</loc>
-    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
+    <lastmod>2019-02-07T22:15:35-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/posts/positive-semi-definite/</loc>
+    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
   </url>
   
   <url>
@@ -133,7 +138,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/tags/convexity/</loc>
-    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
+    <lastmod>2019-02-07T22:15:35-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -174,6 +179,12 @@
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/tags/gradient-descent/</loc>
+    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/series/greedy/</loc>
     <lastmod>2019-01-25T21:51:25-08:00</lastmod>
     <priority>0</priority>
@@ -199,7 +210,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/categories/machine-learning/</loc>
-    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
+    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -253,7 +264,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/posts/</loc>
-    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
+    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -301,7 +312,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/series/statistical-learning/</loc>
-    <lastmod>2019-02-06T00:35:35-08:00</lastmod>
+    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -313,7 +324,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/</loc>
-    <lastmod>2019-02-07T15:29:45-08:00</lastmod>
+    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
     <priority>0</priority>
   </url>
   

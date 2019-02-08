@@ -7,22 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Distribution | k317h</title>
-    <meta property="og:title" content="Distribution - k317h">
+    <title>Gradient Descent | k317h</title>
+    <meta property="og:title" content="Gradient Descent - k317h">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2019-02-07T22:21:16&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-02-07T22:21:16&#43;08:00">
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Distribution">
+    <meta name="description" content="Gradient Descent">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/tags/distribution/">
+    <meta property="og:url" content="https://keithzeng.github.io/posts/gradient-descent/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
+        <link rel="stylesheet" href="/css/prism.css">
+    
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/distribution/index.xml" title="k317h" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -31,7 +36,6 @@
     
     
 </head>
-
 
 <body>
 <header id="header" class="clearfix">
@@ -68,51 +72,114 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    <h3 class="archive-title">
-                        Articles in
-                        <span class="keyword">distribution</span>
-                        tag
-                    </h3>
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/marginal-distribution/">Marginal Distribution</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/31
-                            </date>
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Gradient Descent</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019/2/7
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
                             
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://keithzeng.github.io/categories/mathematic">mathematic</a>
-                                
-                            </div>
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
                             
-                            <div class="post-content">
-                                Marginal Distribution: It&rsquo;s a function that gives the probability based on only subset of the variables.1. For example,
-Or in mathematical way, for discrete
-$$Pr(X = x) = \sum_y Pr(X = x, Y = y) = \sum_y Pr(X = x | Y = y) Pr(Y = y)$$
-and for continuous
-$$p_X(x) = \int_y p_{X,Y}(x,y) dy = \int_y p_{X|Y}(x|y)p_Y(y) dy$$
-and it can also be written as Expected Vaue
-$$p_X(x) = \int_y p_{X|Y} (x|y) p_Y(y) dy = \mathbb{E}_Y[p_{X|Y} (x|y)]$$……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/marginal-distribution/">Read More</a></p>
-                            </div>
-                        </article>
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Views</span></span>
+                        </div>
+                        
+                        <div class="post-content">
+                            
+
+<h2 id="gradient-descent">Gradient Descent</h2>
+
+<p>A simple algorithm to go &ldquo;downward&rdquo; against the gradient of the function.
+<img src="/img/cse250/gradient.png" alt="Gradient" /></p>
+
+<p><img src="/img/cse250/gradient_descent.png" alt="gradient_descent" /></p>
+
+<p>Algebrically:
+$$w_{t+1} = w_t - \eta \nabla f(w_t)$$
+where $\eta$ is called learning rate or step size.</p>
+
+<h2 id="step-size">Step Size</h2>
+
+<ol>
+<li>$\eta$ too small, slow convergence</li>
+<li>$\eta$ too large, solution will bounce around</li>
+</ol>
+
+<p>In practice:</p>
+
+<ol>
+<li>Set $\eta$ to be a smalle constant</li>
+<li>Backtracking line search (work when $\nabla f$ is continuous)
+
+<ul>
+<li>Parameter $\bar{\alpha}, c \in (0,1), \rho \in (0,1)$. Descent direction $P_t$ (an negative value input to the algorithm, could be against gradient but doesn&rsquo;t have to).</li>
+<li>Set $\alpha = \bar{\alpha}$</li>
+<li>Rpeat until $f(x_t + \alpha P_t) \leq f(x_t) + c \alpha \nabla f(x_t)^T P_t$
+
+<ul>
+<li>$\alpha \gets \rho\alpha$</li>
+</ul></li>
+<li>Terminate with $\eta_t = \alpha$</li>
+</ul></li>
+</ol>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/convex-optimization/">Convex Optimization</a></li>
+        
+        <li><a href="/posts/positive-semi-definite/">Positive Semi Definite</a></li>
+        
+        <li><a href="/posts/logistic-regression/">Logistic Regression</a></li>
+        
+        <li><a href="/posts/matrix/">Matrix</a></li>
+        
+        <li><a href="/posts/linear-regression/">Linear Regression</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://keithzeng.github.io/tags/gradient-descent">gradient descent</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
                     
+    
 
-                    
-
-
-
-
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "keithzeng/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
                 </div>
             </div>
-
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -326,7 +393,6 @@ if (!doNotTrack) {
 
 
 <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
 
 
 

@@ -6,15 +6,26 @@
     <description>Recent content in Machine Learning on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Feb 2019 00:35:35 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Feb 2019 22:21:16 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Gradient Descent</title>
+      <link>https://keithzeng.github.io/posts/gradient-descent/</link>
+      <pubDate>Thu, 07 Feb 2019 22:21:16 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/gradient-descent/</guid>
+      <description>Gradient Descent A simple algorithm to go &amp;ldquo;downward&amp;rdquo; against the gradient of the function. Algebrically: $$w_{t+1} = w_t - \eta \nabla f(w_t)$$ where $\eta$ is called learning rate or step size.
+Step Size  $\eta$ too small, slow convergence $\eta$ too large, solution will bounce around  In practice:
+ Set $\eta$ to be a smalle constant Backtracking line search (work when $\nabla f$ is continuous)  Parameter $\bar{\alpha}, c \in (0,1), \rho \in (0,1)$.</description>
+    </item>
+    
+    <item>
       <title>Convex Optimization</title>
       <link>https://keithzeng.github.io/posts/convex-optimization/</link>
-      <pubDate>Wed, 06 Feb 2019 00:35:35 -0800</pubDate>
+      <pubDate>Thu, 07 Feb 2019 22:15:35 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/posts/convex-optimization/</guid>
       <description>Gradient &amp;amp;&amp;amp; Hessian The gradient of a f, d x 1, can be represented as follow $$ \nabla f(x) = \begin{bmatrix} \frac {\partial f(x)} {\partial x_1} \newline &amp;hellip;\newline \frac {\partial f(x)} {\partial x_d} \end{bmatrix} $$

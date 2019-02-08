@@ -6,10 +6,32 @@
     <description>Recent content in Posts on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Feb 2019 15:29:45 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Feb 2019 22:21:16 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gradient Descent</title>
+      <link>https://keithzeng.github.io/posts/gradient-descent/</link>
+      <pubDate>Thu, 07 Feb 2019 22:21:16 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/gradient-descent/</guid>
+      <description>Gradient Descent A simple algorithm to go &amp;ldquo;downward&amp;rdquo; against the gradient of the function. Algebrically: $$w_{t+1} = w_t - \eta \nabla f(w_t)$$ where $\eta$ is called learning rate or step size.
+Step Size  $\eta$ too small, slow convergence $\eta$ too large, solution will bounce around  In practice:
+ Set $\eta$ to be a smalle constant Backtracking line search (work when $\nabla f$ is continuous)  Parameter $\bar{\alpha}, c \in (0,1), \rho \in (0,1)$.</description>
+    </item>
+    
+    <item>
+      <title>Convex Optimization</title>
+      <link>https://keithzeng.github.io/posts/convex-optimization/</link>
+      <pubDate>Thu, 07 Feb 2019 22:15:35 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/convex-optimization/</guid>
+      <description>Gradient &amp;amp;&amp;amp; Hessian The gradient of a f, d x 1, can be represented as follow $$ \nabla f(x) = \begin{bmatrix} \frac {\partial f(x)} {\partial x_1} \newline &amp;hellip;\newline \frac {\partial f(x)} {\partial x_d} \end{bmatrix} $$
+and the Hessian, d x d, can be represented as
+$$ \nabla^2 f(x) = \begin{bmatrix} \frac {\partial^2 f(x)} {\partial x_1^2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_1x_2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_1x_d} \newline &amp;hellip; &amp;amp; &amp;hellip; &amp;amp; &amp;hellip;\newline \frac {\partial^2 f(x)} {\partial x_d^2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_dx_2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_dx_d} \newline \end{bmatrix} $$</description>
+    </item>
     
     <item>
       <title>Positive Semi Definite</title>
@@ -22,17 +44,6 @@ Any matrix $A_{d \times d}$ is said to be PSD if $x^TAx \geq$ 0 $\forall$ vector
 Examples Identity matrix $I_{d \times d}$: $$ A = \begin{bmatrix} 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \end{bmatrix} $$
 Then
 \begin{align} x^TAx &amp;amp;= \sum_{i = 1}^d \sum_{i = 1}^d A_{i,j}x_ix_j \newline &amp;amp;= \sum_{i = 1}^d A_{i,i} x_i^2\newline &amp;amp;= \sum_{i = 1}^d x_i^2 \newline &amp;amp;\geq 0 \end{align}</description>
-    </item>
-    
-    <item>
-      <title>Convex Optimization</title>
-      <link>https://keithzeng.github.io/posts/convex-optimization/</link>
-      <pubDate>Wed, 06 Feb 2019 00:35:35 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/posts/convex-optimization/</guid>
-      <description>Gradient &amp;amp;&amp;amp; Hessian The gradient of a f, d x 1, can be represented as follow $$ \nabla f(x) = \begin{bmatrix} \frac {\partial f(x)} {\partial x_1} \newline &amp;hellip;\newline \frac {\partial f(x)} {\partial x_d} \end{bmatrix} $$
-and the Hessian, d x d, can be represented as
-$$ \nabla^2 f(x) = \begin{bmatrix} \frac {\partial^2 f(x)} {\partial x_1^2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_1x_2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_1x_d} \newline &amp;hellip; &amp;amp; &amp;hellip; &amp;amp; &amp;hellip;\newline \frac {\partial^2 f(x)} {\partial x_d^2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_dx_2} &amp;amp; \frac {\partial^2 f(x)} {\partial x_dx_d} \newline \end{bmatrix} $$</description>
     </item>
     
     <item>

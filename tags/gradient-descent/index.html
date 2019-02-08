@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Distribution | k317h</title>
-    <meta property="og:title" content="Distribution - k317h">
+    <title>Gradient Descent | k317h</title>
+    <meta property="og:title" content="Gradient Descent - k317h">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Distribution">
+    <meta name="description" content="Gradient Descent">
         
     <meta name="author" content="k317h">
-    <meta property="og:url" content="https://keithzeng.github.io/tags/distribution/">
+    <meta property="og:url" content="https://keithzeng.github.io/tags/gradient-descent/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/distribution/index.xml" title="k317h" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/gradient-descent/index.xml" title="k317h" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -70,7 +70,7 @@
                 <div class="res-cons">
                     <h3 class="archive-title">
                         Articles in
-                        <span class="keyword">distribution</span>
+                        <span class="keyword">gradient-descent</span>
                         tag
                     </h3>
 
@@ -78,29 +78,25 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/marginal-distribution/">Marginal Distribution</a>
+                                    <a href="https://keithzeng.github.io/posts/gradient-descent/">Gradient Descent</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2019/1/31
+                                2019/2/7
                             </date>
                             
                             <div class="post-meta meta-category">
                                 |
                                 
-                                    <a href="https://keithzeng.github.io/categories/mathematic">mathematic</a>
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
                                 
                             </div>
                             
                             <div class="post-content">
-                                Marginal Distribution: It&rsquo;s a function that gives the probability based on only subset of the variables.1. For example,
-Or in mathematical way, for discrete
-$$Pr(X = x) = \sum_y Pr(X = x, Y = y) = \sum_y Pr(X = x | Y = y) Pr(Y = y)$$
-and for continuous
-$$p_X(x) = \int_y p_{X,Y}(x,y) dy = \int_y p_{X|Y}(x|y)p_Y(y) dy$$
-and it can also be written as Expected Vaue
-$$p_X(x) = \int_y p_{X|Y} (x|y) p_Y(y) dy = \mathbb{E}_Y[p_{X|Y} (x|y)]$$……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/marginal-distribution/">Read More</a></p>
+                                Gradient Descent A simple algorithm to go &ldquo;downward&rdquo; against the gradient of the function. Algebrically: $$w_{t+1} = w_t - \eta \nabla f(w_t)$$ where $\eta$ is called learning rate or step size.
+Step Size  $\eta$ too small, slow convergence $\eta$ too large, solution will bounce around  In practice:
+ Set $\eta$ to be a smalle constant Backtracking line search (work when $\nabla f$ is continuous)  Parameter $\bar{\alpha}, c \in (0,1), \rho \in (0,1)$.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/gradient-descent/">Read More</a></p>
                             </div>
                         </article>
                     
