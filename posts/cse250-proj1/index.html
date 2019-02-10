@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.53" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CSE250 Proj1 | k317h</title>
+    <meta property="og:title" content="CSE250 Proj1 - k317h">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-01-27T16:22:07&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-01-27T16:22:07&#43;08:00">
+        
+    <meta name="Keywords" content="Java,Web,Software">
+    <meta name="description" content="CSE250 Proj1">
+        
+    <meta name="author" content="k317h">
+    <meta property="og:url" content="https://keithzeng.github.io/posts/cse250-proj1/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://keithzeng.github.io">
+                        k317h
+                    </a>
+                
+                <p class="description">A Blog to Record My Progress...</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://keithzeng.github.io">Main</a>
+                    
+                    <a  href="https://keithzeng.github.io/books/" title="Books">Books</a>
+                    
+                    <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
+                    
+                    <a  href="https://keithzeng.github.io/about/" title="About">About</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">CSE250 Proj1</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019/1/27
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Views</span></span>
+                        </div>
+                        
+                        <div class="post-content">
+                            
+
+<p><a href="http://cseweb.ucsd.edu/classes/wi19/cse250B-a/prog1.pdf">Project 1</a></p>
+
+<h2 id="1-prototype-selection">1. Prototype Selection</h2>
+
+<p>Divide data into ${S_1, S_2, &hellip;, S_c}$, where c = number of labels. For each dataset $S_i$, I select M/c points as new training set for that label, which are the centroids by running k-means clustering algorithm.</p>
+
+<p>My idea was to capture as many distinct types in for each label and meanwhile reduce the noise by selecting only the center of the each type.</p>
+
+<h2 id="2-pseudocode">2. Pseudocode</h2>
+
+<p>create knnWrapper(dataX, dataY, neighbor, protype_num)</p>
+
+<ul>
+<li>dataX = training data for X</li>
+<li>dataY = label data for corresponding X</li>
+<li>neighbor = number of closest neighbors picked to decide the query point</li>
+<li>prototype_num = desired final data size</li>
+</ul>
+
+<p>model = run knnWrapper(dataX, dataY, 1, M)</p>
+
+<p>model.predict(query)</p>
+
+<p><strong>Detailed Implementation for knnWrapper():</strong></p>
+
+<p>$trainX = \emptyset$<br />
+$trainy = \emptyset$<br />
+labels = extra distinct labels from dataY<br />
+$data$ = group dataX by its label</p>
+
+<p>for label in labels</p>
+
+<ul>
+<li>centroids = find_k_means_clusters(data[label], M / C)</li>
+<li>trainX = trainX + centroids</li>
+<li>trainy append label M/C times</li>
+</ul>
+
+<p>return knn(trainX, trainy, neighbor)</p>
+
+<h2 id="3-experimental-results">3. Experimental Results</h2>
+
+<p>The margin of error can be calculated according to <sup class="footnote-ref" id="fnref:lisa"><a href="#fn:lisa">1</a></sup>
+$$ME = Z\sqrt{\frac{p(1 -p)}{n}}$$
+where</p>
+
+<ul>
+<li>Z is Z-value from z-table <sup class="footnote-ref" id="fnref:ztable"><a href="#fn:ztable">2</a></sup>, 1.96 chosen for 95% confidence interval</li>
+<li>p = proportion mean of sample</li>
+<li>n = sample size.</li>
+</ul>
+
+<p>The following plots are for random selection and k-means:
+<img src="/img/cse250/random_accuracy.png" alt="Random's Accuracy vs Prototye" />
+<img src="/img/cse250/kmean_accuracy.png" alt="K-mean's Accuracy vs Prototye" />
+<img src="/img/cse250/accuracy.png" alt="Accuracy vs Prototye" /></p>
+
+<p><a href="https://www.tablesgenerator.com/markdown_tables">Accuracy for Random vs K-Means PS</a></p>
+
+<table>
+<thead>
+<tr>
+<th align="right">Num of Prototype</th>
+<th align="right">Accuracy of Random</th>
+<th align="right">Accuracy of K-Means</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="right">1000</td>
+<td align="right">0.8861 $\pm$ 0.1137</td>
+<td align="right">0.9580 $\pm$ 0.0718</td>
+</tr>
+
+<tr>
+<td align="right">2000</td>
+<td align="right">0.9123 $\pm$ 0.1012</td>
+<td align="right">0.9628 $\pm$ 0.0678</td>
+</tr>
+
+<tr>
+<td align="right">3000</td>
+<td align="right">0.9230 $\pm$ 0.0954</td>
+<td align="right">0.9650 $\pm$ 0.0657</td>
+</tr>
+
+<tr>
+<td align="right">4000</td>
+<td align="right">0.9309 $\pm$ 0.0908</td>
+<td align="right">0.9662 $\pm$ 0.0646</td>
+</tr>
+
+<tr>
+<td align="right">5000</td>
+<td align="right">0.9355 $\pm$ 0.0879</td>
+<td align="right">0.9673 $\pm$ 0.0637</td>
+</tr>
+
+<tr>
+<td align="right">6000</td>
+<td align="right">0.9393 $\pm$ 0.0854</td>
+<td align="right">0.9679 $\pm$ 0.0631</td>
+</tr>
+
+<tr>
+<td align="right">7000</td>
+<td align="right">0.9420 $\pm$ 0.0836</td>
+<td align="right">0.9685 $\pm$ 0.0625</td>
+</tr>
+
+<tr>
+<td align="right">8000</td>
+<td align="right">0.9449 $\pm$ 0.0817</td>
+<td align="right">0.9685 $\pm$ 0.0625</td>
+</tr>
+
+<tr>
+<td align="right">9000</td>
+<td align="right">0.9464 $\pm$ 0.0806</td>
+<td align="right">0.9689 $\pm$ 0.0621</td>
+</tr>
+
+<tr>
+<td align="right">10000</td>
+<td align="right">0.9489 $\pm$ 0.0788</td>
+<td align="right">0.9691 $\pm$ 0.0619</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="4-critical-evaluation">4. Critical Evaluation</h2>
+
+<p>My method is a improvement to the random selection. There are many more techniques for PS, such condensation, edition, and hybrid. I would love to try some of the hybrid methods that can further improve the performance,  for example Repeated Editing Fast Condensing Nearest Neighbour (RFCNN). Moreover, besides PS methods, they are approaches focusing on different aspect of problem for kNN. One aspect is looking at different dist function, such as Fast Similarity Search, Approximated Similarity Search, etc.<sup class="footnote-ref" id="fnref:jose"><a href="#fn:jose">3</a></sup> Also, one can also try differnt data structure for storing the points, such as vp-tree which provides O(logn) search time.<sup class="footnote-ref" id="fnref:peter"><a href="#fn:peter">4</a></sup></p>
+
+<p>Image credit to <a href="https://sci2s.ugr.es/pr">sci2s</a> <img src="https://sci2s.ugr.es/sites/default/files/files/TematicWebSites/pr/psTaxonomy.png" alt="PS Methods" /></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:lisa">Confidence Intervals for a Single Mean or Proportion, Lisa Sullivan, Wayne LaMorte, <a href="http://sphweb.bumc.bu.edu/otlt/MPH-Modules/QuantCore/PH717_ConfidenceIntervals-OneSample/PH717_ConfidenceIntervals-OneSample_print.html">http://sphweb.bumc.bu.edu/otlt/MPH-Modules/QuantCore/PH717_ConfidenceIntervals-OneSample/PH717_ConfidenceIntervals-OneSample_print.html</a>
+ <a class="footnote-return" href="#fnref:lisa"><sup>[return]</sup></a></li>
+<li id="fn:ztable"><a href="http://www.ltcconline.net/greenl/courses/201/estimation/smallConfLevelTable.htm">http://www.ltcconline.net/greenl/courses/201/estimation/smallConfLevelTable.htm</a>
+ <a class="footnote-return" href="#fnref:ztable"><sup>[return]</sup></a></li>
+<li id="fn:jose">On the suitability of Prototype Selection methods for kNN classification with distributed data, Jose J. Valero-Mas, Jorge Calvo-Zaragoza, Juan R. Rico-Juan, <a href="https://grfia.dlsi.ua.es/repositori/grfia/pubs/341/SuitabilityPSDistributedScenarios.pdf">https://grfia.dlsi.ua.es/repositori/grfia/pubs/341/SuitabilityPSDistributedScenarios.pdf</a>
+ <a class="footnote-return" href="#fnref:jose"><sup>[return]</sup></a></li>
+<li id="fn:peter">Data Structures and Algorithm for Nearest Neighbor Search in General Metric Spaces, Peter N. Yianilos, <a href="http://web.cs.iastate.edu/~honavar/nndatastructures.pdf">http://web.cs.iastate.edu/~honavar/nndatastructures.pdf</a>
+ <a class="footnote-return" href="#fnref:peter"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/archives/">Archives</a></li>
+        
+        <li><a href="/posts/k-clustering/">K Clustering</a></li>
+        
+        <li><a href="/posts/probability/">Probability</a></li>
+        
+        <li><a href="/posts/my-first-post/">My First Post</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://keithzeng.github.io/tags/cse250b">cse250b</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/project">project</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/mnist">mnist</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "keithzeng/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://keithzeng.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">Most Recents</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment/" title="Sequence Alignment">Sequence Alignment</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/rna-secondary-structure/" title="RNA Secondary Structure">RNA Secondary Structure</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/knapsack/" title="Knapsack">Knapsack</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/segmented-least-square/" title="Segmented Least Square">Segmented Least Square</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/" title="Weighted Interval Scheduling">Weighted Interval Scheduling</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/gradient-descent/" title="Gradient Descent">Gradient Descent</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/convex-optimization/" title="Convex Optimization">Convex Optimization</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/positive-semi-definite/" title="Positive Semi Definite">Positive Semi Definite</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/logistic-regression/" title="Logistic Regression">Logistic Regression</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Categories</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(12)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/other/">other(3)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Series</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/greedy/">greedy(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/matrix/">matrix(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/other/">other(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/probability/">probability(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(11)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+    
+    <a href="https://keithzeng.github.io/tags/bayes/">bayes</a>
+    
+    <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
+    
+    <a href="https://keithzeng.github.io/tags/convexity/">convexity</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
+    
+    <a href="https://keithzeng.github.io/tags/determinant/">determinant</a>
+    
+    <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
+    
+    <a href="https://keithzeng.github.io/tags/divide-and-conquer/">divide-and-conquer</a>
+    
+    <a href="https://keithzeng.github.io/tags/dp/">dp</a>
+    
+    <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/logistic/">logistic</a>
+    
+    <a href="https://keithzeng.github.io/tags/lpnorm/">lpnorm</a>
+    
+    <a href="https://keithzeng.github.io/tags/metric/">metric</a>
+    
+    <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
+    
+    <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/other/">other</a>
+    
+    <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/project/">project</a>
+    
+    <a href="https://keithzeng.github.io/tags/psd/">psd</a>
+    
+    <a href="https://keithzeng.github.io/tags/rank/">rank</a>
+    
+    <a href="https://keithzeng.github.io/tags/regression/">regression</a>
+    
+    <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Other</h3>
+        <ul class="widget-list">
+            <li><a href="https://keithzeng.github.io/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
+    </div>
+</footer>
+
+<script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+</script>
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133234541-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+</html>

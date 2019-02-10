@@ -78,6 +78,167 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/">Sequence Alignment Revisited</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Sequence Alignment
+We can reduce the space by using only two column instead.
+Space-Efficient-Alignment(X ,Y)
+ Array B[0&hellip;m,0&hellip;1] Initialize B[i,0]=iδ for each i (just as in column 0 of A) For j=1,&hellip;,n  B[0,1]=j$\delta$ (since this corresponds to entry A[0,j]) For i=1,&hellip;,m  B[i, 1]= min[$\alpha x_iy_j$ + B[i − 1, 0], $\delta$ + B[i−1,1], $\delta$ + B[i,0]]  Endfor Move column 1 of B to column 0 to make room for next iteration:  Update B[i, 0]= B[i, 1] for each i   Endfor  However, this doesn&rsquo;t left enough information to get back the information about alignment.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/sequence-alignment/">Sequence Alignment</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 When you type &ldquo;ocurrance&rdquo;, the brower will will prompt “Perhaps you mean occurrence?”
+How does the search engine knows?
+How does it know the most similar word?
+How do we determine the similarity between words?
+The definition of similarity will be based on the optimal alignment between X and Y where X = $x_1x_2 &hellip; x_m$, Y = $y_1y_2 &hellip; y_n$.
+ when there is gap (character not matched), we pay $\delta$ when we match character p and q, we pay $\alpha_{pq}$, where $\alpha_{pq}$ = 0 goal is to minimize the sum of cost.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/sequence-alignment/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/rna-secondary-structure/">RNA Secondary Structure</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 We have bases of {A,C,G,T} in DNA sequence, where A-T and C-G form a pair. A sinlge strand of RNA will loop back, resulting shape called secondary structure.
+Let $B = b_1b_2 &hellip; b_n$, where $b_i$ = {A,C,G,U} also A-U, C-G form pair
+Then the Secondary structure, S ={(i, j)}
+ no sharp turn, i &lt; j - 4 pair is either {A,U}, {C,G} (either order) no base appear in more than 1 matching no crossing condition, (i,j) and (k, l) $\in$ S, we can&rsquo;t have i &lt; k &lt; j &lt; l  Algorithm Following the same analysis……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/rna-secondary-structure/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/knapsack/">Knapsack</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Each request has value $v_i$ and weight $w_i$, and we have constraint that the total of request weight $\leq$ W.
+Greedy doesn&rsquo;t work because sorting the W either in decreasing or increasing manner don&rsquo;t produce the optimal solution.
+ {W/2 + 1, W/2, W/2} {1, W/2, W/2}  Using dynamic programing, we can use reduce this problem to whether or not each request belongs to the optimal solution O again.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/knapsack/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/segmented-least-square/">Segmented Least Square</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Data $P = (x_1,y_1), (x_2, y_2)&hellip;(x_n, y_n)$ for $x_1 &lt; x_2 &lt; &hellip; &lt; x_n$.
+Given a line y=ax+b, and error
+$$Error(L, P) = \sum_{i=1}^n(y_i - ax_i -b)^2$$
+And it has closed form solution of
+$$a = \frac{n\sum_i x_iy_i - (\sum_i x_i)(\sum_i y_i)}{n\sum_i x_i^2 - (\sum_i x_i)^2}$$
+and
+$$b = \frac {\sum_i y_i - a \sum_i x_i}{n}$$
+However, if the data is show as below (maybe fitted with two lines), we can&rsquo;t just use the above formula.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/segmented-least-square/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/">Weighted Interval Scheduling</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/8
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Instead of just fitting as many tasks like regular interval scheduling problem, we have weight associates with the interval. Now we want to maximize the value.
+So basically, $f_i$ finish time sorted in non-decreasing order, $v_i$ is the value, and $s_i$ is the start time. We want $S \subseteq {1&hellip; n}$.
+We also define $p(j)$ which is the largest i &lt; j which is disjoint(compatible) with j.
+Algorithm Idea:……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/">Fast Fourtier Transform</a>
                                 </h1>
                             </header>
@@ -180,62 +341,29 @@ Modified Merge-Sort By leverage the merge process form merger-sort, we can count
                             </div>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/merge-sort/">Merge Sort</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/29
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Problem Sort the elements
-Abstract the behavior:
-1. Divide the input into two pieces of equal size O(n) 1. solve the two subproblems on these pieces separately by recursion 1. combine the two results into an overall solution O(n)
-Recurrence Time Complexity q = 2 T(n) ≤ 2T(n/2) + cn
-To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  General Case For q &gt; 2 T(n) ≤ qT(n/2) + cn……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/merge-sort/">Read More</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/k-clustering/">K Clustering</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/25
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Problem We have set of objects $U = \{o_1, o_2, &hellip;\}$, and we want to split them into k clusters.
-We also have following definition for distance function.
- $\forall_{i,j} dist(p_i, p_j) = dist(p_j, p_j)$ $\forall_{i,j} dist(p_i, p_i) = 0$ $\forall_{i,j} dist(p_i, p_j) &gt; 0$.  At the end, we should have $C = \{C_1, C_2, &hellip; C_K\}$.
-Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is to find the k-clustering with maximum spacing.……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/k-clustering/">Read More</a></p>
-                            </div>
-                        </article>
-                    
 
                     
 
+
+<ol class="page-navigator">
+    
+
+    
+    <li  class="current">
+        <a href="https://keithzeng.github.io/categories/algorithm/">1</a>
+    </li>
+    
+    <li >
+        <a href="https://keithzeng.github.io/categories/algorithm/page/2/">2</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="https://keithzeng.github.io/categories/algorithm/page/2/">Next</a>
+    </li>
+    
+</ol>
 
 
 
@@ -257,6 +385,30 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment/" title="Sequence Alignment">Sequence Alignment</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/rna-secondary-structure/" title="RNA Secondary Structure">RNA Secondary Structure</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/knapsack/" title="Knapsack">Knapsack</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/segmented-least-square/" title="Segmented Least Square">Segmented Least Square</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/" title="Weighted Interval Scheduling">Weighted Interval Scheduling</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/gradient-descent/" title="Gradient Descent">Gradient Descent</a>
     </li>
     
@@ -272,30 +424,6 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
         <a href="https://keithzeng.github.io/posts/logistic-regression/" title="Logistic Regression">Logistic Regression</a>
     </li>
     
-    <li>
-        <a href="https://keithzeng.github.io/posts/matrix/" title="Matrix">Matrix</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/linear-regression/" title="Linear Regression">Linear Regression</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/" title="Bayes Optimal Classifier">Bayes Optimal Classifier</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/marginal-distribution/" title="Marginal Distribution">Marginal Distribution</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/lp-norm/" title="lp norm">lp norm</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/" title="Nearest Neighbor Classification">Nearest Neighbor Classification</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -306,11 +434,11 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(6)</a>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(12)</a>
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(8)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(9)</a>
     </li>
     
     <li>
@@ -333,6 +461,10 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     </li>
     
     <li>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(6)</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/series/greedy/">greedy(1)</a>
     </li>
     
@@ -349,7 +481,7 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(10)</a>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(11)</a>
     </li>
     
 </ul>
@@ -375,6 +507,10 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     
     <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
     
+    <a href="https://keithzeng.github.io/tags/divide-and-conquer/">divide-and-conquer</a>
+    
+    <a href="https://keithzeng.github.io/tags/dp/">dp</a>
+    
     <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
     
     <a href="https://keithzeng.github.io/tags/knn/">knn</a>
@@ -392,6 +528,8 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     <a href="https://keithzeng.github.io/tags/other/">other</a>
     
     <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/project/">project</a>
     
     <a href="https://keithzeng.github.io/tags/psd/">psd</a>
     

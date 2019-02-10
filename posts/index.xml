@@ -6,10 +6,87 @@
     <description>Recent content in Posts on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Feb 2019 22:21:16 -0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 Feb 2019 18:50:42 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sequence Alignment Revisited</title>
+      <link>https://keithzeng.github.io/posts/sequence-alignment-revisited/</link>
+      <pubDate>Sat, 09 Feb 2019 18:50:42 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/sequence-alignment-revisited/</guid>
+      <description>Problem1 Sequence Alignment
+We can reduce the space by using only two column instead.
+Space-Efficient-Alignment(X ,Y)
+ Array B[0&amp;hellip;m,0&amp;hellip;1] Initialize B[i,0]=iδ for each i (just as in column 0 of A) For j=1,&amp;hellip;,n  B[0,1]=j$\delta$ (since this corresponds to entry A[0,j]) For i=1,&amp;hellip;,m  B[i, 1]= min[$\alpha x_iy_j$ + B[i − 1, 0], $\delta$ + B[i−1,1], $\delta$ + B[i,0]]  Endfor Move column 1 of B to column 0 to make room for next iteration:  Update B[i, 0]= B[i, 1] for each i   Endfor  However, this doesn&amp;rsquo;t left enough information to get back the information about alignment.</description>
+    </item>
+    
+    <item>
+      <title>Sequence Alignment</title>
+      <link>https://keithzeng.github.io/posts/sequence-alignment/</link>
+      <pubDate>Sat, 09 Feb 2019 17:56:45 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/sequence-alignment/</guid>
+      <description>Problem1 When you type &amp;ldquo;ocurrance&amp;rdquo;, the brower will will prompt “Perhaps you mean occurrence?”
+How does the search engine knows?
+How does it know the most similar word?
+How do we determine the similarity between words?
+The definition of similarity will be based on the optimal alignment between X and Y where X = $x_1x_2 &amp;hellip; x_m$, Y = $y_1y_2 &amp;hellip; y_n$.
+ when there is gap (character not matched), we pay $\delta$ when we match character p and q, we pay $\alpha_{pq}$, where $\alpha_{pq}$ = 0 goal is to minimize the sum of cost.</description>
+    </item>
+    
+    <item>
+      <title>RNA Secondary Structure</title>
+      <link>https://keithzeng.github.io/posts/rna-secondary-structure/</link>
+      <pubDate>Sat, 09 Feb 2019 17:07:21 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/rna-secondary-structure/</guid>
+      <description>Problem1 We have bases of {A,C,G,T} in DNA sequence, where A-T and C-G form a pair. A sinlge strand of RNA will loop back, resulting shape called secondary structure.
+Let $B = b_1b_2 &amp;hellip; b_n$, where $b_i$ = {A,C,G,U} also A-U, C-G form pair
+Then the Secondary structure, S ={(i, j)}
+ no sharp turn, i &amp;lt; j - 4 pair is either {A,U}, {C,G} (either order) no base appear in more than 1 matching no crossing condition, (i,j) and (k, l) $\in$ S, we can&amp;rsquo;t have i &amp;lt; k &amp;lt; j &amp;lt; l  Algorithm Following the same analysis</description>
+    </item>
+    
+    <item>
+      <title>Knapsack</title>
+      <link>https://keithzeng.github.io/posts/knapsack/</link>
+      <pubDate>Sat, 09 Feb 2019 14:09:38 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/knapsack/</guid>
+      <description>Problem1 Each request has value $v_i$ and weight $w_i$, and we have constraint that the total of request weight $\leq$ W.
+Greedy doesn&amp;rsquo;t work because sorting the W either in decreasing or increasing manner don&amp;rsquo;t produce the optimal solution.
+ {W/2 + 1, W/2, W/2} {1, W/2, W/2}  Using dynamic programing, we can use reduce this problem to whether or not each request belongs to the optimal solution O again.</description>
+    </item>
+    
+    <item>
+      <title>Segmented Least Square</title>
+      <link>https://keithzeng.github.io/posts/segmented-least-square/</link>
+      <pubDate>Sat, 09 Feb 2019 12:54:29 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/segmented-least-square/</guid>
+      <description>Problem1 Data $P = (x_1,y_1), (x_2, y_2)&amp;hellip;(x_n, y_n)$ for $x_1 &amp;lt; x_2 &amp;lt; &amp;hellip; &amp;lt; x_n$.
+Given a line y=ax+b, and error
+$$Error(L, P) = \sum_{i=1}^n(y_i - ax_i -b)^2$$
+And it has closed form solution of
+$$a = \frac{n\sum_i x_iy_i - (\sum_i x_i)(\sum_i y_i)}{n\sum_i x_i^2 - (\sum_i x_i)^2}$$
+and
+$$b = \frac {\sum_i y_i - a \sum_i x_i}{n}$$
+However, if the data is show as below (maybe fitted with two lines), we can&amp;rsquo;t just use the above formula.</description>
+    </item>
+    
+    <item>
+      <title>Weighted Interval Scheduling</title>
+      <link>https://keithzeng.github.io/posts/weighted-interval-scheduling/</link>
+      <pubDate>Fri, 08 Feb 2019 23:22:27 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/weighted-interval-scheduling/</guid>
+      <description>Problem1 Instead of just fitting as many tasks like regular interval scheduling problem, we have weight associates with the interval. Now we want to maximize the value.
+So basically, $f_i$ finish time sorted in non-decreasing order, $v_i$ is the value, and $s_i$ is the start time. We want $S \subseteq {1&amp;hellip; n}$.
+We also define $p(j)$ which is the largest i &amp;lt; j which is disjoint(compatible) with j.
+Algorithm Idea:</description>
+    </item>
     
     <item>
       <title>Gradient Descent</title>
@@ -231,6 +308,17 @@ T-Score T-Score T-Score&amp;rsquo;s formula $$T = \frac{X - \mu}{s/ \sqrt{n}}$$ 
 There are couple drawbacks for KNN
  high storage for data computation for decision boundary intolerance to noise  There are couple methods address above issue
  better similarity metric or better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time</description>
+    </item>
+    
+    <item>
+      <title>CSE250 Proj1</title>
+      <link>https://keithzeng.github.io/posts/cse250-proj1/</link>
+      <pubDate>Sun, 27 Jan 2019 16:22:07 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/cse250-proj1/</guid>
+      <description>Project 1
+1. Prototype Selection Divide data into ${S_1, S_2, &amp;hellip;, S_c}$, where c = number of labels. For each dataset $S_i$, I select M/c points as new training set for that label, which are the centroids by running k-means clustering algorithm.
+My idea was to capture as many distinct types in for each label and meanwhile reduce the noise by selecting only the center of the each type.</description>
     </item>
     
     <item>

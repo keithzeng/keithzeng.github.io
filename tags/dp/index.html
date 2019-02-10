@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.53" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dp | k317h</title>
+    <meta property="og:title" content="Dp - k317h">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="Java,Web,Software">
+    <meta name="description" content="Dp">
+        
+    <meta name="author" content="k317h">
+    <meta property="og:url" content="https://keithzeng.github.io/tags/dp/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://keithzeng.github.io/tags/dp/index.xml" title="k317h" />
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://keithzeng.github.io">
+                        k317h
+                    </a>
+                
+                <p class="description">A Blog to Record My Progress...</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://keithzeng.github.io">Main</a>
+                    
+                    <a  href="https://keithzeng.github.io/books/" title="Books">Books</a>
+                    
+                    <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
+                    
+                    <a  href="https://keithzeng.github.io/about/" title="About">About</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <h3 class="archive-title">
+                        Articles in
+                        <span class="keyword">dp</span>
+                        tag
+                    </h3>
+
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/">Sequence Alignment Revisited</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Sequence Alignment
+We can reduce the space by using only two column instead.
+Space-Efficient-Alignment(X ,Y)
+ Array B[0&hellip;m,0&hellip;1] Initialize B[i,0]=iδ for each i (just as in column 0 of A) For j=1,&hellip;,n  B[0,1]=j$\delta$ (since this corresponds to entry A[0,j]) For i=1,&hellip;,m  B[i, 1]= min[$\alpha x_iy_j$ + B[i − 1, 0], $\delta$ + B[i−1,1], $\delta$ + B[i,0]]  Endfor Move column 1 of B to column 0 to make room for next iteration:  Update B[i, 0]= B[i, 1] for each i   Endfor  However, this doesn&rsquo;t left enough information to get back the information about alignment.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/sequence-alignment/">Sequence Alignment</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 When you type &ldquo;ocurrance&rdquo;, the brower will will prompt “Perhaps you mean occurrence?”
+How does the search engine knows?
+How does it know the most similar word?
+How do we determine the similarity between words?
+The definition of similarity will be based on the optimal alignment between X and Y where X = $x_1x_2 &hellip; x_m$, Y = $y_1y_2 &hellip; y_n$.
+ when there is gap (character not matched), we pay $\delta$ when we match character p and q, we pay $\alpha_{pq}$, where $\alpha_{pq}$ = 0 goal is to minimize the sum of cost.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/sequence-alignment/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/rna-secondary-structure/">RNA Secondary Structure</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 We have bases of {A,C,G,T} in DNA sequence, where A-T and C-G form a pair. A sinlge strand of RNA will loop back, resulting shape called secondary structure.
+Let $B = b_1b_2 &hellip; b_n$, where $b_i$ = {A,C,G,U} also A-U, C-G form pair
+Then the Secondary structure, S ={(i, j)}
+ no sharp turn, i &lt; j - 4 pair is either {A,U}, {C,G} (either order) no base appear in more than 1 matching no crossing condition, (i,j) and (k, l) $\in$ S, we can&rsquo;t have i &lt; k &lt; j &lt; l  Algorithm Following the same analysis……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/rna-secondary-structure/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/knapsack/">Knapsack</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Each request has value $v_i$ and weight $w_i$, and we have constraint that the total of request weight $\leq$ W.
+Greedy doesn&rsquo;t work because sorting the W either in decreasing or increasing manner don&rsquo;t produce the optimal solution.
+ {W/2 + 1, W/2, W/2} {1, W/2, W/2}  Using dynamic programing, we can use reduce this problem to whether or not each request belongs to the optimal solution O again.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/knapsack/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/segmented-least-square/">Segmented Least Square</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Data $P = (x_1,y_1), (x_2, y_2)&hellip;(x_n, y_n)$ for $x_1 &lt; x_2 &lt; &hellip; &lt; x_n$.
+Given a line y=ax+b, and error
+$$Error(L, P) = \sum_{i=1}^n(y_i - ax_i -b)^2$$
+And it has closed form solution of
+$$a = \frac{n\sum_i x_iy_i - (\sum_i x_i)(\sum_i y_i)}{n\sum_i x_i^2 - (\sum_i x_i)^2}$$
+and
+$$b = \frac {\sum_i y_i - a \sum_i x_i}{n}$$
+However, if the data is show as below (maybe fitted with two lines), we can&rsquo;t just use the above formula.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/segmented-least-square/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/">Weighted Interval Scheduling</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/8
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Instead of just fitting as many tasks like regular interval scheduling problem, we have weight associates with the interval. Now we want to maximize the value.
+So basically, $f_i$ finish time sorted in non-decreasing order, $v_i$ is the value, and $s_i$ is the start time. We want $S \subseteq {1&hellip; n}$.
+We also define $p(j)$ which is the largest i &lt; j which is disjoint(compatible) with j.
+Algorithm Idea:……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+
+                    
+
+
+
+
+                </div>
+            </div>
+
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://keithzeng.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">Most Recents</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment/" title="Sequence Alignment">Sequence Alignment</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/rna-secondary-structure/" title="RNA Secondary Structure">RNA Secondary Structure</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/knapsack/" title="Knapsack">Knapsack</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/segmented-least-square/" title="Segmented Least Square">Segmented Least Square</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/" title="Weighted Interval Scheduling">Weighted Interval Scheduling</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/gradient-descent/" title="Gradient Descent">Gradient Descent</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/convex-optimization/" title="Convex Optimization">Convex Optimization</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/positive-semi-definite/" title="Positive Semi Definite">Positive Semi Definite</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/logistic-regression/" title="Logistic Regression">Logistic Regression</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Categories</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(12)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/other/">other(3)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Series</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/greedy/">greedy(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/matrix/">matrix(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/other/">other(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/probability/">probability(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(11)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+    
+    <a href="https://keithzeng.github.io/tags/bayes/">bayes</a>
+    
+    <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
+    
+    <a href="https://keithzeng.github.io/tags/convexity/">convexity</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
+    
+    <a href="https://keithzeng.github.io/tags/determinant/">determinant</a>
+    
+    <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
+    
+    <a href="https://keithzeng.github.io/tags/divide-and-conquer/">divide-and-conquer</a>
+    
+    <a href="https://keithzeng.github.io/tags/dp/">dp</a>
+    
+    <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/logistic/">logistic</a>
+    
+    <a href="https://keithzeng.github.io/tags/lpnorm/">lpnorm</a>
+    
+    <a href="https://keithzeng.github.io/tags/metric/">metric</a>
+    
+    <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
+    
+    <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/other/">other</a>
+    
+    <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/project/">project</a>
+    
+    <a href="https://keithzeng.github.io/tags/psd/">psd</a>
+    
+    <a href="https://keithzeng.github.io/tags/rank/">rank</a>
+    
+    <a href="https://keithzeng.github.io/tags/regression/">regression</a>
+    
+    <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Other</h3>
+        <ul class="widget-list">
+            <li><a href="https://keithzeng.github.io/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
+    </div>
+</footer>
+
+<script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+</script>
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133234541-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+
+</body>
+</html>

@@ -70,6 +70,178 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/matrix/" title="Matrix" >Matrix</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/1
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/mathematic">mathematic</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Determinant Calculation Determinant of 2x2 matrix
+$$ A= \begin{bmatrix} a &amp; b \newline c &amp; d \end{bmatrix} $$
+$|A| = det(A) = ad -bc$
+Determinant of 3x3 matrix, also called expansion of the determinant by first row. Link.
+$$ B= \begin{bmatrix} a &amp; b &amp; c \newline d &amp; e &amp; f \newline g &amp; h &amp; k \end{bmatrix} $$
+$|B| = det(B) = a\begin{vmatrix} e &amp; f \newline h &amp; k \end{vmatrix} -b\begin{vmatrix} d &amp; f \newline g &amp; k \end{vmatrix} +c\begin{vmatrix} d &amp; e \newline g &amp; h \end{vmatrix}$……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/matrix/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/linear-regression/" title="Linear Regression" >Linear Regression</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Basic Idea Fit a line to a bunch of points.
+Example Without extra information, we will predict the mean 2.47.
+Average squared error = $\mathbb{E} [(studentGPA - predictedGPA)^2]$ = Variance
+If we have SAT scores, then we can fit a line.
+Now if we predict based on this line, the MSE drops to 0.43.
+This is a regression problem with:
+ Predictor variable: SAT score Response variable: College GPA  Formula For $\mathbb{R}$ $$y = ax + b$$……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/linear-regression/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/" title="Bayes Optimal Classifier" >Bayes Optimal Classifier</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Background Marginal Distribution
+Three ways to sample from P
+ Draw (x,y) Draw y according to its marginal distribution, then x according to the conditional distribution of x | y Draw X according to its marginal distribution, then Y according to the conditional distribution of y | x  Define:
+$\mu$: distribution on $X$
+$\eta$: conditional distribution y|x
+Classifier Normal Classifier
+$h : x \rightarrow y$
+$R(h) = Pr_{(x,y) \in p} (h(x) \neq y)$, where R = risk……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/marginal-distribution/" title="Marginal Distribution" >Marginal Distribution</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/mathematic">mathematic</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Marginal Distribution: It&rsquo;s a function that gives the probability based on only subset of the variables.1. For example,
+Or in mathematical way, for discrete
+$$Pr(X = x) = \sum_y Pr(X = x, Y = y) = \sum_y Pr(X = x | Y = y) Pr(Y = y)$$
+and for continuous
+$$p_X(x) = \int_y p_{X,Y}(x,y) dy = \int_y p_{X|Y}(x|y)p_Y(y) dy$$
+and it can also be written as Expected Vaue
+$$p_X(x) = \int_y p_{X|Y} (x|y) p_Y(y) dy = \mathbb{E}_Y[p_{X|Y} (x|y)]$$……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/marginal-distribution/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/lp-norm/" title="lp norm" >lp norm</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Families of Distance Function $l_p$ norm The most common one is $l_2$ norm (Euclidean distance):
+$$||x - z||_2 = \sqrt{\sum_{i=1}^{m}(x_i - z_i)^2}$$
+Notes: sometime 2 is dropped.
+For $p \geq 1$, the $l_p$ distance:
+$$||x - z||_p = (\sum_{i=1}^{m}(x_i - z_i)^p)^{1/p}$$
+Special case:
+$l_1$ distance: $$||x - z||_1 = \sum_{i=1}^{m}|x_i - z_i|$$
+$l_\infty$ distance:
+$$||x - z||_1 = max_i |x_i - z_i|$$
+Metric space Let $X$ be the space that data lie.……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/lp-norm/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/" title="Nearest Neighbor Classification" >Nearest Neighbor Classification</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/31
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Nearest Neighbor Classification Procedures  Assemble a data set (training set)  How to classify a new image x?  find its closest neighbor y, and label it the same   Notes:
+ training set of 60000 images test set of 10000 images  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/" title="Fast Fourtier Transform" >Fast Fourtier Transform</a>
                                 </h1>
                             </header>
@@ -172,112 +344,6 @@ Modified Merge-Sort By leverage the merge process form merger-sort, we can count
                             <p class="readmore"><a href="https://keithzeng.github.io/posts/counting-inversion/">Read More</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/merge-sort/" title="Merge Sort" >Merge Sort</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/29
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Problem Sort the elements
-Abstract the behavior:
-1. Divide the input into two pieces of equal size O(n) 1. solve the two subproblems on these pieces separately by recursion 1. combine the two results into an overall solution O(n)
-Recurrence Time Complexity q = 2 T(n) ≤ 2T(n/2) + cn
-To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  General Case For q &gt; 2 T(n) ≤ qT(n/2) + cn……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/merge-sort/">Read More</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/margin-error/" title="Margin of Error" >Margin of Error</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/27
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/mathematic">mathematic</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Z-Score vs T-Score Z-Score Link
-Z-Score&rsquo;s formula $$z = \frac{X - \mu}{\sigma}$$ where X = sample mean, $\mu$ = population means, $\sigma$ = population standard deviation.
-Also, we use Z Score when sample size &gt;= 30 or we know the population&rsquo;s mean dna SD.
-Z Table
-T-Score T-Score T-Score&rsquo;s formula $$T = \frac{X - \mu}{s/ \sqrt{n}}$$ where X = sample mean, $\mu$ = population mean, s = sample standard deviation, and n = sample size.……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/margin-error/">Read More</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/prototype-selection/" title="Prototype Selection" >Prototype Selection</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/27
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Backgrond kNN prototype selection Summary List
-There are couple drawbacks for KNN
- high storage for data computation for decision boundary intolerance to noise  There are couple methods address above issue
- better similarity metric or better distance function k-d trees or R-trees as storage reduction technique (prototype selection)  Prototype Selection 1. edition method - remove noise 1. condensation method - remove superfluous dataset 1. hybrid method - achive elimination of noise and superfluous at the same time……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/prototype-selection/">Read More</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/k-clustering/" title="K Clustering" >K Clustering</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/25
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Problem We have set of objects $U = \{o_1, o_2, &hellip;\}$, and we want to split them into k clusters.
-We also have following definition for distance function.
- $\forall_{i,j} dist(p_i, p_j) = dist(p_j, p_j)$ $\forall_{i,j} dist(p_i, p_i) = 0$ $\forall_{i,j} dist(p_i, p_j) &gt; 0$.  At the end, we should have $C = \{C_1, C_2, &hellip; C_K\}$.
-Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is to find the k-clustering with maximum spacing.……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/k-clustering/">Read More</a></p>
-                        </article>
-                    
 
                     
 
@@ -330,6 +396,30 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment/" title="Sequence Alignment">Sequence Alignment</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/rna-secondary-structure/" title="RNA Secondary Structure">RNA Secondary Structure</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/knapsack/" title="Knapsack">Knapsack</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/segmented-least-square/" title="Segmented Least Square">Segmented Least Square</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/" title="Weighted Interval Scheduling">Weighted Interval Scheduling</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/gradient-descent/" title="Gradient Descent">Gradient Descent</a>
     </li>
     
@@ -345,30 +435,6 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
         <a href="https://keithzeng.github.io/posts/logistic-regression/" title="Logistic Regression">Logistic Regression</a>
     </li>
     
-    <li>
-        <a href="https://keithzeng.github.io/posts/matrix/" title="Matrix">Matrix</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/linear-regression/" title="Linear Regression">Linear Regression</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/" title="Bayes Optimal Classifier">Bayes Optimal Classifier</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/marginal-distribution/" title="Marginal Distribution">Marginal Distribution</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/lp-norm/" title="lp norm">lp norm</a>
-    </li>
-    
-    <li>
-        <a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/" title="Nearest Neighbor Classification">Nearest Neighbor Classification</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -379,11 +445,11 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(6)</a>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(12)</a>
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(8)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(9)</a>
     </li>
     
     <li>
@@ -406,6 +472,10 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     </li>
     
     <li>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(6)</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/series/greedy/">greedy(1)</a>
     </li>
     
@@ -422,7 +492,7 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(10)</a>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(11)</a>
     </li>
     
 </ul>
@@ -448,6 +518,10 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     
     <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
     
+    <a href="https://keithzeng.github.io/tags/divide-and-conquer/">divide-and-conquer</a>
+    
+    <a href="https://keithzeng.github.io/tags/dp/">dp</a>
+    
     <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
     
     <a href="https://keithzeng.github.io/tags/knn/">knn</a>
@@ -465,6 +539,8 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     <a href="https://keithzeng.github.io/tags/other/">other</a>
     
     <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/project/">project</a>
     
     <a href="https://keithzeng.github.io/tags/psd/">psd</a>
     

@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://keithzeng.github.io/posts/sequence-alignment-revisited/</loc>
+    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/posts/sequence-alignment/</loc>
+    <lastmod>2019-02-09T17:56:45-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/posts/rna-secondary-structure/</loc>
+    <lastmod>2019-02-09T17:07:21-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/posts/knapsack/</loc>
+    <lastmod>2019-02-09T14:09:38-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/posts/segmented-least-square/</loc>
+    <lastmod>2019-02-09T12:54:29-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/posts/weighted-interval-scheduling/</loc>
+    <lastmod>2019-02-08T23:22:27-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/posts/gradient-descent/</loc>
     <lastmod>2019-02-07T22:21:16-08:00</lastmod>
   </url>
@@ -88,6 +118,11 @@
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/posts/cse250-proj1/</loc>
+    <lastmod>2019-01-27T16:22:07-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/about/</loc>
     <lastmod>2019-01-27T03:17:07-08:00</lastmod>
   </url>
@@ -114,7 +149,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/categories/algorithm/</loc>
-    <lastmod>2019-01-30T00:31:46-08:00</lastmod>
+    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -126,7 +161,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/categories/</loc>
-    <lastmod>2019-01-30T00:31:46-08:00</lastmod>
+    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -150,7 +185,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/tags/cse250b/</loc>
-    <lastmod>2019-01-24T22:27:30-08:00</lastmod>
+    <lastmod>2019-01-27T16:22:07-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -175,6 +210,24 @@
   <url>
     <loc>https://keithzeng.github.io/series/divide-and-conquer/</loc>
     <lastmod>2019-01-30T00:31:46-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/tags/divide-and-conquer/</loc>
+    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/tags/dp/</loc>
+    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/series/dynamic-programing/</loc>
+    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -264,7 +317,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/posts/</loc>
-    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
+    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -277,6 +330,12 @@
   <url>
     <loc>https://keithzeng.github.io/tags/probability/</loc>
     <lastmod>2019-01-24T22:27:30-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/tags/project/</loc>
+    <lastmod>2019-01-27T16:22:07-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -324,7 +383,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/</loc>
-    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
+    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
     <priority>0</priority>
   </url>
   
