@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -47,7 +47,7 @@
                 <nav id="nav-menu" class="clearfix">
                     <a class="current" href="https://keithzeng.github.io">Main</a>
                     
-                    <a  href="https://keithzeng.github.io/books/" title="Books">Books</a>
+                    <a  href="https://keithzeng.github.io/projects/" title="Projects">Projects</a>
                     
                     <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
                     
@@ -66,6 +66,59 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/closest-point/" title="Closest Point" >Closest Point</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/29
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Given n points in the plane, find the pair that is closest together.
+Brute force takes $O(n^2)$.
+Algorithm Let&rsquo;s $d(p_i, p_j)$ = Euclidean distance.
+In 1-d, we can simply sort points and compute the distance with the next point, we then have complexity of O(nlogn). In 2-d, we can&rsquo;t applied the same thing.
+We will use divide and conquer. We find the closest pair in the left and closest pair in the right, and hoping to get it in linear time.……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/closest-point/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/counting-inversion/" title="Counting Inversion" >Counting Inversion</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/29
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Application in ranking, also called corraborative filtering.
+Comparing two rankings and decide how similar they are, or how many pairs are out of order.
+To quantify this, we count the number of inversions. The inversion is defined as two indices i &lt; j that $a_i &gt; a_j$. Algorithm Brute-Force $T(n) = O(n^2)$
+Modified Merge-Sort By leverage the merge process form merger-sort, we can count the number of inversion. Basically, when the element from A is appended, there is not inversion.……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/counting-inversion/">Read More</a></p>
+                        </article>
                     
                         <article class="post">
                             <header>
@@ -224,29 +277,6 @@ Probability mass functions has following properties:
                             <p class="readmore"><a href="https://keithzeng.github.io/posts/probability/">Read More</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/my-first-post/" title="My First Post" >My First Post</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/24
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/other">other</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Hello, this is the first post……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/my-first-post/">Read More</a></p>
-                        </article>
-                    
 
                     
 
@@ -271,7 +301,15 @@ Probability mass functions has following properties:
         <a href="https://keithzeng.github.io/page/3/">3</a>
     </li>
     
+    <li >
+        <a href="https://keithzeng.github.io/page/4/">4</a>
+    </li>
+    
 
+    
+    <li class="next">
+        <a href="https://keithzeng.github.io/page/4/">Next</a>
+    </li>
     
 </ol>
 
@@ -293,6 +331,10 @@ Probability mass functions has following properties:
     <section class="widget">
         <h3 class="widget-title">Most Recents</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/constrained-optimization/" title="Constrained Optimization">Constrained Optimization</a>
+    </li>
     
     <li>
         <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
@@ -330,10 +372,6 @@ Probability mass functions has following properties:
         <a href="https://keithzeng.github.io/posts/positive-semi-definite/" title="Positive Semi Definite">Positive Semi Definite</a>
     </li>
     
-    <li>
-        <a href="https://keithzeng.github.io/posts/logistic-regression/" title="Logistic Regression">Logistic Regression</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -348,7 +386,7 @@ Probability mass functions has following properties:
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(9)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(10)</a>
     </li>
     
     <li>
@@ -356,7 +394,7 @@ Probability mass functions has following properties:
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/other/">other(3)</a>
+        <a href="https://keithzeng.github.io/categories/other/">other(4)</a>
     </li>
     
 </ul>
@@ -383,7 +421,7 @@ Probability mass functions has following properties:
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/other/">other(3)</a>
+        <a href="https://keithzeng.github.io/series/other/">other(4)</a>
     </li>
     
     <li>
@@ -391,7 +429,7 @@ Probability mass functions has following properties:
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(11)</a>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(12)</a>
     </li>
     
 </ul>
@@ -434,6 +472,8 @@ Probability mass functions has following properties:
     <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
     
     <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/optimization/">optimization</a>
     
     <a href="https://keithzeng.github.io/tags/other/">other</a>
     

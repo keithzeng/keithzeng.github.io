@@ -6,10 +6,32 @@
     <description>Recent content on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Feb 2019 18:50:42 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Feb 2019 23:07:59 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Projects</title>
+      <link>https://keithzeng.github.io/projects/</link>
+      <pubDate>Thu, 14 Feb 2019 23:07:59 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Constrained Optimization</title>
+      <link>https://keithzeng.github.io/posts/constrained-optimization/</link>
+      <pubDate>Thu, 14 Feb 2019 15:43:04 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/constrained-optimization/</guid>
+      <description>Constrained Optimization $$\min_{x \in R^n} f(x)$$
+subject to: $$c_i (x) = 0, i \in E \text{(equality constraints)}$$ $$c_i (x) \geq 0, i \in I \text{(inequality constraints)}$$
+Feasible Set $\Omega = { x_i | c_i(x) = 0, i \in E \text{ and } c_i(x) \geq 0, i \in I}$.
+Case 1 $\min_{x \in R^n} f(x)$ subject to $c_1 (x) = 0$
+x is local minimum if x + s $\notin \Omega$ or f(x+s) $\geq$ f(x).</description>
+    </item>
     
     <item>
       <title>Sequence Alignment Revisited</title>
@@ -327,7 +349,7 @@ My idea was to capture as many distinct types in for each label and meanwhile re
       <pubDate>Sun, 27 Jan 2019 03:17:07 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/about/</guid>
-      <description></description>
+      <description>Resume</description>
     </item>
     
     <item>

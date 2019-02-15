@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://keithzeng.github.io/projects/</loc>
+    <lastmod>2019-02-14T23:07:59-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://keithzeng.github.io/posts/constrained-optimization/</loc>
+    <lastmod>2019-02-14T15:43:04-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/posts/sequence-alignment-revisited/</loc>
     <lastmod>2019-02-09T18:50:42-08:00</lastmod>
   </url>
@@ -263,7 +273,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/categories/machine-learning/</loc>
-    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
+    <lastmod>2019-02-14T15:43:04-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -298,26 +308,32 @@
   </url>
   
   <url>
+    <loc>https://keithzeng.github.io/tags/optimization/</loc>
+    <lastmod>2019-02-14T15:43:04-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://keithzeng.github.io/categories/other/</loc>
-    <lastmod>2019-01-27T03:17:07-08:00</lastmod>
+    <lastmod>2019-02-14T23:07:59-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://keithzeng.github.io/series/other/</loc>
-    <lastmod>2019-01-27T03:17:07-08:00</lastmod>
+    <lastmod>2019-02-14T23:07:59-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://keithzeng.github.io/tags/other/</loc>
-    <lastmod>2019-01-27T03:17:07-08:00</lastmod>
+    <lastmod>2019-02-14T23:07:59-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://keithzeng.github.io/posts/</loc>
-    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
+    <lastmod>2019-02-14T15:43:04-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -371,7 +387,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/series/statistical-learning/</loc>
-    <lastmod>2019-02-07T22:21:16-08:00</lastmod>
+    <lastmod>2019-02-14T15:43:04-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -383,7 +399,7 @@
   
   <url>
     <loc>https://keithzeng.github.io/</loc>
-    <lastmod>2019-02-09T18:50:42-08:00</lastmod>
+    <lastmod>2019-02-14T23:07:59-08:00</lastmod>
     <priority>0</priority>
   </url>
   

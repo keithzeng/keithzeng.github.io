@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -49,7 +49,7 @@
                 <nav id="nav-menu" class="clearfix">
                     <a class="" href="https://keithzeng.github.io">Main</a>
                     
-                    <a  href="https://keithzeng.github.io/books/" title="Books">Books</a>
+                    <a  href="https://keithzeng.github.io/projects/" title="Projects">Projects</a>
                     
                     <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
                     
@@ -74,6 +74,33 @@
                         series
                     </h3>
 
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/constrained-optimization/">Constrained Optimization</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/14
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Constrained Optimization $$\min_{x \in R^n} f(x)$$
+subject to: $$c_i (x) = 0, i \in E \text{(equality constraints)}$$ $$c_i (x) \geq 0, i \in I \text{(inequality constraints)}$$
+Feasible Set $\Omega = { x_i | c_i(x) = 0, i \in E \text{ and } c_i(x) \geq 0, i \in I}$.
+Case 1 $\min_{x \in R^n} f(x)$ subject to $c_1 (x) = 0$
+x is local minimum if x + s $\notin \Omega$ or f(x+s) $\geq$ f(x).……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/constrained-optimization/">Read More</a></p>
+                            </div>
+                        </article>
                     
                         <article class="post">
                             <header>
@@ -319,31 +346,6 @@ There are couple drawbacks for KNN
                             </div>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/cse250-proj1/">CSE250 Proj1</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/27
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Project 1
-1. Prototype Selection Divide data into ${S_1, S_2, &hellip;, S_c}$, where c = number of labels. For each dataset $S_i$, I select M/c points as new training set for that label, which are the centroids by running k-means clustering algorithm.
-My idea was to capture as many distinct types in for each label and meanwhile reduce the noise by selecting only the center of the each type.……
-                                <p class="readmore"><a href="https://keithzeng.github.io/posts/cse250-proj1/">Read More</a></p>
-                            </div>
-                        </article>
-                    
 
                     
 
@@ -388,6 +390,10 @@ My idea was to capture as many distinct types in for each label and meanwhile re
 <ul class="widget-list">
     
     <li>
+        <a href="https://keithzeng.github.io/posts/constrained-optimization/" title="Constrained Optimization">Constrained Optimization</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
     </li>
     
@@ -423,10 +429,6 @@ My idea was to capture as many distinct types in for each label and meanwhile re
         <a href="https://keithzeng.github.io/posts/positive-semi-definite/" title="Positive Semi Definite">Positive Semi Definite</a>
     </li>
     
-    <li>
-        <a href="https://keithzeng.github.io/posts/logistic-regression/" title="Logistic Regression">Logistic Regression</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -441,7 +443,7 @@ My idea was to capture as many distinct types in for each label and meanwhile re
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(9)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(10)</a>
     </li>
     
     <li>
@@ -449,7 +451,7 @@ My idea was to capture as many distinct types in for each label and meanwhile re
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/other/">other(3)</a>
+        <a href="https://keithzeng.github.io/categories/other/">other(4)</a>
     </li>
     
 </ul>
@@ -476,7 +478,7 @@ My idea was to capture as many distinct types in for each label and meanwhile re
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/other/">other(3)</a>
+        <a href="https://keithzeng.github.io/series/other/">other(4)</a>
     </li>
     
     <li>
@@ -484,7 +486,7 @@ My idea was to capture as many distinct types in for each label and meanwhile re
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(11)</a>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(12)</a>
     </li>
     
 </ul>
@@ -527,6 +529,8 @@ My idea was to capture as many distinct types in for each label and meanwhile re
     <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
     
     <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/optimization/">optimization</a>
     
     <a href="https://keithzeng.github.io/tags/other/">other</a>
     
