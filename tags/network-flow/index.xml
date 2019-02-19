@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network Flow on k317h</title>
+    <link>https://keithzeng.github.io/tags/network-flow/</link>
+    <description>Recent content in Network Flow on k317h</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Feb 2019 20:06:53 -0800</lastBuildDate>
+    
+	<atom:link href="https://keithzeng.github.io/tags/network-flow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Network Flow</title>
+      <link>https://keithzeng.github.io/posts/network-flow/</link>
+      <pubDate>Mon, 18 Feb 2019 20:06:53 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/network-flow/</guid>
+      <description>Problem1 A G(V, E), with each edge is capacity $C_e$.
+The is source s $\in$ and sink t $\in$ V.
+No edge enter and and no edge leaving t.
+Flow is defined as function f that take the edge and return a nonnegative real number, $f: E \rightarrow R^+$
+Subjects to following constraints
+ $0 \leq f(e) \leq c_e$ $\sum_{e\ into\ v} f(e) = \sum_{e\ out\ of v} f(e)$ or $f^{out}(v) = f^{in}(v)$  GOAL: find the maximum flow.</description>
+    </item>
+    
+  </channel>
+</rss>

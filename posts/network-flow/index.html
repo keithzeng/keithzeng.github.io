@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Network Flow | k317h</title>
+    <meta property="og:title" content="Network Flow - k317h">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-02-18T20:06:53&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-02-18T20:06:53&#43;08:00">
+        
+    <meta name="Keywords" content="Java,Web,Software">
+    <meta name="description" content="Network Flow">
+        
+    <meta name="author" content="k317h">
+    <meta property="og:url" content="https://keithzeng.github.io/posts/network-flow/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://keithzeng.github.io">
+                        k317h
+                    </a>
+                
+                <p class="description">A Blog to Record My Progress...</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://keithzeng.github.io">Main</a>
+                    
+                    <a  href="https://keithzeng.github.io/projects/" title="Projects">Projects</a>
+                    
+                    <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
+                    
+                    <a  href="https://keithzeng.github.io/about/" title="About">About</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Network Flow</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019/2/18
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> Views</span></span>
+                        </div>
+                        
+                        <div class="post-content">
+                            
+
+<h2 id="problem-algo">Problem<sup class="footnote-ref" id="fnref:algo"><a href="#fn:algo">1</a></sup></h2>
+
+<p>A G(V, E), with each edge is capacity $C_e$.</p>
+
+<p>The is source s $\in$ and sink t $\in$ V.</p>
+
+<p>No edge enter and and no edge leaving t.</p>
+
+<p>Flow is defined as function f that take the edge and return a nonnegative real number, $f: E \rightarrow R^+$</p>
+
+<p>Subjects to following constraints</p>
+
+<ol>
+<li>$0 \leq f(e) \leq c_e$</li>
+<li>$\sum_{e\ into\ v} f(e) = \sum_{e\ out\ of v} f(e)$ or $f^{out}(v) = f^{in}(v)$</li>
+</ol>
+
+<p>GOAL: find the maximum flow.</p>
+
+<p><img src="/img/cse202/network-flow.png" alt="network-flow" /></p>
+
+<h2 id="algorithm">Algorithm</h2>
+
+<h3 id="residual-graph">Residual Graph</h3>
+
+<p>Comes from the idea of following</p>
+
+<p><img src="/img/cse202/network-flow-example.png" alt="network-flow-example" /></p>
+
+<p>At first, we can push 20 units from S -&gt; u -&gt; v -&gt; t. However, one can clearly see that the maximum is 30. But we are stuck now, because any additional flow will exceed the capacity of the edge. When we push s-&gt;v with the flow of 10, we need to undo 10 units on the u-&gt;v edge.</p>
+
+<p>Residual graph $G_f$ is defined as follow:</p>
+
+<ul>
+<li>same node set as G</li>
+<li>for each edge e = (u,v) of G which f(e) &lt; $c_e$, there is $c_e - f(e)$ leftover forward flow</li>
+<li>there is also f(e) is backward flow which we can undo</li>
+</ul>
+
+<h3 id="augmenting-path">Augmenting Path</h3>
+
+<p>augment(f , P)</p>
+
+<ol>
+<li>Let b=bottleneck(P,f)</li>
+<li>For each edge (u,v) $\in$ P
+
+<ul>
+<li>If e=(u,v) is a forward edge then
+
+<ul>
+<li>increase f(e) in G by b</li>
+</ul></li>
+<li>Else ((u, v) is a backward edge, and let e = (v, u))
+
+<ul>
+<li>decrease f(e) in G by b</li>
+</ul></li>
+<li>Endif Endfor</li>
+</ul></li>
+<li>Return(f)</li>
+</ol>
+
+<p><strong>Claim</strong> f&rsquo; = augment(f,P) is a flow in g</p>
+
+<p>If f is forward flow, the conditions holds, because of following
+$$0 \leq f(e) \leq f′(e) = f(e) + bottleneck(P, f) \leq f(e) + (c_e − f(e)) = c_e$$</p>
+
+<p>If f is backward flow, the conditions holds, because of following
+$$c_e \geq f(e) \geq  f′(e) = f(e) − bottleneck(P, f) \geq f(e) − f(e) = 0$$</p>
+
+<p>The conversation of mass is also holds.</p>
+
+<p><strong>Ford-Fulkerson Algorithm</strong>
+Max-Flow</p>
+
+<ol>
+<li>Initially f(e) = 0 for all e in G</li>
+<li>While there is an s-t path in the residual graph $G_f$
+
+<ul>
+<li>Let P be a simple s-t path in $G_f$</li>
+<li>f&rsquo; = augment(f, P)</li>
+<li>Update f to be f&rsquo;</li>
+<li>Update the residual graph Gf to be Gf′</li>
+</ul></li>
+<li>Endwhile</li>
+<li>Return f</li>
+</ol>
+
+<h2 id="analysis">Analysis</h2>
+
+<p>Assume all residuals are all integers, and the algorithm will terminate</p>
+
+<p>v(f&rsquo;) = v(f) + bottleneck(P, f), since bottleneck(P, f) &gt; 0, then v(f&rsquo;)&gt;(f).</p>
+
+<p>The first edge e leaving s must be a forward flow, so we increase the flow by bottleneck(P,f). Moreover, we maximum number of iteration we can have is $\sum_{e\ out\ of\ s} c_e$ if we increase flow by 1 unit at the time.</p>
+
+<h3 id="time-complexity">Time Complexity</h3>
+
+<p>The algorithm takes O(m + n), where n = number of nodes, m = number of edges. Since m $\geq$ n/2, we can simplify to O(m). Combined with the max capacity at the s, we have O(mC). Finding path takes O(m+n) = O(m), augmenting takes O(n), building residual graph takes O(m). Overall, it takes $O(m^2C)$.</p>
+
+<h2 id="cut">Cut</h2>
+
+<p>Divide the graph into two set, A contains s and B contains t. The capacity of this cut c(A,B)= $\sum_{e\ out\ of\ A}c_e$.</p>
+
+<p><strong>Claim</strong></p>
+
+<p>However, we can provide an even strong upper bound, $v(f) = f^{out}(A) − f^{in}(A)$.</p>
+
+<p><strong>Proof</strong></p>
+
+<ul>
+<li>By definition $v(f) = f^{out}(s)$</li>
+<li>Since $f^{in}(s) = 0$, we can writer above as $v(f) = f^{out}(s) - f^{in}(s)$</li>
+<li>$v(f) = \sum_{v \in A}(f^{out}(v) − f^{in}(v))$, where all node != s will contribute 0 to the sum</li>
+<li>RHS = $\sum_{e\ out\ of\ A} f(e) - \sum_{e\ into\ A} f(e) = f^{out}(A) - f^{in}(A)$</li>
+<li>Base case, A = {s}, then $f^{out}(A) = f^{out}(s)$, $f^{in}(A) = 0$</li>
+<li>If (A, B) is a cut, $f^{out}(A) = f^{in}(B)$ and $f^{in}(A) = f^{out}(B)$, so $ v(f) = f^{in}(B) - f^{out}(B)$</li>
+<li>The above also proof the base case of B = {t}</li>
+</ul>
+
+<p><strong>Claim</strong></p>
+
+<p>$$v(f ) \leq c(A, B)$$</p>
+
+<p><strong>Proof</strong></p>
+
+<p>\begin{align}
+v(f) &amp;= f^{out}(A) - f^{in}(A) \newline
+&amp;\leq f^{out}(A) \newline
+&amp;= \sum_{e\ out\ of\ A} f(e) \newline
+&amp;\leq \sum_{e\ out\ of\ A} c_e  \newline
+&amp;= c(A,B)
+\end{align}</p>
+
+<p>Basically, we are saying that the flow is upper bounded by its capacity of cut.</p>
+
+<h2 id="max-flow-min-cut">Max Flow = Min Cut</h2>
+
+<p><strong>Claim</strong></p>
+
+<p>$v(\bar{f}) = c(A^*, B^*)$, where $\bar{f}$ = flow return by Ford-Fulkerson Algorithm.</p>
+
+<p><strong>Proof</strong></p>
+
+<p><img src="/img/cse202/flow-cut.png" alt="cut" /></p>
+
+<ol>
+<li>$(A^*, B^*)$ is a cut
+
+<ul>
+<li>$s \in A$ and $t \in B$</li>
+</ul></li>
+<li>e=(u,v) and $f(e) = c_e$
+
+<ul>
+<li>if not, there is path from s to v path in $G_f$ which contradicts $v \in B^*$</li>
+</ul></li>
+<li>similiary e&rsquo;=(u&rsquo;,v&rsquo;) and $f(e&rsquo;) = 0$</li>
+</ol>
+
+<p>So
+\begin{align}
+v(f) &amp;= f^{out}(A^*) - f^{in}(A^*) \newline
+&amp;= \sum_{e\ out\ of\ A} f(e) - \sum_{e\ into\ A} f(e)\newline
+&amp;= \sum_{e\ out\ of\ A} c_e - 0\newline
+&amp;= c(A^*, B^*)\newline
+\end{align}</p>
+
+<p>More generally in every cut, v(f)=c(A,B).</p>
+
+<p>Therefore, if there is f&rsquo; &gt; f, this will f&rsquo; will exceed the capacity now if there is c(A&rsquo;,B&rsquo;) &lt; $c(A^*, B^*)$, it will be &lt; v(f), both of them contradict v(f) ≤ c(A, B).</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:algo">Algorithm Design by Jon Kleinber, Eva Tardos
+ <a class="footnote-return" href="#fnref:algo"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/projects/">Projects</a></li>
+        
+        <li><a href="/posts/constrained-optimization/">Constrained Optimization</a></li>
+        
+        <li><a href="/posts/full-stack-skill/">Full Stack Skill</a></li>
+        
+        <li><a href="/posts/sequence-alignment-revisited/">Sequence Alignment Revisited</a></li>
+        
+        <li><a href="/posts/sequence-alignment/">Sequence Alignment</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://keithzeng.github.io/tags/network-flow">network flow</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "keithzeng/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://keithzeng.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">Most Recents</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/network-flow/" title="Network Flow">Network Flow</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/constrained-optimization/" title="Constrained Optimization">Constrained Optimization</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/full-stack-skill/" title="Full Stack Skill">Full Stack Skill</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment/" title="Sequence Alignment">Sequence Alignment</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/rna-secondary-structure/" title="RNA Secondary Structure">RNA Secondary Structure</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/knapsack/" title="Knapsack">Knapsack</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/segmented-least-square/" title="Segmented Least Square">Segmented Least Square</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/" title="Weighted Interval Scheduling">Weighted Interval Scheduling</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/gradient-descent/" title="Gradient Descent">Gradient Descent</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Categories</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(13)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/other/">other(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/software-engineering/">software-engineering(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Series</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/full-stack/">full-stack(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/greedy/">greedy(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/matrix/">matrix(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/network-flow/">network-flow(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/other/">other(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/probability/">probability(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(12)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+    
+    <a href="https://keithzeng.github.io/tags/back-end/">back-end</a>
+    
+    <a href="https://keithzeng.github.io/tags/bayes/">bayes</a>
+    
+    <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
+    
+    <a href="https://keithzeng.github.io/tags/convexity/">convexity</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
+    
+    <a href="https://keithzeng.github.io/tags/determinant/">determinant</a>
+    
+    <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
+    
+    <a href="https://keithzeng.github.io/tags/divide-and-conquer/">divide-and-conquer</a>
+    
+    <a href="https://keithzeng.github.io/tags/dp/">dp</a>
+    
+    <a href="https://keithzeng.github.io/tags/front-end/">front-end</a>
+    
+    <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/logistic/">logistic</a>
+    
+    <a href="https://keithzeng.github.io/tags/lpnorm/">lpnorm</a>
+    
+    <a href="https://keithzeng.github.io/tags/metric/">metric</a>
+    
+    <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
+    
+    <a href="https://keithzeng.github.io/tags/network-flow/">network-flow</a>
+    
+    <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/optimization/">optimization</a>
+    
+    <a href="https://keithzeng.github.io/tags/other/">other</a>
+    
+    <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/project/">project</a>
+    
+    <a href="https://keithzeng.github.io/tags/psd/">psd</a>
+    
+    <a href="https://keithzeng.github.io/tags/rank/">rank</a>
+    
+    <a href="https://keithzeng.github.io/tags/regression/">regression</a>
+    
+    <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Other</h3>
+        <ul class="widget-list">
+            <li><a href="https://keithzeng.github.io/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
+    </div>
+</footer>
+
+<script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+</script>
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133234541-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+</html>

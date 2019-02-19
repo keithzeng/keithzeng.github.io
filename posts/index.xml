@@ -6,10 +6,24 @@
     <description>Recent content in Posts on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Feb 2019 15:43:04 -0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Feb 2019 20:06:53 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Network Flow</title>
+      <link>https://keithzeng.github.io/posts/network-flow/</link>
+      <pubDate>Mon, 18 Feb 2019 20:06:53 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/network-flow/</guid>
+      <description>Problem1 A G(V, E), with each edge is capacity $C_e$.
+The is source s $\in$ and sink t $\in$ V.
+No edge enter and and no edge leaving t.
+Flow is defined as function f that take the edge and return a nonnegative real number, $f: E \rightarrow R^+$
+Subjects to following constraints
+ $0 \leq f(e) \leq c_e$ $\sum_{e\ into\ v} f(e) = \sum_{e\ out\ of v} f(e)$ or $f^{out}(v) = f^{in}(v)$  GOAL: find the maximum flow.</description>
+    </item>
     
     <item>
       <title>Constrained Optimization</title>
@@ -22,6 +36,18 @@ subject to: $$c_i (x) = 0, i \in E \text{(equality constraints)}$$ $$c_i (x) \ge
 Feasible Set $\Omega = { x_i | c_i(x) = 0, i \in E \text{ and } c_i(x) \geq 0, i \in I}$.
 Case 1 $\min_{x \in R^n} f(x)$ subject to $c_1 (x) = 0$
 x is local minimum if x + s $\notin \Omega$ or f(x+s) $\geq$ f(x).</description>
+    </item>
+    
+    <item>
+      <title>Full Stack Skill</title>
+      <link>https://keithzeng.github.io/posts/full-stack-skill/</link>
+      <pubDate>Tue, 12 Feb 2019 11:19:46 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/posts/full-stack-skill/</guid>
+      <description>Full Stack Developer
+Front-End Basic
+   HTML5 CSS JavaScript           Framework
+   Angular React Vue           Back-End    Ruby on Rail Python with Django Java           Database    MySQL MongoDB          Tools    Docker AWS          Knowledge Front End CSS preprocessors Sass or LESS</description>
     </item>
     
     <item>

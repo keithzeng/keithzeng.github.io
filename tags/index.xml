@@ -6,10 +6,19 @@
     <description>Recent content in Tags on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Jan 2019 18:00:14 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Feb 2019 11:19:46 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Back End</title>
+      <link>https://keithzeng.github.io/tags/back-end/</link>
+      <pubDate>Tue, 12 Feb 2019 11:19:46 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/back-end/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bayes</title>
@@ -102,6 +111,15 @@
     </item>
     
     <item>
+      <title>Front End</title>
+      <link>https://keithzeng.github.io/tags/front-end/</link>
+      <pubDate>Tue, 12 Feb 2019 11:19:46 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/front-end/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gradient Descent</title>
       <link>https://keithzeng.github.io/tags/gradient-descent/</link>
       <pubDate>Thu, 07 Feb 2019 22:21:16 -0800</pubDate>
@@ -152,6 +170,15 @@
       <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/tags/mnist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network Flow</title>
+      <link>https://keithzeng.github.io/tags/network-flow/</link>
+      <pubDate>Mon, 18 Feb 2019 20:06:53 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/network-flow/</guid>
       <description></description>
     </item>
     
