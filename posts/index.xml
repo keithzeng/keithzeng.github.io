@@ -350,17 +350,6 @@ There are couple drawbacks for KNN
     </item>
     
     <item>
-      <title>CSE250 Proj1</title>
-      <link>https://keithzeng.github.io/posts/cse250-proj1/</link>
-      <pubDate>Sun, 27 Jan 2019 16:22:07 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/posts/cse250-proj1/</guid>
-      <description>Project 1
-1. Prototype Selection Divide data into ${S_1, S_2, &amp;hellip;, S_c}$, where c = number of labels. For each dataset $S_i$, I select M/c points as new training set for that label, which are the centroids by running k-means clustering algorithm.
-My idea was to capture as many distinct types in for each label and meanwhile reduce the noise by selecting only the center of the each type.</description>
-    </item>
-    
-    <item>
       <title>K Clustering</title>
       <link>https://keithzeng.github.io/posts/k-clustering/</link>
       <pubDate>Fri, 25 Jan 2019 21:51:25 -0800</pubDate>

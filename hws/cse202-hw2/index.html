@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CSE202 HW2 | k317h</title>
+    <meta property="og:title" content="CSE202 HW2 - k317h">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-02-05T13:01:30&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-02-05T13:01:30&#43;08:00">
+        
+    <meta name="Keywords" content="Java,Web,Software">
+    <meta name="description" content="CSE202 HW2">
+        
+    <meta name="author" content="k317h">
+    <meta property="og:url" content="https://keithzeng.github.io/hws/cse202-hw2/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://keithzeng.github.io">
+                        k317h
+                    </a>
+                
+                <p class="description">A Blog to Record My Progress...</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://keithzeng.github.io">Main</a>
+                    
+                    <a  href="https://keithzeng.github.io/projects/" title="Projects">Projects</a>
+                    
+                    <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
+                    
+                    <a  href="https://keithzeng.github.io/about/" title="About">About</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">CSE202 HW2</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019/2/5
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<p><a href="https://cseweb.ucsd.edu/classes/wi19/cse202-a/hw2.pdf">HW Link</a></p>
+
+<h2 id="problem-1-kt-5-2">Problem 1 (KT 5.2)</h2>
+
+<p>Idea: we will need to modify the merge-and-count function, everything else stays the same as regular inversion algorithm.</p>
+
+<p>merge-and-count(A, B):</p>
+
+<ol>
+<li>i = 1, j = 1, where i is pointer to A, j is pointer to B</li>
+<li>count = 0, lenA = length(A), lenB = length(B)</li>
+<li>sorted = {}</li>
+<li>While $i \leq lenA$ and $j \leq lenB$:
+
+<ul>
+<li>if (A[i] $\leq$ B[j])
+
+<ul>
+<li>sorted = sorted + {A[i]}</li>
+<li>$i \gets i + 1$</li>
+</ul></li>
+<li>else
+
+<ul>
+<li>sorted = sorted + {B[j]}</li>
+<li>$j \gets j + 1$</li>
+</ul></li>
+</ul></li>
+<li>append remaining A or append remaining B to sorted</li>
+<li>While $i \leq lenA$ and $j \leq lenB$:
+
+<ul>
+<li>if (A[i] $\leq$ 2B[j]), means no significant inversion
+
+<ul>
+<li>$i \gets i + 1$</li>
+</ul></li>
+<li>else
+
+<ul>
+<li>$j \gets j + 1$</li>
+<li>$count \gets count + (lenA - i + 1)$</li>
+</ul></li>
+</ul></li>
+<li>return (sorted, count)</li>
+</ol>
+
+<h3 id="analysis">Analysis</h3>
+
+<h4 id="time-complexity">Time Complexity</h4>
+
+<p>Instead of looping once for original inversion problem, we here loop twice. One for making the element sorted, and one for counting number of <em>significant inversion</em>. Our conquer step will take O(2n), which is still O(n), so T(n) = 2T(n/2) + O(n) still holds. Thus the overall algorithm is still $O(n\log n)$.</p>
+
+<h4 id="space-complexity">Space Complexity</h4>
+
+<p>T(n) = O(n)</p>
+
+<p>\pagebreak</p>
+
+<h2 id="problem-2">Problem 2</h2>
+
+<h3 id="part-a">part (a)</h3>
+
+<p>Since there are 4 addition, 2 substractions. Assume all other operations takes negligible time and all the $B^n$ is precomputed to save time.</p>
+
+<p>We have following</p>
+
+<p>\begin{align}
+T(1) &amp;= 1 \newline
+T(n) &amp; = 3T(n / 2) + 6
+\end{align}</p>
+
+<p>Solving the above recurence euqaion, we got</p>
+
+<p>$$T(n) = 4 \cdot 3 ^ {\log n} - 3 = 4 n ^ {\log 3} - 3$$</p>
+
+<h3 id="part-b">part (b)</h3>
+
+<p>ALG(A, B, n):</p>
+
+<ol>
+<li>pad A and B to 2n digits</li>
+<li>A = pad(A, 2n)</li>
+<li>B = pad(B, 2n)</li>
+<li>A = DFT(A, 2n)</li>
+<li>B = DFT(B)</li>
+<li>C = $A \cdot B$</li>
+<li>coefficient = IDFT(C)</li>
+<li>return Coefficient</li>
+</ol>
+
+<p>pad(A, d):</p>
+
+<ol>
+<li>pad the input A to desired digits</li>
+</ol>
+
+<p>DFT(x, N, s)<sup class="footnote-ref" id="fnref:fft"><a href="#fn:fft">1</a></sup> :</p>
+
+<ol>
+<li>if N = 1
+
+<ul>
+<li>return X</li>
+</ul></li>
+<li>else
+
+<ul>
+<li>$X_0, &hellip; X_{N/2 - 1} \gets$ DFT(x,N/2, 2s)</li>
+<li>$X_{N/2}, &hellip; X_{N -1} \gets$ DFT(x + s,N/2, 2s)</li>
+<li>Full DFT Step:</li>
+<li>for k = 0 to N / 2 - 1
+
+<ul>
+<li>$t \gets X_K$</li>
+<li>$X_k \gets t + e^{\frac{2\pi i k}{N}} X_{k+N/2}$</li>
+<li>$X_{k + N / 2} \gets t - e^{\frac{2\pi i k}{N}} X_{k+N/2}$</li>
+</ul></li>
+<li>endFor</li>
+</ul></li>
+<li>endIf</li>
+</ol>
+
+<p>Assume that all the roots of unity is precomuted to save time. Now for DFT, the recurrent relation is $T(N) = 2T(N/2) + 2N$, which is $T(N) = 2N \log_2 N$, IDFT performs excatly the same steps in reverse, so we can treat the time complexity as same.</p>
+
+<p>Since there are 3 DFT operations, and N dot operations, we have overall time complexity of</p>
+
+<p>\begin{align}
+T(N) &amp;= 3 \times 2N \log_2 N + N \newline
+T(n) &amp;= 3 \times 2 (2n) \log_2 {2n} + 2n \newline
+&amp;= 12 n \log_2 {2n} + 2n \newline
+&amp;= 12 n (\log_2 2 + \log_2 n) + 2n \newline
+&amp;= 14 n + 12n\log_2 n\newline
+\end{align}</p>
+
+<p>Finally incoporating the 10 times cost to float points operations, we got</p>
+
+<p>$$T(n) = 140 n + 120 n\log_2 n$$</p>
+
+<h3 id="part-c">part (c)</h3>
+
+<p><img src="/img/cse202/hw2.2c.png" alt="cost vs input" /></p>
+
+<p>Using scipy library, I got n = 40254.58180453, So if n &gt;= 40255, FFT outperforms Karatsuba.</p>
+
+<h2 id="problem-3">Problem 3</h2>
+
+<h3 id="algorithm-1">Algorithm 1:</h3>
+
+<p>Basic Idea: for each vertex v, find the two longest paths orginate from v.</p>
+
+<p>We need to create a adjacency matrix or neighbor list for each v.</p>
+
+<p>Alg(T):</p>
+
+<ul>
+<li>Let adj = {neighbors[i], where i = 1 to n} from buildAdjMatrix(T)</li>
+<li>Let diameter = 0</li>
+<li>Let visited = {}</li>
+<li>for v in V
+
+<ul>
+<li>add vertex to be visited to avoid next node travel back</li>
+<li>loop through neighbors[v] and calculate the distance</li>
+<li>$maxDist_v$ = sum of two longest paths (or just one for 1 neighbor)</li>
+<li>diameter = max($diameter$, $maxDist_v$)</li>
+</ul></li>
+<li>return diameter</li>
+</ul>
+
+<h3 id="complexity">Complexity</h3>
+
+<h4 id="time-complexity-1">Time Complexity</h4>
+
+<p>Building adjacency matrix takes O(n). For each loop, we will take O(n) to visit possibly all the vertices. By looping n times, we have $O(n^2)$. Overall we have $O(n^2 + n) = O(n^2)$</p>
+
+<h4 id="space-complexity-1">Space Complexity</h4>
+
+<p>We will at most store 2n vertices in adj matrix and n status in visited. So the overall space is O(n).</p>
+
+<p>Where</p>
+
+<ul>
+<li>V = vertices of graph</li>
+<li>T = graph</li>
+<li>m = number of edges</li>
+<li>n = number of vertices</li>
+</ul>
+
+<h3 id="algorithm-2-improved-algorithm">Algorithm 2 (Improved Algorithm):</h3>
+
+<p>Idea: we have done a lot of repeated work to find the disitance between different iterations. We can see that the maximum diameter should be either on subtrees of current vertex or span across different subtree (including current vertex). We can recursively split the problem into k subgroups and perform the calculation.</p>
+
+<p>k = number of neighbors for each vertex, which can be different for diffrent vertex.</p>
+
+<p>Alg(T):</p>
+
+<ul>
+<li>Let adj = {neighbors[i], where i = 1 to n} from buildAdjMatrix(T)</li>
+<li>Let global variable diameter = 0</li>
+<li>Let visited = {}</li>
+<li>Let x = an abitary vertex in V.</li>
+<li>DFS(x, adj, visited)</li>
+<li>return diameter</li>
+</ul>
+
+<p>DFS(x, adj, visited):</p>
+
+<ul>
+<li>if visited[x] return</li>
+<li>Let longestDist = 0, secondLongestDist = 0</li>
+<li>set x to be visited</li>
+<li>for neighbor in adj[x]:
+
+<ul>
+<li>dist = DFS(neighbor)</li>
+<li>if dist &gt; longestDist
+
+<ul>
+<li>longestDist $\gets$ dist, secondLongestDist $\gets$ longestDist</li>
+</ul></li>
+<li>else if dist &gt; secondLongestDist
+
+<ul>
+<li>secondLongestDist $\gets$ dist</li>
+</ul></li>
+</ul></li>
+<li>diameter = max (longestDist + secondLongestDist, diameter)</li>
+<li>return longestDist</li>
+</ul>
+
+<h3 id="complexity-1">Complexity</h3>
+
+<h4 id="time-complexity-2">Time Complexity</h4>
+
+<p>Building adjacency matrix takes O(n). For the n loops, we basically split the vertices into groups of neighbors. Let&rsquo;s assume without loss of generality that at each vertex we split into k groups, so T(n) = kT(n/k) + O(1). Based on master theorem, this is O(n) complexity. Alternatively, we can see that the algorithm visit each node exactly 1 time. Overall we have $O(n + n) = O(n)$</p>
+
+<h4 id="space-complexity-2">Space Complexity</h4>
+
+<p>Same as above, so space complexity is O(n).</p>
+
+<h3 id="proof">Proof</h3>
+
+<p><strong>Claim 1:</strong> The algorithm cover all the paths possible and return the diameter of the tree.</p>
+
+<p>Assume the contary, the return value is not the diameter, which means there is a path has longer distance than diameter. Let&rsquo;s call this path $P_{uv}$. Let&rsquo;s assume z is the root vertext of this path. There are two possible cases</p>
+
+<ul>
+<li>our original solution contains z</li>
+<li>our original solution doesn&rsquo;t contains z</li>
+</ul>
+
+<p>Let&rsquo;s define our original solution to be $P_{xy}$.</p>
+
+<p>If our original solution contains z, then at the step when we try to find the two longest paths, we would&rsquo;ve pick $P_{uv}$. We ended up choose our $P_{xy}$ because $P_{xz}$ and $P_{yz}$ is the two longest path, so $P_{uz}$ &lt; ($P_{xz}$, $P_{yz}$) and $P_{vz}$ &lt; ($P_{xz}$, $P_{yz}$), so $P_{uz} + P_{zv} &lt; P_{xz} + P_{zy}$. So $P_{uv}$ can&rsquo;t be the diameter.</p>
+
+<p>If our original solution doesn&rsquo;t contain z, this happens in the another vertex a, where $a \neq z$. However, if the $P_{uv}$ is the true diameter, the diameter value will not be replaced by the $P_{cd}$ that goes through vertex a. Therefore $P_{uv}$ cannot be the true diameter.</p>
+
+<p><strong>Claim 2:</strong> The longest path lies between two leaf nodes.</p>
+
+<p>If this is not the case, we can always extend the path with additional nodes to make it longer.</p>
+
+<h2 id="problem-4">Problem 4</h2>
+
+<p>Idea: for each book we can either start a new shelf by itself and append to the exisiting shelf. SO we define a dp array BEST, where BEST[i] stores the best height for stacking the the books from i to n. Thus, we start from the last book $b_n$ to $b_1$.</p>
+
+<p>Assuming each book&rsquo;s width is smaller than W, otherwise there is no solution at all.</p>
+
+<h3 id="algorithm">Algorithm</h3>
+
+<p>Alg(h, t)</p>
+
+<ol>
+<li>Let BEST = array of size n</li>
+<li>BEST[n] = $h_n$</li>
+<li>for i = n - 1 to 1
+
+<ul>
+<li>currentShelfHeight = $h_i$</li>
+<li>currentWidth = $w_i$</li>
+<li>bestSoFar = $\infty$</li>
+<li>for j = i + 1 to n
+
+<ul>
+<li>currentWidth $\gets$ currentWidth + $t_j$</li>
+<li>if currentWidth &gt; W, break the loop</li>
+<li>currentShelfHeight = max(currentShelfHeight, $h_j$)</li>
+<li>if BEST[j] + currentShelfHeight &lt; bestSoFar
+
+<ul>
+<li>bestSoFar $\gets$ BEST[j] + currentShelfHeight</li>
+</ul></li>
+</ul></li>
+<li>BEST[i] = bestSoFar</li>
+</ul></li>
+<li>return BEST[1]</li>
+</ol>
+
+<h3 id="complexity-2">Complexity</h3>
+
+<h4 id="time-complexity-3">Time Complexity</h4>
+
+<p>T(n) = O($n^2$), double for loops and each loops takes around n times.</p>
+
+<h4 id="space-complexity-3">Space Complexity</h4>
+
+<p>T(n) = O(n), only auxiliary array of size n is used.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:fft">FFT, <a href="https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm</a>
+ <a class="footnote-return" href="#fnref:fft"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/hws/cse202-hw1/">CSE202 HW1</a></li>
+        
+        <li><a href="/posts/fast-fourtier-transform/">Fast Fourtier Transform</a></li>
+        
+        <li><a href="/posts/integer-multiplication/">Integer Multiplication</a></li>
+        
+        <li><a href="/posts/closest-point/">Closest Point</a></li>
+        
+        <li><a href="/posts/counting-inversion/">Counting Inversion</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://keithzeng.github.io/tags/cse202">cse202</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/hw">hw</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "keithzeng/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://keithzeng.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">Most Recents</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/network-flow/" title="Network Flow">Network Flow</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/constrained-optimization/" title="Constrained Optimization">Constrained Optimization</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/full-stack-skill/" title="Full Stack Skill">Full Stack Skill</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment/" title="Sequence Alignment">Sequence Alignment</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/rna-secondary-structure/" title="RNA Secondary Structure">RNA Secondary Structure</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/knapsack/" title="Knapsack">Knapsack</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/segmented-least-square/" title="Segmented Least Square">Segmented Least Square</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/" title="Weighted Interval Scheduling">Weighted Interval Scheduling</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/gradient-descent/" title="Gradient Descent">Gradient Descent</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Categories</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/other/">other(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/software-engineering/">software-engineering(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Series</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/full-stack/">full-stack(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/greedy/">greedy(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/matrix/">matrix(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/network-flow/">network-flow(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/np/">np(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/other/">other(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/probability/">probability(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(13)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+    
+    <a href="https://keithzeng.github.io/tags/back-end/">back-end</a>
+    
+    <a href="https://keithzeng.github.io/tags/bayes/">bayes</a>
+    
+    <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
+    
+    <a href="https://keithzeng.github.io/tags/convexity/">convexity</a>
+    
+    <a href="https://keithzeng.github.io/tags/coordinate-descent/">coordinate-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
+    
+    <a href="https://keithzeng.github.io/tags/determinant/">determinant</a>
+    
+    <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
+    
+    <a href="https://keithzeng.github.io/tags/divide-and-conquer/">divide-and-conquer</a>
+    
+    <a href="https://keithzeng.github.io/tags/dp/">dp</a>
+    
+    <a href="https://keithzeng.github.io/tags/front-end/">front-end</a>
+    
+    <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/hw/">hw</a>
+    
+    <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/logistic/">logistic</a>
+    
+    <a href="https://keithzeng.github.io/tags/lpnorm/">lpnorm</a>
+    
+    <a href="https://keithzeng.github.io/tags/metric/">metric</a>
+    
+    <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
+    
+    <a href="https://keithzeng.github.io/tags/network-flow/">network-flow</a>
+    
+    <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/optimization/">optimization</a>
+    
+    <a href="https://keithzeng.github.io/tags/other/">other</a>
+    
+    <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/project/">project</a>
+    
+    <a href="https://keithzeng.github.io/tags/psd/">psd</a>
+    
+    <a href="https://keithzeng.github.io/tags/rank/">rank</a>
+    
+    <a href="https://keithzeng.github.io/tags/regression/">regression</a>
+    
+    <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Other</h3>
+        <ul class="widget-list">
+            <li><a href="https://keithzeng.github.io/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
+    </div>
+</footer>
+
+<script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true,
+        },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+    };
+</script>
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133234541-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.57.2" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -66,6 +66,87 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/knapsack/" title="Knapsack" >Knapsack</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Each request has value $v_i$ and weight $w_i$, and we have constraint that the total of request weight $\leq$ W.
+Greedy doesn&rsquo;t work because sorting the W either in decreasing or increasing manner don&rsquo;t produce the optimal solution.
+ {W/2 + 1, W/2, W/2} {1, W/2, W/2}  Using dynamic programing, we can use reduce this problem to whether or not each request belongs to the optimal solution O again.……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/knapsack/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/segmented-least-square/" title="Segmented Least Square" >Segmented Least Square</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/9
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Data $P = (x_1,y_1), (x_2, y_2)&hellip;(x_n, y_n)$ for $x_1 &lt; x_2 &lt; &hellip; &lt; x_n$.
+Given a line y=ax+b, and error
+$$Error(L, P) = \sum_{i=1}^n(y_i - ax_i -b)^2$$
+And it has closed form solution of
+$$a = \frac{n\sum_i x_iy_i - (\sum_i x_i)(\sum_i y_i)}{n\sum_i x_i^2 - (\sum_i x_i)^2}$$
+and
+$$b = \frac {\sum_i y_i - a \sum_i x_i}{n}$$
+However, if the data is show as below (maybe fitted with two lines), we can&rsquo;t just use the above formula.……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/segmented-least-square/">Read More</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/" title="Weighted Interval Scheduling" >Weighted Interval Scheduling</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/2/8
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem1 Instead of just fitting as many tasks like regular interval scheduling problem, we have weight associates with the interval. Now we want to maximize the value.
+So basically, $f_i$ finish time sorted in non-decreasing order, $v_i$ is the value, and $s_i$ is the start time. We want $S \subseteq {1&hellip; n}$.
+We also define $p(j)$ which is the largest i &lt; j which is disjoint(compatible) with j.
+Algorithm Idea:……
+                            </div>
+                            <p class="readmore"><a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/">Read More</a></p>
+                        </article>
                     
                         <article class="post">
                             <header>
@@ -227,121 +308,6 @@ This is a regression problem with:
                             <p class="readmore"><a href="https://keithzeng.github.io/posts/linear-regression/">Read More</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/" title="Bayes Optimal Classifier" >Bayes Optimal Classifier</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/31
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Background Marginal Distribution
-Three ways to sample from P
- Draw (x,y) Draw y according to its marginal distribution, then x according to the conditional distribution of x | y Draw X according to its marginal distribution, then Y according to the conditional distribution of y | x  Define:
-$\mu$: distribution on $X$
-$\eta$: conditional distribution y|x
-Classifier Normal Classifier
-$h : x \rightarrow y$
-$R(h) = Pr_{(x,y) \in p} (h(x) \neq y)$, where R = risk……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/bayes-optimal-classifier/">Read More</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/marginal-distribution/" title="Marginal Distribution" >Marginal Distribution</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/31
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/mathematic">mathematic</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Marginal Distribution: It&rsquo;s a function that gives the probability based on only subset of the variables.1. For example,
-Or in mathematical way, for discrete
-$$Pr(X = x) = \sum_y Pr(X = x, Y = y) = \sum_y Pr(X = x | Y = y) Pr(Y = y)$$
-and for continuous
-$$p_X(x) = \int_y p_{X,Y}(x,y) dy = \int_y p_{X|Y}(x|y)p_Y(y) dy$$
-and it can also be written as Expected Vaue
-$$p_X(x) = \int_y p_{X|Y} (x|y) p_Y(y) dy = \mathbb{E}_Y[p_{X|Y} (x|y)]$$……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/marginal-distribution/">Read More</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/lp-norm/" title="lp norm" >lp norm</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/31
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Families of Distance Function $l_p$ norm The most common one is $l_2$ norm (Euclidean distance):
-$$||x - z||_2 = \sqrt{\sum_{i=1}^{m}(x_i - z_i)^2}$$
-Notes: sometime 2 is dropped.
-For $p \geq 1$, the $l_p$ distance:
-$$||x - z||_p = (\sum_{i=1}^{m}(x_i - z_i)^p)^{1/p}$$
-Special case:
-$l_1$ distance: $$||x - z||_1 = \sum_{i=1}^{m}|x_i - z_i|$$
-$l_\infty$ distance:
-$$||x - z||_1 = max_i |x_i - z_i|$$
-Metric space Let $X$ be the space that data lie.……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/lp-norm/">Read More</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/" title="Nearest Neighbor Classification" >Nearest Neighbor Classification</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019/1/31
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/machine-learning">machine learning</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                Nearest Neighbor Classification Procedures  Assemble a data set (training set)  How to classify a new image x?  find its closest neighbor y, and label it the same   Notes:
- training set of 60000 images test set of 10000 images  How do we determine if two data (images) are closest? With 28 x 28 image, we can strech it to become a vector of 784.……
-                            </div>
-                            <p class="readmore"><a href="https://keithzeng.github.io/posts/nearest-neighbor-classification/">Read More</a></p>
-                        </article>
-                    
 
                     
 
@@ -447,11 +413,11 @@ Metric space Let $X$ be the space that data lie.……
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(13)</a>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(17)</a>
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(10)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(11)</a>
     </li>
     
     <li>
@@ -474,11 +440,11 @@ Metric space Let $X$ be the space that data lie.……
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(5)</a>
+        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(6)</a>
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(6)</a>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(7)</a>
     </li>
     
     <li>
@@ -486,7 +452,7 @@ Metric space Let $X$ be the space that data lie.……
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/greedy/">greedy(1)</a>
+        <a href="https://keithzeng.github.io/series/greedy/">greedy(2)</a>
     </li>
     
     <li>
@@ -498,6 +464,10 @@ Metric space Let $X$ be the space that data lie.……
     </li>
     
     <li>
+        <a href="https://keithzeng.github.io/series/np/">np(1)</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/series/other/">other(4)</a>
     </li>
     
@@ -506,7 +476,7 @@ Metric space Let $X$ be the space that data lie.……
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(12)</a>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(13)</a>
     </li>
     
 </ul>
@@ -523,6 +493,8 @@ Metric space Let $X$ be the space that data lie.……
     <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
     
     <a href="https://keithzeng.github.io/tags/convexity/">convexity</a>
+    
+    <a href="https://keithzeng.github.io/tags/coordinate-descent/">coordinate-descent</a>
     
     <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
     
@@ -541,6 +513,8 @@ Metric space Let $X$ be the space that data lie.……
     <a href="https://keithzeng.github.io/tags/front-end/">front-end</a>
     
     <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/hw/">hw</a>
     
     <a href="https://keithzeng.github.io/tags/knn/">knn</a>
     
@@ -602,8 +576,9 @@ Metric space Let $X$ be the space that data lie.……
     window.MathJax = {
         tex2jax: {
             inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
+            processEscapes: true,
+        },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
     };
 </script>
 <script type="text/javascript" src="/js/prism.js" async="true"></script>
@@ -624,8 +599,6 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 

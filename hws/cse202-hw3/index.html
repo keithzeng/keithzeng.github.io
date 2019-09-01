@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CSE202 HW3 | k317h</title>
+    <meta property="og:title" content="CSE202 HW3 - k317h">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-02-18T19:32:41&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-02-18T19:32:41&#43;08:00">
+        
+    <meta name="Keywords" content="Java,Web,Software">
+    <meta name="description" content="CSE202 HW3">
+        
+    <meta name="author" content="k317h">
+    <meta property="og:url" content="https://keithzeng.github.io/hws/cse202-hw3/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://keithzeng.github.io">
+                        k317h
+                    </a>
+                
+                <p class="description">A Blog to Record My Progress...</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://keithzeng.github.io">Main</a>
+                    
+                    <a  href="https://keithzeng.github.io/projects/" title="Projects">Projects</a>
+                    
+                    <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
+                    
+                    <a  href="https://keithzeng.github.io/about/" title="About">About</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">CSE202 HW3</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019/2/18
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h2 id="problem-1">Problem 1</h2>
+
+<h3 id="idea">Idea</h3>
+
+<p>We can think every row as a node with influx of row&rsquo;s sum that we want to distribute into every column which is also a node with edge&rsquo;s capacity of M.</p>
+
+<p>Let&rsquo;s define $X_1 &hellip; X_n$ to be the rows and $Y_1 .. Y_n$ to be the columns. The preliminary graph looks like this.</p>
+
+<p><img src="/img/cse202/hw3.1a.png" alt="hw3.1a" /></p>
+
+<p>Due to the nature of the network flow problem, we might have edge with 0 flow. However, in our problem we have constraint of filling number between 1 to M. Therefore, we need to reduce the edge connecting X to Y with reduced capacity of M - 1, and add 1 back later. Because we reduce the edge&rsquo;s capacity, we also need to reduce influx of every X by number of columns, which is equivalent of deducting 1 for every cell. Meanwhile the efflux of the Y will need to be reduced by the by number of rows. With these considerations in mind, we update the graph to below.</p>
+
+<p><img src="/img/cse202/hw3.1b.png" alt="hw3.1b" /></p>
+
+<h3 id="algorithm">Algorithm</h3>
+
+<p>ALGO(M, $r_1&hellip;r_n$, $c_1&hellip;c_n$):</p>
+
+<ol>
+<li>G(V, E) = contructGraph(M, $r_1&hellip;r_n$, $c_1&hellip;c_n$)</li>
+<li>f = MaxFlow(G(V,E))</li>
+<li>a = array of n x n</li>
+<li>fill a according to: $a_{ij} = 1 + f(X_i, Y_j)$</li>
+<li>if $\sum_i a_{ij} = c_j$ for $1 \leq j \leq n$ and $\sum_j a_{ij} = r_i$ for $1 \leq i \leq n$
+
+<ul>
+<li>return a</li>
+</ul></li>
+<li>else
+
+<ul>
+<li>return &ldquo;Impossible&rdquo;</li>
+</ul></li>
+</ol>
+
+<h3 id="analysis">Analysis</h3>
+
+<h4 id="time-complexity">Time Complexity</h4>
+
+<p>The best time complexity for MaxFlow take $O(n^3)$ using Pre-Flow Push Algorithm, where n = number of vertices. The time for filling the entry and check takes $O(n^2)$. So overall time complexity is $O(n^3)$.</p>
+
+<h4 id="space-complexity">Space Complexity</h4>
+
+<p>No extra space besides a is use, so space complexity O(1).</p>
+
+<h4 id="correctness">Correctness</h4>
+
+<p>Since the preliminary graph contains correct influx for all the rows and correct efflux of the columns. We essentially making sure all the sums are capped with the corresponding sum. With edge capped with M, we make sure no edge can have value greater than it. With consideration of potential 0 flow, we come up with modified graph where deduct the $X_i - Y_j$&rsquo;s capacity by 1. We also adjust all the influx and efflux according to make sure the conservation of influx and efflux.</p>
+
+<p>After the program completes, we simply add the 1 back to flow to accommodate the modification made above. So all the constraints in the problem are strictly enforced to guarantee the correctness of the algorithm.</p>
+
+<h2 id="problem-2-kt-6-11">Problem 2 (KT 6.11)</h2>
+
+<h3 id="idea-1">Idea</h3>
+
+<p>Let OPT[i] denote the minimum cost for cost up to week i. For each week i, we have choice of either using A or B. So the OPT[i] reduces to following:</p>
+
+<p>$$ OPT[i] =
+\begin{cases}
+OPT[i - 1] + r * s_i \newline
+OPT[i - 4] + 4 * c \newline
+\end{cases}
+$$</p>
+
+<p>which is then reduces to following</p>
+
+<p>$$OPT[i] = \min(OPT[i - 1] + r * s_i , OPT[i - 4] + 4 * c)$$</p>
+
+<h3 id="algorithm-1">Algorithm</h3>
+
+<p>ALGO(n, s, c):</p>
+
+<p>Let OPT = array of 0&rsquo;s with size n + 1<br />
+Let OPT[i] = 0 $\forall i \leq 0$</p>
+
+<p>for i = 1 to n</p>
+
+<ul>
+<li>OPT[i] = min(OPT[i - 1] + r * $s_i$ , OPT[i - 4] + 4 * c)</li>
+</ul>
+
+<p>return OPT[n]</p>
+
+<h3 id="analysis-1">Analysis</h3>
+
+<h4 id="space-complexity-1">Space Complexity</h4>
+
+<p>OPT takes O(n).</p>
+
+<h4 id="time-complexity-1">Time Complexity</h4>
+
+<p>We only have 1 loop which iterates up to n, so O(n).</p>
+
+<h4 id="correctness-1">Correctness</h4>
+
+<p>Base case when i = 0, OPT[i=0] = 0. Now for any other i &gt; 0, assume the OPT[i - 1] and OPT[i - 4] contains the correct minimum cost for week i - 1 and i - 4 respectively by induction. Now for week i, we can either continue use company A with cost of OPT[i - 1] + r$s_i$ or we can rethink our strategy and use company B instead with OPT[i - 4] + 4c cost.</p>
+
+<h2 id="problem-3-kt-7-5">Problem 3 (KT 7.5)</h2>
+
+<p>False. The (A,B) is no longer the minimum cut. Consider the following example.</p>
+
+<p><img src="/img/cse202/hw3.3a.png" alt="cut-counterexample" /></p>
+
+<p><img src="/img/cse202/hw3.3b.png" alt="cut-counterexample" /></p>
+
+<p>Initially $A^*$ = {s, a, b, c, d} with c(A,B) = 3, if we increase the weight by 1 to every edge the new $A^*$ = {s} with c(A,B) = 5.</p>
+
+<h2 id="problem-4">Problem 4</h2>
+
+<h3 id="idea-2">Idea</h3>
+
+<p>The find the maximum grade, we can spend 0 up to H hours for each project, then if we do decide to spend h hour for the first project, then we have H - h hours for other project. This leads to a natural recursion algorithm.</p>
+
+<p>Or we can use dynamic programing to save the intermediate result, where we create an dp array of k by H. Each dp[i, j] represents the maximum grade for spending j hours for project from 1 to i.</p>
+
+<h3 id="algorithm-2">Algorithm</h3>
+
+<p>ALGORecursive(H, G):</p>
+
+<ol>
+<li>if length of G = 1, return $G_1[H]$</li>
+<li>BestGrade = 0</li>
+<li>for h = 0 to H
+
+<ul>
+<li>Grade $\gets G_1[h] + ALGO(H - h, G[2:k])$</li>
+<li>BestGrade = max(Grade, BestGrade)</li>
+</ul></li>
+<li>return BestGrade</li>
+</ol>
+
+<p>ALGOIterative(H, G):</p>
+
+<ol>
+<li>DP=array of k by H</li>
+<li>for h = 0 to H
+
+<ul>
+<li>DP[1, h] = $G_1[h]$</li>
+</ul></li>
+<li>for p = 2 to k
+
+<ul>
+<li>for $h_1$ = 0 to H
+
+<ul>
+<li>BestGrade = 0</li>
+<li>for $h_2$ = 0 to $h_1$
+
+<ul>
+<li>Grade = $G_p[h_2] + DP[p - 1, h_1 - h_2]$</li>
+<li>BestGrade = max(BestGrade, Grade)</li>
+</ul></li>
+<li>$DP[p, h_1]$ = BestGrade</li>
+</ul></li>
+</ul></li>
+<li>return DP[k, H]</li>
+</ol>
+
+<h3 id="analysis-2">Analysis</h3>
+
+<h4 id="time-complexity-2">Time Complexity</h4>
+
+<p>There are three nested loops with length of k, H, H, so runtime = $O(kH^2)$.</p>
+
+<h4 id="space-complexity-2">Space Complexity</h4>
+
+<p>Depends on the algorithm use, if we use recursion we have O(1) otherwise we have O(kH). Moreover, we can even further reduce the dp method to use only O(H) since we only rely on the row.</p>
+
+<h4 id="correctness-2">Correctness</h4>
+
+<p>Base case, when we have only k = 1 project, we need to spend all H hours to the project to get the maximum grade, since $G_i[H] \geq G_i[H- 1] \geq &hellip; \geq G_i[0]$. For any i &gt; 1, assuming we have all the correct result for i - 1 projects by induction. For this project, we can spend from 0 up to H hours on project i. Now if we spend h hour on project i, we only have H - h hours left, then we just have to check which h and H - h combo resulting the best grade and this is the answer ties to 1 to i projects with total hour H.</p>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/sequence-alignment-revisited/">Sequence Alignment Revisited</a></li>
+        
+        <li><a href="/posts/sequence-alignment/">Sequence Alignment</a></li>
+        
+        <li><a href="/posts/rna-secondary-structure/">RNA Secondary Structure</a></li>
+        
+        <li><a href="/posts/knapsack/">Knapsack</a></li>
+        
+        <li><a href="/posts/segmented-least-square/">Segmented Least Square</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://keithzeng.github.io/tags/cse202">cse202</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/dp">dp</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "keithzeng/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://keithzeng.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">Most Recents</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/network-flow/" title="Network Flow">Network Flow</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/constrained-optimization/" title="Constrained Optimization">Constrained Optimization</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/full-stack-skill/" title="Full Stack Skill">Full Stack Skill</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment/" title="Sequence Alignment">Sequence Alignment</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/rna-secondary-structure/" title="RNA Secondary Structure">RNA Secondary Structure</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/knapsack/" title="Knapsack">Knapsack</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/segmented-least-square/" title="Segmented Least Square">Segmented Least Square</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/" title="Weighted Interval Scheduling">Weighted Interval Scheduling</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/gradient-descent/" title="Gradient Descent">Gradient Descent</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Categories</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/other/">other(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/software-engineering/">software-engineering(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Series</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/full-stack/">full-stack(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/greedy/">greedy(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/matrix/">matrix(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/network-flow/">network-flow(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/np/">np(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/other/">other(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/probability/">probability(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(13)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+    
+    <a href="https://keithzeng.github.io/tags/back-end/">back-end</a>
+    
+    <a href="https://keithzeng.github.io/tags/bayes/">bayes</a>
+    
+    <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
+    
+    <a href="https://keithzeng.github.io/tags/convexity/">convexity</a>
+    
+    <a href="https://keithzeng.github.io/tags/coordinate-descent/">coordinate-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
+    
+    <a href="https://keithzeng.github.io/tags/determinant/">determinant</a>
+    
+    <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
+    
+    <a href="https://keithzeng.github.io/tags/divide-and-conquer/">divide-and-conquer</a>
+    
+    <a href="https://keithzeng.github.io/tags/dp/">dp</a>
+    
+    <a href="https://keithzeng.github.io/tags/front-end/">front-end</a>
+    
+    <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/hw/">hw</a>
+    
+    <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/logistic/">logistic</a>
+    
+    <a href="https://keithzeng.github.io/tags/lpnorm/">lpnorm</a>
+    
+    <a href="https://keithzeng.github.io/tags/metric/">metric</a>
+    
+    <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
+    
+    <a href="https://keithzeng.github.io/tags/network-flow/">network-flow</a>
+    
+    <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/optimization/">optimization</a>
+    
+    <a href="https://keithzeng.github.io/tags/other/">other</a>
+    
+    <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/project/">project</a>
+    
+    <a href="https://keithzeng.github.io/tags/psd/">psd</a>
+    
+    <a href="https://keithzeng.github.io/tags/rank/">rank</a>
+    
+    <a href="https://keithzeng.github.io/tags/regression/">regression</a>
+    
+    <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Other</h3>
+        <ul class="widget-list">
+            <li><a href="https://keithzeng.github.io/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
+    </div>
+</footer>
+
+<script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true,
+        },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+    };
+</script>
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133234541-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+</body>
+</html>

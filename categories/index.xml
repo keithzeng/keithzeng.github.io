@@ -6,40 +6,31 @@
     <description>Recent content in Categories on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Feb 2019 20:06:53 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2019 18:34:16 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Algorithm</title>
+      <title>algorithm</title>
       <link>https://keithzeng.github.io/categories/algorithm/</link>
-      <pubDate>Mon, 18 Feb 2019 20:06:53 -0800</pubDate>
+      <pubDate>Sun, 03 Mar 2019 18:34:16 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/categories/algorithm/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Machine Learning</title>
+      <title>machine learning</title>
       <link>https://keithzeng.github.io/categories/machine-learning/</link>
-      <pubDate>Thu, 14 Feb 2019 15:43:04 -0800</pubDate>
+      <pubDate>Mon, 18 Feb 2019 10:37:54 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/categories/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Mathematic</title>
-      <link>https://keithzeng.github.io/categories/mathematic/</link>
-      <pubDate>Thu, 07 Feb 2019 15:29:45 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/categories/mathematic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Other</title>
+      <title>other</title>
       <link>https://keithzeng.github.io/categories/other/</link>
       <pubDate>Thu, 14 Feb 2019 23:07:59 -0800</pubDate>
       
@@ -48,11 +39,20 @@
     </item>
     
     <item>
-      <title>Software Engineering</title>
+      <title>software engineering</title>
       <link>https://keithzeng.github.io/categories/software-engineering/</link>
       <pubDate>Tue, 12 Feb 2019 11:19:46 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/categories/software-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mathematic</title>
+      <link>https://keithzeng.github.io/categories/mathematic/</link>
+      <pubDate>Thu, 07 Feb 2019 15:29:45 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/categories/mathematic/</guid>
       <description></description>
     </item>
     

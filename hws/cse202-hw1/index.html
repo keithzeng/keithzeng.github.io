@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CSE202 HW1 | k317h</title>
+    <meta property="og:title" content="CSE202 HW1 - k317h">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-01-26T13:30:38&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-01-26T13:30:38&#43;08:00">
+        
+    <meta name="Keywords" content="Java,Web,Software">
+    <meta name="description" content="CSE202 HW1">
+        
+    <meta name="author" content="k317h">
+    <meta property="og:url" content="https://keithzeng.github.io/hws/cse202-hw1/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://keithzeng.github.io">
+                        k317h
+                    </a>
+                
+                <p class="description">A Blog to Record My Progress...</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://keithzeng.github.io">Main</a>
+                    
+                    <a  href="https://keithzeng.github.io/projects/" title="Projects">Projects</a>
+                    
+                    <a  href="https://keithzeng.github.io/archives/" title="Archives">Archives</a>
+                    
+                    <a  href="https://keithzeng.github.io/about/" title="About">About</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">CSE202 HW1</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019/1/26
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://keithzeng.github.io/categories/algorithm">algorithm</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<p><a href="https://cseweb.ucsd.edu/classes/wi19/cse202-a/hw1.pdf">HW Link</a></p>
+
+<h2 id="problem-1-kt-4-2a">Problem 1 (KT 4.2a)</h2>
+
+<p>YES. T is still the MST for new instance.<br />
+Proof by contraction</p>
+
+<ul>
+<li>Assume original MST is T and new MST is T&rsquo;</li>
+<li>$T \neq T&rsquo;$, at least one edge is different</li>
+<li>$\exists$ $e_1 \in T$ and $e_2 \in T&rsquo;$, whose $cost(e_1) &lt; cost(e_2)$ and $cost^2(e_1) &gt; cost^2(e_2)$</li>
+<li>However, the above mathematical expression doesn&rsquo;t hold</li>
+</ul>
+
+<h2 id="problem-2-kt-4-2b">Problem 2 (KT 4.2b)</h2>
+
+<p>No. The P is no longer the shortest path for new instance.</p>
+
+<p><img src="/img/cse202/hw1.2.png" alt="Diargram" />
+As we can see, in the Dijkastra&rsquo;s algorithm, the edge e(s,t) is the shortest path with cost = 7. After squaring the cost, there is a shortest path P&rsquo; = s -&gt; a -&gt; t with cost of 32 &lt; cost(P) = 49.</p>
+
+<h2 id="problem-3-kt-17">Problem 3 (KT 17)</h2>
+
+<h3 id="algorithm">Algorithm:</h3>
+
+<ol>
+<li>Let $I = \{I_1, I_2, &hellip;, I_n\}$ and best = 0</li>
+<li>Sort I based on the finish time, f(i)</li>
+<li>for i in n
+
+<ul>
+<li>let $R = I \setminus \{I_j | i \neq j$ and $I_i \cap I_j \neq \emptyset\}$</li>
+<li>let num_of_jobs = perfome regular interval scheduling algorithm on R</li>
+<li>best = max(best, num_of_jobs + 1)</li>
+</ul></li>
+</ol>
+
+<h3 id="time-complexity-anaylysis">Time complexity anaylysis:</h3>
+
+<p>Step 2, sorting takes $O(nlogn)$.<br />
+Step 3, the for loops takes $O(n^2)$ overall, since looping through intervals takes O(n), pruning + regular interval scheduling algorithm takes O(n)
+So time complexity = $O(nlogn + n^2)$ = $O(n^2)$.</p>
+
+<h3 id="space-complexity-analysis">Space complexity analysis:</h3>
+
+<p>We don&rsquo;t use any extra space, so space complexity = O(1).</p>
+
+<h3 id="proof-of-optimality">Proof of Optimality:</h3>
+
+<p><strong>Claim:</strong><br />
+The algorithm above provides the optimal solution.</p>
+
+<p><strong>Proof:</strong><br />
+Let&rsquo;s say the optimal solution is S*, which contains a $I_i$. Since above algorithm is brute force algorithm go through each job, we are guranteed that when are checing the optimal number for $I_i$ the number is updated.</p>
+
+<h2 id="problem-4">Problem 4</h2>
+
+<h3 id="algorithm-1">Algorithm:</h3>
+
+<p>Let $J = \{J_1, J_2, &hellip;, J_n\}$, where $J_i$ contains $c_i$ and $p_i$<br />
+Let $C = C_0$<br />
+while k &gt; 0</p>
+
+<ol>
+<li>find project x, which $c_x &lt;= C$ and $p_x$ is max</li>
+<li>if $x = \emptyset$ break</li>
+<li>$C \gets C + p_x$</li>
+<li>$k \gets k - 1$</li>
+</ol>
+
+<h3 id="proof-of-optimality-1">Proof of Optimality:</h3>
+
+<p><strong>Claim:</strong><br />
+The gready algorithm above produces the optimal capital, C*.</p>
+
+<p><strong>Proof:</strong><br />
+Let&rsquo;s say in loop i, we have capital C, we choose a different $J_y$. Since our algorithm picks $J_x$, it implies that $p_y \leq p_x$ and also new capital $C&rsquo; \leq C$. In the next round, when we consider all the jobs whose cost are smaller than the current capital, the new heap $H&rsquo; \subseteq H$, which shows that our algorithm stays ahead in every step.</p>
+
+<h4 id="time-complexity">Time Complexity:</h4>
+
+<p>T = O(kn), if k = n we have $T = O(n^2)$.</p>
+
+<h3 id="space-complexity">Space Complexity:</h3>
+
+<p>No extra space, so space complexity = O(1).</p>
+
+<h3 id="improved-algorithm">Improved Algorithm:</h3>
+
+<p>Let $J = \{J_1, J_2, &hellip;, J_n\}$, where $J_i$ contains $c_i$ and $p_i$, then sort J based on $c_i$<br />
+Let H = maxheap sorted on J&rsquo;s profit<br />
+Let $C = C_0$<br />
+Let z = 1, pointer for J</p>
+
+<p>loop add_job:<br />
+while $z \leq n$ and $c_z \leq C$</p>
+
+<ol>
+<li>push $J_z$ to H</li>
+<li>$z \gets z + 1$</li>
+</ol>
+
+<p>excute loop add_job<br />
+while k &gt; 0 and H is not empty</p>
+
+<ol>
+<li>$J_x$ = extractMax from H</li>
+<li>$C \gets C + p_x$</li>
+<li>execute loop add_job</li>
+<li>$k \gets k - 1$</li>
+</ol>
+
+<h3 id="time-complexity-1">Time Complexity:</h3>
+
+<ol>
+<li>Sorting takes O(nlogn).</li>
+<li>Extractmax takes retrieval + deletion = O(1) + O(logn) = O(logn). For k loops, complexity = O(klogn).</li>
+<li>The add_job inserts n jobs, each insertion takes O(logi) where i = size of heap. So $\sum_i^n log(i) = O(nlogn)$.</li>
+<li>So overall = O(nlogn + klogn) = O(nlogn), since $k \leq n$</li>
+</ol>
+
+<h3 id="space-complexity-1">Space Complexity:</h3>
+
+<p>O(n) for storing all the projects in the heap.</p>
+
+<h2 id="problem-5">Problem 5</h2>
+
+<h3 id="algorithm-2">Algorithm:</h3>
+
+<p>sort $T = \{t_1, t_2, &hellip;, t_n\}$ in decreasing order<br />
+sort $W = \{w_1, w_2, &hellip;, w_n\}$ in decreasing order</p>
+
+<p>Let i = 1, pointer for T<br />
+Let j = 1, pointer for W<br />
+Let result = {}</p>
+
+<p>while $i \leq n$</p>
+
+<ol>
+<li>If $t_i$ / $w_j$ $\leq D$
+
+<ul>
+<li>$i \gets i + 1$</li>
+<li>$j \gets j + 1$</li>
+<li>result + {i, j}</li>
+</ul></li>
+<li>else
+
+<ul>
+<li>$i \gets i + 1$</li>
+</ul></li>
+</ol>
+
+<h3 id="proof-of-optimality-2">Proof of Optimality:</h3>
+
+<p><strong>Claim:</strong><br />
+The above algorithm produces the optimal assignment, R.</p>
+
+<p><strong>Proof:</strong><br />
+Assume there is a better assignment R&rsquo;, where |R&rsquo;| &gt; |R|.<br />
+This can happen by either case:</p>
+
+<ol>
+<li>R&rsquo; = R + {i, j}</li>
+<li>R&rsquo; have different arrangement of pairs that vacant a machine to take on another task, resulting more tasks to be taken</li>
+</ol>
+
+<p>For case 1, let&rsquo;s say in step i, our algorithm rejects the task because $t_i$ / $w_j$ $\gt D$, but R&rsquo; takes this pair {i, j}. This will be a violation to the requirement since this machine can&rsquo;t complete the task on time.</p>
+
+<p>For case 2, the only way that R&rsquo; and R will take on different arrangement is when R decides to take the pair {i, j} but R&rsquo; decides to ignore the $t_i$. This have vacated the $w_j$, we now have |R| &gt; |R&rsquo;|. In the next round, $w_j$ can try to take the $t_{i+1}$, making $|R&rsquo;| \gets |R&rsquo;| + 1$ or 0. In the meantime, R could either take the new pair {i+1, j+1} or rejects. In the best case scenario, $|R&rsquo;| \gets |R&rsquo;| + 1$, while |R| stays, making |R&rsquo;| = |R| in this round. However, in every round, |R| $\geq$ |R&rsquo;|.</p>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/k-clustering/">K Clustering</a></li>
+        
+        <li><a href="/posts/probability/">Probability</a></li>
+        
+        <li><a href="/posts/my-first-post/">My First Post</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://keithzeng.github.io/tags/cse202">cse202</a></li>
+                                
+                                <li><a href="https://keithzeng.github.io/tags/hw">hw</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "keithzeng/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://keithzeng.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">Most Recents</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/network-flow/" title="Network Flow">Network Flow</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/constrained-optimization/" title="Constrained Optimization">Constrained Optimization</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/full-stack-skill/" title="Full Stack Skill">Full Stack Skill</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment-revisited/" title="Sequence Alignment Revisited">Sequence Alignment Revisited</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/sequence-alignment/" title="Sequence Alignment">Sequence Alignment</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/rna-secondary-structure/" title="RNA Secondary Structure">RNA Secondary Structure</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/knapsack/" title="Knapsack">Knapsack</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/segmented-least-square/" title="Segmented Least Square">Segmented Least Square</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/weighted-interval-scheduling/" title="Weighted Interval Scheduling">Weighted Interval Scheduling</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/posts/gradient-descent/" title="Gradient Descent">Gradient Descent</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Categories</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/mathematic/">mathematic(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/other/">other(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/categories/software-engineering/">software-engineering(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Series</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/full-stack/">full-stack(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/greedy/">greedy(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/matrix/">matrix(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/network-flow/">network-flow(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/np/">np(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/other/">other(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/probability/">probability(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(13)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">Tags</h3>
+<div class="tagcloud">
+    
+    <a href="https://keithzeng.github.io/tags/back-end/">back-end</a>
+    
+    <a href="https://keithzeng.github.io/tags/bayes/">bayes</a>
+    
+    <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
+    
+    <a href="https://keithzeng.github.io/tags/convexity/">convexity</a>
+    
+    <a href="https://keithzeng.github.io/tags/coordinate-descent/">coordinate-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
+    
+    <a href="https://keithzeng.github.io/tags/cse250b/">cse250b</a>
+    
+    <a href="https://keithzeng.github.io/tags/determinant/">determinant</a>
+    
+    <a href="https://keithzeng.github.io/tags/distance/">distance</a>
+    
+    <a href="https://keithzeng.github.io/tags/distribution/">distribution</a>
+    
+    <a href="https://keithzeng.github.io/tags/divide-and-conquer/">divide-and-conquer</a>
+    
+    <a href="https://keithzeng.github.io/tags/dp/">dp</a>
+    
+    <a href="https://keithzeng.github.io/tags/front-end/">front-end</a>
+    
+    <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/hw/">hw</a>
+    
+    <a href="https://keithzeng.github.io/tags/knn/">knn</a>
+    
+    <a href="https://keithzeng.github.io/tags/logistic/">logistic</a>
+    
+    <a href="https://keithzeng.github.io/tags/lpnorm/">lpnorm</a>
+    
+    <a href="https://keithzeng.github.io/tags/metric/">metric</a>
+    
+    <a href="https://keithzeng.github.io/tags/mnist/">mnist</a>
+    
+    <a href="https://keithzeng.github.io/tags/network-flow/">network-flow</a>
+    
+    <a href="https://keithzeng.github.io/tags/notes/">notes</a>
+    
+    <a href="https://keithzeng.github.io/tags/optimization/">optimization</a>
+    
+    <a href="https://keithzeng.github.io/tags/other/">other</a>
+    
+    <a href="https://keithzeng.github.io/tags/probability/">probability</a>
+    
+    <a href="https://keithzeng.github.io/tags/project/">project</a>
+    
+    <a href="https://keithzeng.github.io/tags/psd/">psd</a>
+    
+    <a href="https://keithzeng.github.io/tags/rank/">rank</a>
+    
+    <a href="https://keithzeng.github.io/tags/regression/">regression</a>
+    
+    <a href="https://keithzeng.github.io/tags/statistic/">statistic</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">Other</h3>
+        <ul class="widget-list">
+            <li><a href="https://keithzeng.github.io/index.xml">RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://keithzeng.github.io">k317h By k317h</a>.
+    </div>
+</footer>
+
+<script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true,
+        },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+    };
+</script>
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133234541-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+</body>
+</html>

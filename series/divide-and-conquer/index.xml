@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Divide and Conquer on k317h</title>
+    <title>divide and conquer on k317h</title>
     <link>https://keithzeng.github.io/series/divide-and-conquer/</link>
-    <description>Recent content in Divide and Conquer on k317h</description>
+    <description>Recent content in divide and conquer on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Jan 2019 00:31:46 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Feb 2019 13:01:30 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/series/divide-and-conquer/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSE202 HW2</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw2/</link>
+      <pubDate>Tue, 05 Feb 2019 13:01:30 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw2/</guid>
+      <description>HW Link
+Problem 1 (KT 5.2) Idea: we will need to modify the merge-and-count function, everything else stays the same as regular inversion algorithm.
+merge-and-count(A, B):
+ i = 1, j = 1, where i is pointer to A, j is pointer to B count = 0, lenA = length(A), lenB = length(B) sorted = {} While $i \leq lenA$ and $j \leq lenB$:  if (A[i] $\leq$ B[j])  sorted = sorted + {A[i]} $i \gets i + 1$  else  sorted = sorted + {B[j]} $j \gets j + 1$   append remaining A or append remaining B to sorted While $i \leq lenA$ and $j \leq lenB$:  if (A[i] $\leq$ 2B[j]), means no significant inversion  $i \gets i + 1$  else  $j \gets j + 1$ $count \gets count + (lenA - i + 1)$   return (sorted, count)  Analysis Time Complexity Instead of looping once for original inversion problem, we here loop twice.</description>
+    </item>
     
     <item>
       <title>Fast Fourtier Transform</title>

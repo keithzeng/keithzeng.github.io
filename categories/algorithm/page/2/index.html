@@ -3,17 +3,17 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.57.2" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Algorithm | k317h</title>
-    <meta property="og:title" content="Algorithm - k317h">
+    <title>algorithm | k317h</title>
+    <meta property="og:title" content="algorithm - k317h">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="Java,Web,Software">
-    <meta name="description" content="Algorithm">
+    <meta name="description" content="algorithm">
         
     <meta name="author" content="k317h">
     <meta property="og:url" content="https://keithzeng.github.io/categories/algorithm/">
@@ -74,6 +74,85 @@
                         category
                     </h3>
 
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/fast-fourtier-transform/">Fast Fourtier Transform</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/30
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Given two vectors $a = (a_1, a_2, a_{n-1})$ and $b = (a_1, b_2, b_{n-1})$.
+The convolution of a * b is a vector with 2n - 1 coordinates, where coordinate k is $\sum_{(i,j):i+j=k|i,j &lt; n} a_ib_j$, which is can be written as
+$$a ∗ b = (a_0b_0, a_0b_1 + a_1b_0, a_0b_2 + a_1b_1 + a_2b_0, &hellip; , a_{n−2}b_{n−1} + a_{n−1}b_{n−2}, a_{n−1}b_{n−1})$$
+Or an n x n table, whose (i, j) entry is $a_ib_j$……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/fast-fourtier-transform/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/integer-multiplication/">Integer Multiplication</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/30
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Wiki Explanation
+Algorithm Let&rsquo;s say we define $x = x_1 2^{n/2} + x_0$, then xy become \begin{align} xy &amp;= (x_1 2^{n/2} + x_0)(y_1 2^{n/2} + y_0) \newline &amp;= x_1 y_1 2^n + (x_1 y_0 + x_0 y_1)2^{n/2} + x_0 y_0 \end{align}
+So we have $$T(n) \leq 4T(n/2) + cn$$ But this is essentially $$T(n) \leq O(n^{\log_2 q}) = O(n^2)$$
+However, we can reduce the time by observing that $(x_1 + x_0)(y_1 + y_0) = x_1y_1 + x_1y_0 + x_0y_1 + x_0y_0$.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/integer-multiplication/">Read More</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://keithzeng.github.io/posts/closest-point/">Closest Point</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019/1/29
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://keithzeng.github.io/categories/algorithm">algorithm</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Problem Given n points in the plane, find the pair that is closest together.
+Brute force takes $O(n^2)$.
+Algorithm Let&rsquo;s $d(p_i, p_j)$ = Euclidean distance.
+In 1-d, we can simply sort points and compute the distance with the next point, we then have complexity of O(nlogn). In 2-d, we can&rsquo;t applied the same thing.
+We will use divide and conquer. We find the closest pair in the left and closest pair in the right, and hoping to get it in linear time.……
+                                <p class="readmore"><a href="https://keithzeng.github.io/posts/closest-point/">Read More</a></p>
+                            </div>
+                        </article>
                     
                         <article class="post">
                             <header>
@@ -247,11 +326,11 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(13)</a>
+        <a href="https://keithzeng.github.io/categories/algorithm/">algorithm(17)</a>
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(10)</a>
+        <a href="https://keithzeng.github.io/categories/machine-learning/">machine-learning(11)</a>
     </li>
     
     <li>
@@ -274,11 +353,11 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
 <ul class="widget-list">
     
     <li>
-        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(5)</a>
+        <a href="https://keithzeng.github.io/series/divide-and-conquer/">divide-and-conquer(6)</a>
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(6)</a>
+        <a href="https://keithzeng.github.io/series/dynamic-programing/">dynamic-programing(7)</a>
     </li>
     
     <li>
@@ -286,7 +365,7 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/greedy/">greedy(1)</a>
+        <a href="https://keithzeng.github.io/series/greedy/">greedy(2)</a>
     </li>
     
     <li>
@@ -298,6 +377,10 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     </li>
     
     <li>
+        <a href="https://keithzeng.github.io/series/np/">np(1)</a>
+    </li>
+    
+    <li>
         <a href="https://keithzeng.github.io/series/other/">other(4)</a>
     </li>
     
@@ -306,7 +389,7 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     </li>
     
     <li>
-        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(12)</a>
+        <a href="https://keithzeng.github.io/series/statistical-learning/">statistical-learning(13)</a>
     </li>
     
 </ul>
@@ -323,6 +406,8 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     <a href="https://keithzeng.github.io/tags/confidence-interval/">confidence-interval</a>
     
     <a href="https://keithzeng.github.io/tags/convexity/">convexity</a>
+    
+    <a href="https://keithzeng.github.io/tags/coordinate-descent/">coordinate-descent</a>
     
     <a href="https://keithzeng.github.io/tags/cse202/">cse202</a>
     
@@ -341,6 +426,8 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     <a href="https://keithzeng.github.io/tags/front-end/">front-end</a>
     
     <a href="https://keithzeng.github.io/tags/gradient-descent/">gradient-descent</a>
+    
+    <a href="https://keithzeng.github.io/tags/hw/">hw</a>
     
     <a href="https://keithzeng.github.io/tags/knn/">knn</a>
     
@@ -402,8 +489,9 @@ Let&rsquo;s define spacing to be the minimum dist between clusters. Our goal is 
     window.MathJax = {
         tex2jax: {
             inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
+            processEscapes: true,
+        },
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
     };
 </script>
 <script type="text/javascript" src="/js/prism.js" async="true"></script>
@@ -424,8 +512,6 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 

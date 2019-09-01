@@ -6,175 +6,31 @@
     <description>Recent content in Tags on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Feb 2019 11:19:46 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2019 18:34:16 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Back End</title>
-      <link>https://keithzeng.github.io/tags/back-end/</link>
-      <pubDate>Tue, 12 Feb 2019 11:19:46 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/back-end/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bayes</title>
-      <link>https://keithzeng.github.io/tags/bayes/</link>
-      <pubDate>Thu, 31 Jan 2019 18:00:14 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/bayes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Confidence Interval</title>
-      <link>https://keithzeng.github.io/tags/confidence-interval/</link>
-      <pubDate>Sun, 27 Jan 2019 22:33:16 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/confidence-interval/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Convexity</title>
-      <link>https://keithzeng.github.io/tags/convexity/</link>
-      <pubDate>Thu, 07 Feb 2019 22:15:35 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/convexity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cse202</title>
+      <title>cse202</title>
       <link>https://keithzeng.github.io/tags/cse202/</link>
-      <pubDate>Wed, 30 Jan 2019 00:31:46 -0800</pubDate>
+      <pubDate>Sun, 03 Mar 2019 18:34:16 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/tags/cse202/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Cse250b</title>
-      <link>https://keithzeng.github.io/tags/cse250b/</link>
-      <pubDate>Sun, 27 Jan 2019 16:22:07 -0800</pubDate>
+      <title>hw</title>
+      <link>https://keithzeng.github.io/tags/hw/</link>
+      <pubDate>Sun, 03 Mar 2019 18:34:16 -0800</pubDate>
       
-      <guid>https://keithzeng.github.io/tags/cse250b/</guid>
+      <guid>https://keithzeng.github.io/tags/hw/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Determinant</title>
-      <link>https://keithzeng.github.io/tags/determinant/</link>
-      <pubDate>Fri, 01 Feb 2019 02:06:44 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/determinant/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Distance</title>
-      <link>https://keithzeng.github.io/tags/distance/</link>
-      <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/distance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Distribution</title>
-      <link>https://keithzeng.github.io/tags/distribution/</link>
-      <pubDate>Thu, 31 Jan 2019 17:57:34 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/distribution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Divide and Conquer</title>
-      <link>https://keithzeng.github.io/tags/divide-and-conquer/</link>
-      <pubDate>Sat, 09 Feb 2019 18:50:42 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/divide-and-conquer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dp</title>
-      <link>https://keithzeng.github.io/tags/dp/</link>
-      <pubDate>Sat, 09 Feb 2019 18:50:42 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/dp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Front End</title>
-      <link>https://keithzeng.github.io/tags/front-end/</link>
-      <pubDate>Tue, 12 Feb 2019 11:19:46 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/front-end/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gradient Descent</title>
-      <link>https://keithzeng.github.io/tags/gradient-descent/</link>
-      <pubDate>Thu, 07 Feb 2019 22:21:16 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/gradient-descent/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Knn</title>
-      <link>https://keithzeng.github.io/tags/knn/</link>
-      <pubDate>Sun, 27 Jan 2019 20:25:22 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/knn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Logistic</title>
-      <link>https://keithzeng.github.io/tags/logistic/</link>
-      <pubDate>Fri, 01 Feb 2019 14:39:49 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/logistic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lpnorm</title>
-      <link>https://keithzeng.github.io/tags/lpnorm/</link>
-      <pubDate>Thu, 31 Jan 2019 17:02:35 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/lpnorm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Metric</title>
-      <link>https://keithzeng.github.io/tags/metric/</link>
-      <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/metric/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mnist</title>
-      <link>https://keithzeng.github.io/tags/mnist/</link>
-      <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
-      
-      <guid>https://keithzeng.github.io/tags/mnist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network Flow</title>
+      <title>network flow</title>
       <link>https://keithzeng.github.io/tags/network-flow/</link>
       <pubDate>Mon, 18 Feb 2019 20:06:53 -0800</pubDate>
       
@@ -183,25 +39,43 @@
     </item>
     
     <item>
-      <title>Notes</title>
-      <link>https://keithzeng.github.io/tags/notes/</link>
-      <pubDate>Thu, 31 Jan 2019 22:30:23 -0800</pubDate>
+      <title>dp</title>
+      <link>https://keithzeng.github.io/tags/dp/</link>
+      <pubDate>Mon, 18 Feb 2019 19:32:41 -0800</pubDate>
       
-      <guid>https://keithzeng.github.io/tags/notes/</guid>
+      <guid>https://keithzeng.github.io/tags/dp/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Optimization</title>
-      <link>https://keithzeng.github.io/tags/optimization/</link>
-      <pubDate>Thu, 14 Feb 2019 15:43:04 -0800</pubDate>
+      <title>coordinate descent</title>
+      <link>https://keithzeng.github.io/tags/coordinate-descent/</link>
+      <pubDate>Mon, 18 Feb 2019 10:37:54 -0800</pubDate>
       
-      <guid>https://keithzeng.github.io/tags/optimization/</guid>
+      <guid>https://keithzeng.github.io/tags/coordinate-descent/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Other</title>
+      <title>cse250b</title>
+      <link>https://keithzeng.github.io/tags/cse250b/</link>
+      <pubDate>Mon, 18 Feb 2019 10:37:54 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/cse250b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>project</title>
+      <link>https://keithzeng.github.io/tags/project/</link>
+      <pubDate>Mon, 18 Feb 2019 10:37:54 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>other</title>
       <link>https://keithzeng.github.io/tags/other/</link>
       <pubDate>Thu, 14 Feb 2019 23:07:59 -0800</pubDate>
       
@@ -210,25 +84,61 @@
     </item>
     
     <item>
-      <title>Probability</title>
-      <link>https://keithzeng.github.io/tags/probability/</link>
-      <pubDate>Thu, 24 Jan 2019 22:27:30 -0800</pubDate>
+      <title>optimization</title>
+      <link>https://keithzeng.github.io/tags/optimization/</link>
+      <pubDate>Thu, 14 Feb 2019 15:43:04 -0800</pubDate>
       
-      <guid>https://keithzeng.github.io/tags/probability/</guid>
+      <guid>https://keithzeng.github.io/tags/optimization/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Project</title>
-      <link>https://keithzeng.github.io/tags/project/</link>
-      <pubDate>Sun, 27 Jan 2019 16:22:07 -0800</pubDate>
+      <title>back-end</title>
+      <link>https://keithzeng.github.io/tags/back-end/</link>
+      <pubDate>Tue, 12 Feb 2019 11:19:46 -0800</pubDate>
       
-      <guid>https://keithzeng.github.io/tags/project/</guid>
+      <guid>https://keithzeng.github.io/tags/back-end/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Psd</title>
+      <title>front-end</title>
+      <link>https://keithzeng.github.io/tags/front-end/</link>
+      <pubDate>Tue, 12 Feb 2019 11:19:46 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/front-end/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>divide and conquer</title>
+      <link>https://keithzeng.github.io/tags/divide-and-conquer/</link>
+      <pubDate>Sat, 09 Feb 2019 18:50:42 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/divide-and-conquer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gradient descent</title>
+      <link>https://keithzeng.github.io/tags/gradient-descent/</link>
+      <pubDate>Thu, 07 Feb 2019 22:21:16 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/gradient-descent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>convexity</title>
+      <link>https://keithzeng.github.io/tags/convexity/</link>
+      <pubDate>Thu, 07 Feb 2019 22:15:35 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/convexity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psd</title>
       <link>https://keithzeng.github.io/tags/psd/</link>
       <pubDate>Thu, 07 Feb 2019 15:29:45 -0800</pubDate>
       
@@ -237,7 +147,25 @@
     </item>
     
     <item>
-      <title>Rank</title>
+      <title>logistic</title>
+      <link>https://keithzeng.github.io/tags/logistic/</link>
+      <pubDate>Fri, 01 Feb 2019 14:39:49 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/logistic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>determinant</title>
+      <link>https://keithzeng.github.io/tags/determinant/</link>
+      <pubDate>Fri, 01 Feb 2019 02:06:44 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/determinant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rank</title>
       <link>https://keithzeng.github.io/tags/rank/</link>
       <pubDate>Fri, 01 Feb 2019 02:06:44 -0800</pubDate>
       
@@ -246,7 +174,16 @@
     </item>
     
     <item>
-      <title>Regression</title>
+      <title>notes</title>
+      <link>https://keithzeng.github.io/tags/notes/</link>
+      <pubDate>Thu, 31 Jan 2019 22:30:23 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
       <link>https://keithzeng.github.io/tags/regression/</link>
       <pubDate>Thu, 31 Jan 2019 22:30:23 -0800</pubDate>
       
@@ -255,11 +192,92 @@
     </item>
     
     <item>
-      <title>Statistic</title>
+      <title>bayes</title>
+      <link>https://keithzeng.github.io/tags/bayes/</link>
+      <pubDate>Thu, 31 Jan 2019 18:00:14 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/bayes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>distribution</title>
+      <link>https://keithzeng.github.io/tags/distribution/</link>
+      <pubDate>Thu, 31 Jan 2019 17:57:34 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/distribution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lpnorm</title>
+      <link>https://keithzeng.github.io/tags/lpnorm/</link>
+      <pubDate>Thu, 31 Jan 2019 17:02:35 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/lpnorm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>distance</title>
+      <link>https://keithzeng.github.io/tags/distance/</link>
+      <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/distance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metric</title>
+      <link>https://keithzeng.github.io/tags/metric/</link>
+      <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/metric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mnist</title>
+      <link>https://keithzeng.github.io/tags/mnist/</link>
+      <pubDate>Thu, 31 Jan 2019 16:08:27 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/mnist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>confidence interval</title>
+      <link>https://keithzeng.github.io/tags/confidence-interval/</link>
+      <pubDate>Sun, 27 Jan 2019 22:33:16 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/confidence-interval/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistic</title>
       <link>https://keithzeng.github.io/tags/statistic/</link>
       <pubDate>Sun, 27 Jan 2019 22:33:16 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/tags/statistic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>knn</title>
+      <link>https://keithzeng.github.io/tags/knn/</link>
+      <pubDate>Sun, 27 Jan 2019 20:25:22 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/knn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability</title>
+      <link>https://keithzeng.github.io/tags/probability/</link>
+      <pubDate>Thu, 24 Jan 2019 22:27:30 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/tags/probability/</guid>
       <description></description>
     </item>
     

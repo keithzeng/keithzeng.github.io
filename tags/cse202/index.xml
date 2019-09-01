@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cse202 on k317h</title>
+    <title>cse202 on k317h</title>
     <link>https://keithzeng.github.io/tags/cse202/</link>
-    <description>Recent content in Cse202 on k317h</description>
+    <description>Recent content in cse202 on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Jan 2019 00:31:46 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2019 18:34:16 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/tags/cse202/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSE202 HW4</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw4/</link>
+      <pubDate>Sun, 03 Mar 2019 18:34:16 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw4/</guid>
+      <description>Problem 1: Balanced Simple Path Idea To prove Balanced Simple Path(BSP) is NP-Complete, we need to do following:
+ Prove that BSP $\in$ NP. Choose a problem Y that is known to be NP-complete Consider an arbitrary instance $s_Y$ of problem Y, and show how to construct, in polynomial time, an instance $s_X$ of problem X that satisfies the following properties:  If $s_Y$ is a “yes” instance of Y, then $s_X$ is a “yes” instance of X If $s_X$ is a “yes” instance of X, then $s_Y$ is a “yes” instance of Y.</description>
+    </item>
+    
+    <item>
+      <title>CSE202 HW3</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw3/</link>
+      <pubDate>Mon, 18 Feb 2019 19:32:41 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw3/</guid>
+      <description>Problem 1 Idea We can think every row as a node with influx of row&amp;rsquo;s sum that we want to distribute into every column which is also a node with edge&amp;rsquo;s capacity of M.
+Let&amp;rsquo;s define $X_1 &amp;hellip; X_n$ to be the rows and $Y_1 .. Y_n$ to be the columns. The preliminary graph looks like this.
+Due to the nature of the network flow problem, we might have edge with 0 flow.</description>
+    </item>
+    
+    <item>
+      <title>CSE202 HW2</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw2/</link>
+      <pubDate>Tue, 05 Feb 2019 13:01:30 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw2/</guid>
+      <description>HW Link
+Problem 1 (KT 5.2) Idea: we will need to modify the merge-and-count function, everything else stays the same as regular inversion algorithm.
+merge-and-count(A, B):
+ i = 1, j = 1, where i is pointer to A, j is pointer to B count = 0, lenA = length(A), lenB = length(B) sorted = {} While $i \leq lenA$ and $j \leq lenB$:  if (A[i] $\leq$ B[j])  sorted = sorted + {A[i]} $i \gets i + 1$  else  sorted = sorted + {B[j]} $j \gets j + 1$   append remaining A or append remaining B to sorted While $i \leq lenA$ and $j \leq lenB$:  if (A[i] $\leq$ 2B[j]), means no significant inversion  $i \gets i + 1$  else  $j \gets j + 1$ $count \gets count + (lenA - i + 1)$   return (sorted, count)  Analysis Time Complexity Instead of looping once for original inversion problem, we here loop twice.</description>
+    </item>
     
     <item>
       <title>Fast Fourtier Transform</title>
@@ -71,6 +104,18 @@ Abstract the behavior:
 1. Divide the input into two pieces of equal size O(n) 1. solve the two subproblems on these pieces separately by recursion 1. combine the two results into an overall solution O(n)
 Recurrence Time Complexity q = 2 T(n) ≤ 2T(n/2) + cn
 To analyze the above recurrence relation, check below image.  At level j, we have $2^j$ nodes with size $n/2^j$ Each node takes $cn/2^j$, so level j takes $cn/2^j$ x $2^j = cn$ There are logn levels, so T(n) = O(nlogn)  General Case For q &amp;gt; 2 T(n) ≤ qT(n/2) + cn</description>
+    </item>
+    
+    <item>
+      <title>CSE202 HW1</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw1/</link>
+      <pubDate>Sat, 26 Jan 2019 13:30:38 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw1/</guid>
+      <description>HW Link
+Problem 1 (KT 4.2a) YES. T is still the MST for new instance.
+Proof by contraction
+ Assume original MST is T and new MST is T&amp;rsquo; $T \neq T&amp;rsquo;$, at least one edge is different $\exists$ $e_1 \in T$ and $e_2 \in T&amp;rsquo;$, whose $cost(e_1) &amp;lt; cost(e_2)$ and $cost^2(e_1) &amp;gt; cost^2(e_2)$ However, the above mathematical expression doesn&amp;rsquo;t hold  Problem 2 (KT 4.2b) No. The P is no longer the shortest path for new instance.</description>
     </item>
     
     <item>

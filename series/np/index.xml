@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>np on k317h</title>
+    <link>https://keithzeng.github.io/series/np/</link>
+    <description>Recent content in np on k317h</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Mar 2019 18:34:16 -0800</lastBuildDate>
+    
+	<atom:link href="https://keithzeng.github.io/series/np/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSE202 HW4</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw4/</link>
+      <pubDate>Sun, 03 Mar 2019 18:34:16 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw4/</guid>
+      <description>Problem 1: Balanced Simple Path Idea To prove Balanced Simple Path(BSP) is NP-Complete, we need to do following:
+ Prove that BSP $\in$ NP. Choose a problem Y that is known to be NP-complete Consider an arbitrary instance $s_Y$ of problem Y, and show how to construct, in polynomial time, an instance $s_X$ of problem X that satisfies the following properties:  If $s_Y$ is a “yes” instance of Y, then $s_X$ is a “yes” instance of X If $s_X$ is a “yes” instance of X, then $s_Y$ is a “yes” instance of Y.</description>
+    </item>
+    
+  </channel>
+</rss>

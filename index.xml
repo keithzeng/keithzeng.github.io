@@ -6,10 +6,20 @@
     <description>Recent content on k317h</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Feb 2019 20:06:53 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2019 18:34:16 -0800</lastBuildDate>
     
 	<atom:link href="https://keithzeng.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSE202 HW4</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw4/</link>
+      <pubDate>Sun, 03 Mar 2019 18:34:16 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw4/</guid>
+      <description>Problem 1: Balanced Simple Path Idea To prove Balanced Simple Path(BSP) is NP-Complete, we need to do following:
+ Prove that BSP $\in$ NP. Choose a problem Y that is known to be NP-complete Consider an arbitrary instance $s_Y$ of problem Y, and show how to construct, in polynomial time, an instance $s_X$ of problem X that satisfies the following properties:  If $s_Y$ is a “yes” instance of Y, then $s_X$ is a “yes” instance of X If $s_X$ is a “yes” instance of X, then $s_Y$ is a “yes” instance of Y.</description>
+    </item>
     
     <item>
       <title>Network Flow</title>
@@ -23,6 +33,28 @@ No edge enter and and no edge leaving t.
 Flow is defined as function f that take the edge and return a nonnegative real number, $f: E \rightarrow R^+$
 Subjects to following constraints
  $0 \leq f(e) \leq c_e$ $\sum_{e\ into\ v} f(e) = \sum_{e\ out\ of v} f(e)$ or $f^{out}(v) = f^{in}(v)$  GOAL: find the maximum flow.</description>
+    </item>
+    
+    <item>
+      <title>CSE202 HW3</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw3/</link>
+      <pubDate>Mon, 18 Feb 2019 19:32:41 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw3/</guid>
+      <description>Problem 1 Idea We can think every row as a node with influx of row&amp;rsquo;s sum that we want to distribute into every column which is also a node with edge&amp;rsquo;s capacity of M.
+Let&amp;rsquo;s define $X_1 &amp;hellip; X_n$ to be the rows and $Y_1 .. Y_n$ to be the columns. The preliminary graph looks like this.
+Due to the nature of the network flow problem, we might have edge with 0 flow.</description>
+    </item>
+    
+    <item>
+      <title>CSE250 Proj2</title>
+      <link>https://keithzeng.github.io/hws/cse250-proj2/</link>
+      <pubDate>Mon, 18 Feb 2019 10:37:54 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse250-proj2/</guid>
+      <description>Coordinate Descent (a) In this project I compared different methods using different approaches. Besides the random coordinate descent (RCD), I implemented two ways to choose the coordinate: cyclic coordinate descent method(CCD) and greatest coordinate descent method (GCD). CCD updates the coordinate in cycle and GCD update the coordinate with greatest derivative.1
+(b) For every iteration, the coordinate, i, being picked will be updated with below methods.
+Method 1 (Minimize Loss Function)</description>
     </item>
     
     <item>
@@ -169,6 +201,18 @@ Any matrix $A_{d \times d}$ is said to be PSD if $x^TAx \geq$ 0 $\forall$ vector
 Examples Identity matrix $I_{d \times d}$: $$ A = \begin{bmatrix} 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \newline 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \end{bmatrix} $$
 Then
 \begin{align} x^TAx &amp;amp;= \sum_{i = 1}^d \sum_{i = 1}^d A_{i,j}x_ix_j \newline &amp;amp;= \sum_{i = 1}^d A_{i,i} x_i^2\newline &amp;amp;= \sum_{i = 1}^d x_i^2 \newline &amp;amp;\geq 0 \end{align}</description>
+    </item>
+    
+    <item>
+      <title>CSE202 HW2</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw2/</link>
+      <pubDate>Tue, 05 Feb 2019 13:01:30 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw2/</guid>
+      <description>HW Link
+Problem 1 (KT 5.2) Idea: we will need to modify the merge-and-count function, everything else stays the same as regular inversion algorithm.
+merge-and-count(A, B):
+ i = 1, j = 1, where i is pointer to A, j is pointer to B count = 0, lenA = length(A), lenB = length(B) sorted = {} While $i \leq lenA$ and $j \leq lenB$:  if (A[i] $\leq$ B[j])  sorted = sorted + {A[i]} $i \gets i + 1$  else  sorted = sorted + {B[j]} $j \gets j + 1$   append remaining A or append remaining B to sorted While $i \leq lenA$ and $j \leq lenB$:  if (A[i] $\leq$ 2B[j]), means no significant inversion  $i \gets i + 1$  else  $j \gets j + 1$ $count \gets count + (lenA - i + 1)$   return (sorted, count)  Analysis Time Complexity Instead of looping once for original inversion problem, we here loop twice.</description>
     </item>
     
     <item>
@@ -360,10 +404,10 @@ There are couple drawbacks for KNN
     
     <item>
       <title>CSE250 Proj1</title>
-      <link>https://keithzeng.github.io/posts/cse250-proj1/</link>
+      <link>https://keithzeng.github.io/hws/cse250-proj1/</link>
       <pubDate>Sun, 27 Jan 2019 16:22:07 -0800</pubDate>
       
-      <guid>https://keithzeng.github.io/posts/cse250-proj1/</guid>
+      <guid>https://keithzeng.github.io/hws/cse250-proj1/</guid>
       <description>Project 1
 1. Prototype Selection Divide data into ${S_1, S_2, &amp;hellip;, S_c}$, where c = number of labels. For each dataset $S_i$, I select M/c points as new training set for that label, which are the centroids by running k-means clustering algorithm.
 My idea was to capture as many distinct types in for each label and meanwhile reduce the noise by selecting only the center of the each type.</description>
@@ -375,7 +419,8 @@ My idea was to capture as many distinct types in for each label and meanwhile re
       <pubDate>Sun, 27 Jan 2019 03:17:07 -0800</pubDate>
       
       <guid>https://keithzeng.github.io/about/</guid>
-      <description>Resume</description>
+      <description>ML Resume
+SE Resume</description>
     </item>
     
     <item>
@@ -385,6 +430,18 @@ My idea was to capture as many distinct types in for each label and meanwhile re
       
       <guid>https://keithzeng.github.io/archives/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>CSE202 HW1</title>
+      <link>https://keithzeng.github.io/hws/cse202-hw1/</link>
+      <pubDate>Sat, 26 Jan 2019 13:30:38 -0800</pubDate>
+      
+      <guid>https://keithzeng.github.io/hws/cse202-hw1/</guid>
+      <description>HW Link
+Problem 1 (KT 4.2a) YES. T is still the MST for new instance.
+Proof by contraction
+ Assume original MST is T and new MST is T&amp;rsquo; $T \neq T&amp;rsquo;$, at least one edge is different $\exists$ $e_1 \in T$ and $e_2 \in T&amp;rsquo;$, whose $cost(e_1) &amp;lt; cost(e_2)$ and $cost^2(e_1) &amp;gt; cost^2(e_2)$ However, the above mathematical expression doesn&amp;rsquo;t hold  Problem 2 (KT 4.2b) No. The P is no longer the shortest path for new instance.</description>
     </item>
     
     <item>
